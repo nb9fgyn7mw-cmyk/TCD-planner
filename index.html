@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="TCD Planner">
+<title>TheCuratorsDesk — Planner</title>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  body{background:#1a1208;font-family:'Cormorant Garamond',Georgia,serif;overflow-x:hidden}
+  :root{
+    --forest:#2D4A3E;--gold:#C9A84C;--gold-lt:#E4C977;--parch:#F5E6C8;
+    --burg:#6B2737;--navy:#1B2A4A;--sepia:#6B4C2A;--amber:#C48E34;
+    --silver:#A8B8C8;--dark:#1a1208;--cream:#FCF6EA;
+  }
+  button{font-family:'Cormorant Garamond',Georgia,serif;cursor:pointer;border:none;background:none}
+  ::-webkit-scrollbar{width:4px;height:4px}
+  ::-webkit-scrollbar-track{background:#1a1208}
+  ::-webkit-scrollbar-thumb{background:#C9A84C44;border-radius:2px}
+  .cinzel{font-family:'Cinzel',Georgia,serif}
+  .fade-in{animation:fadeIn 0.3s ease}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+  .pulse{animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.6}}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+const { useState, useEffect } = React;
+
+// ── DATA ──────────────────────────────────────────────────
+const SEASONS = {
+  prep:     {bg:"#2D4A3E",text:"#E4C977",label:"Prep",       icon:"📚"},
+  evergreen:{bg:"#3a5a3a",text:"#E4C977",label:"Evergreen",  icon:"🌿"},
+  autumn:   {bg:"#6B2737",text:"#F5D090",label:"Autumn",     icon:"🍂"},
+  holiday:  {bg:"#1B2A4A",text:"#A8B8C8",label:"Holiday",    icon:"🎄"},
+  ops:      {bg:"#3a3020",text:"#E4C977",label:"Operations", icon:"⚙️"},
+};
+
+const MONTHS = [
+  { name:"JUNE",    color:"#2D4A3E", weeks:[
+    {w:1,  dates:"Jun 9–13",   s:"prep",     goal:4, theme:"Core Build Week",        products:["Autumn Reading Journal","Latin Quote Art Vol. II","Weekly Planner","Self-Reflection Journal","Book Club Kit"]},
+    {w:2,  dates:"Jun 16–20",  s:"autumn",   goal:2, theme:"Autumn Accessories",     products:["Autumn Desk Notepad","Autumn Bookmark Set"]},
+    {w:3,  dates:"Jun 23–27",  s:"autumn",   goal:2, theme:"Botanical Art",          products:["Pressed Botanical Prints Vol. I","Autumn Scholar Planner"]},
+  ]},
+  { name:"JULY",    color:"#4a6b3e", weeks:[
+    {w:4,  dates:"Jun 30–Jul 4",s:"evergreen",goal:2,theme:"Commonplace Book",        products:["Commonplace Book","Sticker Sheet Vol. II listing"]},
+    {w:5,  dates:"Jul 7–11",   s:"autumn",   goal:2, theme:"Autumn Commonplace",     products:["Autumn Commonplace Book","Annotated Reading Pages"]},
+    {w:6,  dates:"Jul 14–18",  s:"evergreen",goal:2, theme:"Habit Tracker",          products:["Scholar's Habit Tracker","Reading Challenge (Physical)"]},
+    {w:7,  dates:"Jul 21–25",  s:"autumn",   goal:2, theme:"Autumn Challenge",       products:["Autumn Reading Challenge","Latin Quote Art Vol. III"]},
+    {w:8,  dates:"Jul 28–Aug 1",s:"evergreen",goal:2,theme:"Samples — Publish",      products:["Classicist's Companion (publish)","Classicist's Reading Journal (publish)"]},
+  ]},
+  { name:"AUGUST",  color:"#6B2737", weeks:[
+    {w:9,  dates:"Aug 4–8",    s:"autumn",   goal:2, theme:"🍂 Autumn Launch",        products:["Scholar's Morning Pages Journal","Pressed Botanicals Vol. II"]},
+    {w:10, dates:"Aug 11–15",  s:"autumn",   goal:2, theme:"Back to School",         products:["Scholar's Study Kit","Reading List (Semester)"]},
+    {w:11, dates:"Aug 18–22",  s:"evergreen",goal:2, theme:"Literary Prints",        products:["Literary Quote Print Set","Scholar's Desk Setup Print"]},
+    {w:12, dates:"Aug 25–29",  s:"evergreen",goal:2, theme:"SEO + Annual Planner",   products:["Scholar's Annual Reading Planner","Book Review Template Pack"]},
+  ]},
+  { name:"SEPTEMBER",color:"#5a3a6a",weeks:[
+    {w:13, dates:"Sep 1–5",    s:"holiday",  goal:2, theme:"Holiday Prep",           products:["Scholar's Advent Calendar ⭐","Year in Books Review"]},
+    {w:14, dates:"Sep 8–12",   s:"holiday",  goal:2, theme:"Winter Collection",      products:["Scholar's Winter Reading Journal","Scholar's Winter Planner"]},
+    {w:15, dates:"Sep 15–19",  s:"holiday",  goal:2, theme:"Gift Products",          products:["Printable Gift Tags","Scholar's Gift Wrap Set"]},
+    {w:16, dates:"Sep 22–26",  s:"holiday",  goal:2, theme:"Gift Inserts",           products:["Bookish Gift Insert Card","Scholar's Winter Commonplace Book"]},
+    {w:17, dates:"Sep 29–Oct 3",s:"holiday", goal:2, theme:"Digital Bundle",         products:["The Scholar's Gift Set Bundle","Scholar's Winter Bookmark Set"]},
+  ]},
+  { name:"OCTOBER", color:"#1B2A4A", weeks:[
+    {w:18, dates:"Oct 6–10",   s:"holiday",  goal:2, theme:"Physical Prep",          products:["Scholar's Winter Self-Reflection Journal","Literary Print Bundle"]},
+    {w:19, dates:"Oct 13–17",  s:"holiday",  goal:2, theme:"🎄 All Digital Live",     products:["Advent Calendar (Physical)","Cosy Scholar Winter Stickers"]},
+    {w:20, dates:"Oct 20–24",  s:"holiday",  goal:2, theme:"Physical Bundles",       products:["Autumn Scholar Bundle $42.99","Reading Life Starter Kit $44.99"]},
+    {w:21, dates:"Oct 27–31",  s:"holiday",  goal:1, theme:"Premium Gift Box",       products:["The Scholar's Gift Box $69.99 ⭐"]},
+  ]},
+  { name:"NOVEMBER",color:"#3a2050", weeks:[
+    {w:22, dates:"Nov 3–7",    s:"holiday",  goal:2, theme:"🎁 Bundles Live",         products:["Scholar's December Daily Journal","New Year New Chapter Journal"]},
+    {w:23, dates:"Nov 10–14",  s:"ops",      goal:1, theme:"SEO + Marketing",        products:["Etsy SEO refresh + Pinterest gift blitz"]},
+    {w:24, dates:"Nov 17–21",  s:"holiday",  goal:2, theme:"Last Build Window",      products:["Scholar's 2027 Reading Goals","Mindful Reader's Toolkit Bundle"]},
+    {w:25, dates:"Nov 24–28",  s:"ops",      goal:1, theme:"Cyber Week Sale",        products:["Run Etsy sale 20% off + bundle listings"]},
+  ]},
+  { name:"DECEMBER",color:"#1B2A4A", weeks:[
+    {w:26, dates:"Dec 1–5",    s:"holiday",  goal:1, theme:"🎄 Peak Season",          products:["Last-minute digital gift listings"]},
+    {w:27, dates:"Dec 8–12",   s:"ops",      goal:0, theme:"Ship + Fulfil",          products:["Fulfilment — no building this week"]},
+    {w:28, dates:"Dec 15–19",  s:"holiday",  goal:1, theme:"Digital Final Push",     products:["New Year Reading Intentions 2027"]},
+    {w:29, dates:"Dec 22–31",  s:"ops",      goal:0, theme:"Review + Plan 2027",     products:["Year-end review — plan January 2027"]},
+  ]},
+];
+
+// ── CURRENT WEEK DETECTION ────────────────────────────────
+function getCurrentWeek() {
+  const now = new Date();
+  const jun9 = new Date("2026-06-09");
+  const diff = Math.floor((now - jun9) / (7*24*60*60*1000));
+  return Math.max(1, Math.min(29, diff + 1));
+}
+
+// ── NAV BAR ───────────────────────────────────────────────
+function NavBar({ tab, setTab }) {
+  const tabs = [
+    { id:"roadmap", label:"Roadmap", icon:"🗓" },
+    { id:"thisweek",label:"This Week",icon:"📌"},
+    { id:"palette", label:"Palettes", icon:"🎨"},
+  ];
+  return (
+    <div style={{ position:"sticky",top:0,zIndex:100,
+      background:"#1a1208ee",backdropFilter:"blur(8px)",
+      borderBottom:"1px solid #C9A84C33",
+      display:"flex",justifyContent:"space-around",padding:"0 8px" }}>
+      {tabs.map(t=>(
+        <button key={t.id} onClick={()=>setTab(t.id)} style={{
+          flex:1, padding:"12px 4px", fontSize:11,
+          color: tab===t.id ? "#E4C977" : "#F5E6C888",
+          borderBottom: tab===t.id ? "2px solid #C9A84C" : "2px solid transparent",
+          letterSpacing:0.5, transition:"all 0.2s",
+          fontFamily:"'Cinzel',Georgia,serif",
+        }}>
+          <div style={{ fontSize:16, marginBottom:2 }}>{t.icon}</div>
+          {t.label}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+// ── ROADMAP TAB ───────────────────────────────────────────
+function RoadmapTab() {
+  const [openWeek, setOpenWeek] = useState(null);
+  const [filterSeason, setFilterSeason] = useState("all");
+  const currentWeek = getCurrentWeek();
+
+  const totalProds = MONTHS.reduce((a,m)=>a+m.weeks.reduce((b,w)=>b+w.products.length,0),0);
+
+  return (
+    <div style={{ padding:"16px 14px" }} className="fade-in">
+      {/* Header */}
+      <div style={{ textAlign:"center", marginBottom:20, borderBottom:"1px solid #C9A84C44", paddingBottom:16 }}>
+        <div style={{ fontSize:9, letterSpacing:6, color:"#C9A84C", textTransform:"uppercase", marginBottom:4 }} className="cinzel">
+          The Curator's Desk
+        </div>
+        <div style={{ fontSize:22, color:"#E4C977", fontWeight:"bold", letterSpacing:2 }} className="cinzel">
+          2026 Roadmap
+        </div>
+        <div style={{ fontSize:11, color:"#F5E6C866", marginTop:4 }}>
+          {totalProds} products · 29 weeks · June → December
+        </div>
+        <div style={{ marginTop:10, background:"#2D4A3E22", border:"1px solid #2D4A3E",
+          borderRadius:8, padding:"6px 14px", display:"inline-block" }}>
+          <span style={{ fontSize:10, color:"#E4C977" }}>
+            🎯 Goal: <strong>2–3 products/week</strong>
+          </span>
+        </div>
+      </div>
+
+      {/* Season filter */}
+      <div style={{ display:"flex", gap:6, flexWrap:"wrap", marginBottom:16 }}>
+        {[["all","All","#555"],["autumn","🍂 Autumn","#6B2737"],["holiday","🎄 Holiday","#1B2A4A"],["evergreen","🌿 Evergreen","#3a5a3a"]].map(([id,label,col])=>(
+          <button key={id} onClick={()=>setFilterSeason(id)} style={{
+            padding:"4px 10px", borderRadius:14, fontSize:10,
+            border:`1px solid ${filterSeason===id?col:col+"55"}`,
+            background:filterSeason===id?col:"transparent",
+            color:filterSeason===id?"#F5E6C8":"#F5E6C888",
+          }}>{label}</button>
+        ))}
+      </div>
+
+      {/* Month sections */}
+      {MONTHS.map(m=>{
+        const filteredWeeks = filterSeason==="all"
+          ? m.weeks
+          : m.weeks.filter(w=>w.s===filterSeason);
+        if(filteredWeeks.length===0) return null;
+
+        return (
+          <div key={m.name} style={{ marginBottom:20 }}>
+            <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:8 }}>
+              <div style={{ background:m.color, color:"#F5E6C8",
+                padding:"3px 14px", borderRadius:14, fontSize:11,
+                fontWeight:"bold", letterSpacing:2 }} className="cinzel">
+                {m.name}
+              </div>
+              <div style={{ flex:1, height:1, background:m.color+"44" }}/>
+            </div>
+
+            {filteredWeeks.map(w=>{
+              const ss = SEASONS[w.s];
+              const isOpen = openWeek===w.w;
+              const isCurrent = w.w===currentWeek;
+
+              return (
+                <div key={w.w} style={{ marginBottom:6 }}>
+                  <div onClick={()=>setOpenWeek(isOpen?null:w.w)}
+                    style={{
+                      border:`1px solid ${isCurrent?'#E4C977':ss.bg+'88'}`,
+                      borderRadius:10,
+                      background:isOpen?ss.bg+"33":isCurrent?"#E4C97714":"#231808",
+                      padding:"10px 12px",
+                      cursor:"pointer",
+                      position:"relative",
+                    }}>
+
+                    {isCurrent && (
+                      <div style={{ position:"absolute",top:8,right:8,
+                        background:"#E4C977",color:"#1a1208",
+                        fontSize:8,padding:"2px 6px",borderRadius:8,
+                        fontWeight:"bold",letterSpacing:0.5 }} className="cinzel pulse">
+                        NOW
+                      </div>
+                    )}
+
+                    <div style={{ display:"flex", alignItems:"center", gap:8 }}>
+                      <div style={{ width:28,height:28,borderRadius:"50%",
+                        background:ss.bg,border:`1px solid ${ss.text}44`,
+                        display:"flex",alignItems:"center",justifyContent:"center",
+                        fontSize:9,fontWeight:"bold",color:ss.text,flexShrink:0 }}
+                        className="cinzel">
+                        {w.w}
+                      </div>
+                      <div style={{ flex:1 }}>
+                        <div style={{ fontSize:12, color:"#E4C977", fontWeight:"bold", marginBottom:2 }}>
+                          {w.dates}
+                        </div>
+                        <div style={{ fontSize:11, color:"#F5E6C8cc" }}>{w.theme}</div>
+                      </div>
+                      <div style={{ display:"flex", flexDirection:"column", alignItems:"flex-end", gap:3 }}>
+                        <span style={{ background:ss.bg,color:ss.text,fontSize:7,
+                          padding:"1px 6px",borderRadius:8,letterSpacing:0.5 }}>
+                          {ss.icon} {ss.label}
+                        </span>
+                        {w.goal>0 && <span style={{ fontSize:9, color:"#F5E6C866" }}>{w.goal}p</span>}
+                      </div>
+                      <span style={{ fontSize:14, color:"#C9A84C",
+                        transform:isOpen?"rotate(90deg)":"none",
+                        transition:"transform 0.2s", marginLeft:4 }}>›</span>
+                    </div>
+
+                    {isOpen && (
+                      <div style={{ marginTop:10, paddingTop:10,
+                        borderTop:`1px solid ${ss.bg}88` }} className="fade-in">
+                        {w.products.map((p,pi)=>(
+                          <div key={pi} style={{ display:"flex",alignItems:"flex-start",gap:6,marginBottom:4 }}>
+                            <div style={{ width:6,height:6,borderRadius:"50%",
+                              background:ss.bg,border:`1px solid ${ss.text}`,
+                              flexShrink:0,marginTop:5 }}/>
+                            <span style={{ fontSize:11, color:"#F5E6C8cc",lineHeight:1.4 }}>{p}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+// ── THIS WEEK TAB ─────────────────────────────────────────
+function ThisWeekTab() {
+  const currentWeek = getCurrentWeek();
+  let currentWeekData = null;
+  let monthName = "";
+  MONTHS.forEach(m=>m.weeks.forEach(w=>{
+    if(w.w===currentWeek){currentWeekData=w;monthName=m.name;}
+  }));
+  if(!currentWeekData) return <div style={{ padding:24, color:"#F5E6C8", textAlign:"center" }}>No data for current week</div>;
+
+  const ss = SEASONS[currentWeekData.s];
+  const nextWeeks = [];
+  MONTHS.forEach(m=>m.weeks.forEach(w=>{
+    if(w.w>currentWeek && w.w<=currentWeek+3) nextWeeks.push({...w,month:m.name});
+  }));
+
+  return (
+    <div style={{ padding:"16px 14px" }} className="fade-in">
+      {/* This week hero */}
+      <div style={{ background:ss.bg+"44", border:`2px solid ${ss.text}44`,
+        borderRadius:14, padding:"18px 16px", marginBottom:20,
+        background:`linear-gradient(135deg, ${ss.bg}66 0%, ${ss.bg}22 100%)` }}>
+        <div style={{ fontSize:9, letterSpacing:4, color:ss.text, textTransform:"uppercase", marginBottom:4 }} className="cinzel">
+          {monthName} · Week {currentWeek} of 29
+        </div>
+        <div style={{ fontSize:20, color:"#E4C977", fontWeight:"bold", marginBottom:4, lineHeight:1.2 }} className="cinzel">
+          {currentWeekData.theme}
+        </div>
+        <div style={{ fontSize:11, color:"#F5E6C888", marginBottom:12 }}>
+          {currentWeekData.dates}
+        </div>
+
+        {/* Progress bar */}
+        <div style={{ marginBottom:12 }}>
+          <div style={{ fontSize:9, color:"#F5E6C877", marginBottom:4 }}>
+            YEAR PROGRESS — Week {currentWeek}/29
+          </div>
+          <div style={{ height:4, background:"#F5E6C822", borderRadius:2 }}>
+            <div style={{ height:"100%", background:"#C9A84C",
+              borderRadius:2, width:`${(currentWeek/29)*100}%`,
+              transition:"width 0.5s" }}/>
+          </div>
+        </div>
+
+        {/* Goal */}
+        <div style={{ background:"#1a1208aa", borderRadius:8, padding:"8px 12px" }}>
+          <div style={{ fontSize:9, color:ss.text, letterSpacing:2, textTransform:"uppercase", marginBottom:4 }} className="cinzel">
+            This week's goal
+          </div>
+          <div style={{ fontSize:13, color:"#E4C977", fontWeight:"bold" }}>
+            {currentWeekData.goal > 0 ? `Build ${currentWeekData.goal} product${currentWeekData.goal!==1?"s":""}` : "Operations — no building"}
+          </div>
+        </div>
+      </div>
+
+      {/* Products this week */}
+      <div style={{ marginBottom:20 }}>
+        <div style={{ fontSize:9, letterSpacing:3, color:"#C9A84C", textTransform:"uppercase", marginBottom:10 }} className="cinzel">
+          Products This Week
+        </div>
+        {currentWeekData.products.map((p,pi)=>(
+          <div key={pi} style={{ display:"flex",alignItems:"center",gap:10,
+            background:"#231808",border:`1px solid ${ss.bg}88`,
+            borderRadius:8,padding:"10px 12px",marginBottom:6 }}>
+            <div style={{ width:8,height:8,borderRadius:"50%",
+              background:ss.bg,border:`1px solid ${ss.text}`,flexShrink:0 }}/>
+            <span style={{ fontSize:12, color:"#F5E6C8cc" }}>{p}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Coming up */}
+      {nextWeeks.length>0 && (
+        <div>
+          <div style={{ fontSize:9, letterSpacing:3, color:"#C9A84C77", textTransform:"uppercase", marginBottom:10 }} className="cinzel">
+            Coming Up
+          </div>
+          {nextWeeks.map(w=>{
+            const ws = SEASONS[w.s];
+            return (
+              <div key={w.w} style={{ background:"#1a1208",
+                border:`1px solid ${ws.bg}44`,borderRadius:8,
+                padding:"8px 12px",marginBottom:6,
+                display:"flex",alignItems:"center",gap:10 }}>
+                <div style={{ width:22,height:22,borderRadius:"50%",
+                  background:ws.bg+"44",border:`1px solid ${ws.bg}`,
+                  display:"flex",alignItems:"center",justifyContent:"center",
+                  fontSize:9,color:ws.text,flexShrink:0 }} className="cinzel">
+                  {w.w}
+                </div>
+                <div>
+                  <div style={{ fontSize:10, color:"#F5E6C888" }}>{w.dates}</div>
+                  <div style={{ fontSize:11, color:"#E4C97788" }}>{w.theme}</div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ── PALETTE TAB ───────────────────────────────────────────
+function PaletteTab() {
+  const palettes = [
+    { name:"Classic Scholar", subtitle:"Year-round flagship",
+      colors:[{hex:"#2D4A3E",label:"Forest Green"},{hex:"#C9A84C",label:"Gold"},{hex:"#F5E6C8",label:"Parchment"}],
+      use:"All evergreen products — journals, planners, wall art"},
+    { name:"Autumn Scholar", subtitle:"August–October",
+      colors:[{hex:"#6B2737",label:"Burgundy"},{hex:"#C48E34",label:"Amber Gold"},{hex:"#F5E6C8",label:"Parchment"}],
+      use:"Autumn Reading Journal, Autumn Planner, Botanical Prints"},
+    { name:"Winter Scholar", subtitle:"November–December",
+      colors:[{hex:"#1B2A4A",label:"Deep Navy"},{hex:"#A8B8C8",label:"Silver"},{hex:"#C9A84C",label:"Gold"}],
+      use:"Advent Calendar, Winter Journal, Holiday gifts"},
+    { name:"Literary Parchment", subtitle:"Evergreen literary",
+      colors:[{hex:"#F5E6C8",label:"Warm Parchment"},{hex:"#6B4C2A",label:"Sepia Brown"},{hex:"#C9A84C",label:"Gold"}],
+      use:"Botanical prints, Commonplace Book, Literary art"},
+  ];
+
+  return (
+    <div style={{ padding:"16px 14px" }} className="fade-in">
+      <div style={{ textAlign:"center", marginBottom:20 }}>
+        <div style={{ fontSize:9, letterSpacing:4, color:"#C9A84C", textTransform:"uppercase" }} className="cinzel">
+          Brand Color System
+        </div>
+        <div style={{ fontSize:18, color:"#E4C977", marginTop:4 }} className="cinzel">
+          Your Palettes
+        </div>
+        <div style={{ fontSize:11, color:"#F5E6C866", marginTop:4 }}>
+          One product = one palette. Never mix palettes within a product.
+        </div>
+      </div>
+
+      {palettes.map((p,pi)=>(
+        <div key={pi} style={{ background:"#231808",border:"1px solid #C9A84C22",
+          borderRadius:12, padding:"16px 14px", marginBottom:12 }}>
+          <div style={{ marginBottom:10 }}>
+            <div style={{ fontSize:14, color:"#E4C977", fontWeight:"bold" }} className="cinzel">
+              {p.name}
+            </div>
+            <div style={{ fontSize:11, color:"#C9A84C", fontStyle:"italic" }}>{p.subtitle}</div>
+          </div>
+
+          {/* Color swatches */}
+          <div style={{ display:"flex", gap:8, marginBottom:10 }}>
+            {p.colors.map((c,ci)=>(
+              <div key={ci} style={{ flex:1, textAlign:"center" }}>
+                <div style={{ width:"100%", paddingTop:"100%", borderRadius:8,
+                  background:c.hex, border:"1px solid #F5E6C822",
+                  marginBottom:4, position:"relative" }}>
+                  <div style={{ position:"absolute",inset:0,display:"flex",
+                    alignItems:"center",justifyContent:"center",
+                    fontSize:8,color:"#F5E6C844" }}>{c.hex}</div>
+                </div>
+                <div style={{ fontSize:9, color:"#F5E6C888", lineHeight:1.2 }}>{c.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <div style={{ fontSize:10, color:"#F5E6C877", fontStyle:"italic",
+            borderTop:"1px solid #C9A84C22", paddingTop:8 }}>
+            {p.use}
+          </div>
+        </div>
+      ))}
+
+      {/* Rule */}
+      <div style={{ background:"#2D4A3E22",border:"1px solid #2D4A3E",
+        borderRadius:10,padding:"12px 14px",marginTop:8 }}>
+        <div style={{ fontSize:11, color:"#E4C977", fontWeight:"bold", marginBottom:4 }} className="cinzel">
+          The Brand Rule
+        </div>
+        <div style={{ fontSize:11, color:"#F5E6C8cc", lineHeight:1.6 }}>
+          Your brand identity lives in your <em>typography</em>, <em>illustrations</em>, and <em>scholarly aesthetic</em> — not just the color. All four palettes share Cinzel + Cormorant Garamond fonts, classical Latin mottos, and parchment textures. A buyer sees any product and knows it's TheCuratorsDesk.
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── APP ───────────────────────────────────────────────────
+function App() {
+  const [tab, setTab] = useState("thisweek");
+
+  return (
+    <div style={{ maxWidth:500, margin:"0 auto", minHeight:"100vh",
+      background:"#1a1208", paddingBottom:20 }}>
+
+      {/* App header */}
+      <div style={{ background:"linear-gradient(to bottom, #2D4A3E, #1a1208)",
+        padding:"20px 16px 14px", textAlign:"center",
+        borderBottom:"1px solid #C9A84C33" }}>
+        <div style={{ fontSize:9, letterSpacing:6, color:"#C9A84C", textTransform:"uppercase" }} className="cinzel">
+          TheCuratorsDesk
+        </div>
+        <div style={{ fontSize:14, color:"#E4C977", marginTop:2, letterSpacing:1 }} className="cinzel">
+          Creative Planner 2026
+        </div>
+      </div>
+
+      <NavBar tab={tab} setTab={setTab}/>
+
+      <div style={{ color:"#F5E6C8" }}>
+        {tab==="roadmap"  && <RoadmapTab/>}
+        {tab==="thisweek" && <ThisWeekTab/>}
+        {tab==="palette"  && <PaletteTab/>}
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>
