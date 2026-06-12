@@ -60,7 +60,7 @@ function useLS(k,d){
 }
 function getCW(){
   const diff=Math.floor((new Date()-new Date("2026-06-02"))/(7*864e5));
-  return Math.max(1,Math.min(29,diff+1));
+  return Math.max(1,Math.min(28,diff+1));
 }
 
 const EXISTING=[
@@ -97,54 +97,47 @@ const MONTHS=[
       {n:"Scholar\'s Morning Pages Journal",         ty:"both",   st:"done"},
       {n:"Autumn TBR Journal",                       ty:"both",   st:"done"},
     ]},
-    {w:2,dates:"Jun 16–20", s:"ops",    theme:"Vet Week — Test · Market · Reflect",
-     note:"No new builds. Use your own journals daily, set up Pinterest, laminate bookmarks, list Wall Art Vol. II.",
-     pub:"List Wall Art Vol. II (5 listings). Laminate bookmark sets.",
+    {w:2,dates:"Jun 16–27", s:"ops",    theme:"Vet Week — Test · Market · Reflect",
+     note:"One vetting week (2 calendar weeks, no new builds). Use your own journals daily, set up Pinterest, laminate bookmarks, list Wall Art Vol. II, record content. Lulu samples from Week 1 should arrive during this window — approve and order first batch as each arrives.",
+     pub:"List Wall Art Vol. II (5 listings). Laminate bookmark sets. Approve Lulu samples as they arrive → order first batch immediately.",
      products:[
       {n:"Test all journals personally",          ty:"digital",st:"pending"},
       {n:"Build Pinterest boards + pin all products",ty:"digital",st:"pending"},
       {n:"Etsy SEO audit — refresh all tags",     ty:"digital",st:"pending"},
       {n:"Marketing strategy + content calendar", ty:"digital",st:"pending"},
-    ]},
-    {w:3,dates:"Jun 23–27", s:"ops",    theme:"Vet Week — Continue Testing + Marketing",
-     note:"Second vetting week. Confirm Lulu samples arrived from Week 1 order — approve and order first batch as they arrive. Keep journaling daily. No new product builds.",
-     pub:"Approve any arrived Lulu samples → order first batch immediately",
-     products:[
-      {n:"Continue testing journals daily",       ty:"digital",st:"pending"},
-      {n:"Pinterest — pin all live products",     ty:"digital",st:"pending"},
       {n:"Record 4–6 short content videos",       ty:"digital",st:"pending"},
     ]},
   ]},
   {name:"JULY",col:"#4a6b3e",weeks:[
-    {w:4,dates:"Jun 30–Jul 4",s:"evergreen",theme:"CREATE — Habit Tracker + Annual Planner",
+    {w:3,dates:"Jun 30–Jul 4",s:"evergreen",theme:"CREATE — Habit Tracker + Annual Planner",
      note:"Create week 1 of 2. Two evergreen products with strong year-round search. Both relatively fast builds.",
      pub:"Create Commonplace Book digital Etsy listing ($18.99)",
      products:[
       {n:"Scholar\'s Habit Tracker (Monthly)",   ty:"digital",st:"pending"},
       {n:"Scholar\'s Annual Reading Planner",    ty:"both",   st:"pending"},
     ]},
-    {w:5,dates:"Jul 7–11",  s:"autumn", theme:"CREATE — Botanical Prints + Bookmark Set II",
+    {w:4,dates:"Jul 7–11",  s:"autumn", theme:"CREATE — Botanical Prints + Bookmark Set II",
      note:"Create week 2 of 2. Botanical prints are 3 fast designs. Second bookmark set (Forest/Classic palette) is a quick ~30min project using your laminator.",
      pub:"PUBLISH physical listings as Lulu first batches arrive",
      products:[
       {n:"Pressed Botanical Print Set Vol. I",   ty:"digital",st:"pending"},
       {n:"Scholar Bookmark Set II (Classic palette)",ty:"both",st:"pending"},
     ]},
-    {w:6,dates:"Jul 14–18", s:"ops",    theme:"VET — Test New Products + Market",
+    {w:5,dates:"Jul 14–18", s:"ops",    theme:"VET — Test New Products + Market",
      note:"Vetting week. Test the Habit Tracker and Annual Planner in real use. Pin Botanical Prints. Sticker Bundle listing task — no design, just ZIP + list.",
      pub:"List Sticker Sheet Bundle (Vol. I+II) at $12.99. Approve any pending Lulu samples.",
      products:[
       {n:"Test Habit Tracker + Annual Planner",  ty:"digital",st:"pending"},
       {n:"Pinterest pinning + content recording",ty:"digital",st:"pending"},
     ]},
-    {w:7,dates:"Jul 21–25", s:"autumn", theme:"CREATE — Latin Art Vol. III + Bookmark Set III",
+    {w:6,dates:"Jul 21–25", s:"autumn", theme:"CREATE — Latin Art Vol. III + Bookmark Set III",
      note:"Create week 1 of 2. Latin Quote Art Vol. III in burgundy/amber. Bookmark Set III (Winter preview palette) — quick build.",
      pub:"PUBLISH Morning Pages + Autumn TBR physical listings as batches arrive",
      products:[
       {n:"Latin Quote Art Vol. III (Burgundy)",  ty:"digital",st:"pending"},
       {n:"Scholar Bookmark Set III (Autumn Vol. II)",ty:"both",st:"pending"},
     ]},
-    {w:8,dates:"Jul 28–Aug 1",s:"autumn",theme:"CREATE — Gift Tags + Gift Wrap Set",
+    {w:7,dates:"Jul 28–Aug 1",s:"autumn",theme:"CREATE — Gift Tags + Gift Wrap Set",
      note:"Create week 2 of 2. Both are fast digital builds with high Pinterest traffic potential. All autumn products should be live by Aug 1.",
      pub:"Confirm ALL autumn products live by Aug 1. Begin heavy Pinterest pinning.",
      products:[
@@ -160,20 +153,20 @@ const MONTHS=[
       {n:"Test Gift Tags + Gift Wrap with a real order",ty:"digital",st:"pending"},
       {n:"Record packing/unboxing content",            ty:"digital",st:"pending"},
     ]},
-    {w:10,dates:"Aug 11–15",s:"holiday",theme:"CREATE — Advent Calendar (Part 1)",
+    {w:9,dates:"Aug 11–15",s:"holiday",theme:"CREATE — Advent Calendar (Part 1)",
      note:"Create week 1 of 2. Advent Calendar is your most unique product — needs the longest lead time. Start building this week, finish next.",
      pub:"Etsy SEO refresh — update all listing tags for autumn search terms",
      products:[
       {n:"Scholar\'s Advent Reading Calendar (build)",ty:"both",st:"pending"},
     ]},
-    {w:11,dates:"Aug 18–22",s:"holiday",theme:"CREATE — Advent Calendar (Part 2) + Bookmark Set IV",
+    {w:10,dates:"Aug 18–22",s:"holiday",theme:"CREATE — Advent Calendar (Part 2) + Bookmark Set IV",
      note:"Create week 2 of 2. Finish Advent Calendar and upload to Lulu — needs to arrive before Dec 1. Bookmark Set IV (Winter palette) — quick build.",
      pub:"Upload Advent Calendar to Lulu → order sample immediately",
      products:[
       {n:"Scholar\'s Advent Reading Calendar (finish + list digital)",ty:"both",st:"pending"},
       {n:"Scholar Bookmark Set IV (Winter Vol. I)",ty:"both",st:"pending"},
     ]},
-    {w:12,dates:"Aug 25–29",s:"ops",    theme:"VET — Test + Market",
+    {w:11,dates:"Aug 25–29",s:"ops",    theme:"VET — Test + Market",
      note:"Vetting week. Test the Advent Calendar structure yourself (even out of season — check the flow). Pin everything live. Year in Books listing — fast build, no full week needed.",
      pub:"Advent Calendar sample arrives — approve and order first batch",
      products:[
@@ -182,34 +175,34 @@ const MONTHS=[
     ]},
   ]},
   {name:"SEPTEMBER",col:"#5a3a6a",weeks:[
-    {w:13,dates:"Sep 1–5",  s:"holiday",theme:"CREATE — Winter Reading Journal + Winter Planner",
+    {w:12,dates:"Sep 1–5",  s:"holiday",theme:"CREATE — Winter Reading Journal + Winter Planner",
      note:"Create week 1 of 2. Both are physical priorities for holiday season. Build and upload to Lulu immediately — 3 week lead time.",
      pub:"Upload Winter Journal + Winter Planner to Lulu → order samples immediately",
      products:[
       {n:"Scholar\'s Winter Reading Journal",    ty:"both",   st:"pending"},
       {n:"Scholar\'s Winter Planner",            ty:"both",   st:"pending"},
     ]},
-    {w:14,dates:"Sep 8–12", s:"holiday",theme:"CREATE — Winter Self-Reflection + Bookmark Set V",
+    {w:13,dates:"Sep 8–12", s:"holiday",theme:"CREATE — Winter Self-Reflection + Bookmark Set V",
      note:"Create week 2 of 2. Winter Self-Reflection Journal — physical priority, build and order sample. Bookmark Set V (Winter Vol. II) — quick build.",
      pub:"Upload Winter Self-Reflection to Lulu → order sample",
      products:[
       {n:"Scholar\'s Winter Self-Reflection Journal",ty:"both",st:"pending"},
       {n:"Scholar Bookmark Set V (Winter Vol. II)",  ty:"both",st:"pending"},
     ]},
-    {w:15,dates:"Sep 15–19",s:"ops",    theme:"VET — Approve Winter Samples + Market",
+    {w:14,dates:"Sep 15–19",s:"ops",    theme:"VET — Approve Winter Samples + Market",
      note:"Vetting week. Winter Journal + Planner samples arrive — approve and order first batch immediately (need stock before Oct 15). Test bookmarks from recent batches.",
      pub:"Approve Winter Journal + Planner samples → ORDER FIRST BATCH SAME DAY",
      products:[
       {n:"Test Winter products as they arrive",  ty:"digital",st:"pending"},
       {n:"Pinterest holiday board setup",        ty:"digital",st:"pending"},
     ]},
-    {w:16,dates:"Sep 22–26",s:"holiday",theme:"CREATE — Scholar\'s Year in Letters (Part 1)",
+    {w:15,dates:"Sep 22–26",s:"holiday",theme:"CREATE — Scholar\'s Year in Letters (Part 1)",
      note:"Create week 1 of 2. Year in Letters — 12 monthly letters to your future self, sealed and opened New Year\'s Day. Navy/silver palette. Genuinely different from other reflection products.",
      pub:"Winter Self-Reflection sample arrives — approve, order first batch. PUBLISH Winter Journal + Planner physical listings.",
      products:[
       {n:"Scholar\'s Year in Letters (build)",   ty:"both",   st:"pending"},
     ]},
-    {w:17,dates:"Sep 29–Oct 3",s:"holiday",theme:"CREATE — Year in Letters (Part 2) + Gift Set Bundle",
+    {w:16,dates:"Sep 29–Oct 3",s:"holiday",theme:"CREATE — Year in Letters (Part 2) + Gift Set Bundle",
      note:"Create week 2 of 2. Finish Year in Letters, upload to Lulu. Gift Set bundle = listing only, combines existing digital products, no new design.",
      pub:"Upload Year in Letters to Lulu → order sample",
      products:[
@@ -218,28 +211,28 @@ const MONTHS=[
     ]},
   ]},
   {name:"OCTOBER",col:"#1B2A4A",weeks:[
-    {w:18,dates:"Oct 6–10", s:"ops",    theme:"VET — Order Holiday Bulk Inventory",
+    {w:17,dates:"Oct 6–10", s:"ops",    theme:"VET — Order Holiday Bulk Inventory",
      note:"CRITICAL VET WEEK. PUBLISH Winter Self-Reflection physical. Order bulk inventory of ALL physical books for holiday season — needs to arrive by Oct 28.",
      pub:"PUBLISH Winter Self-Reflection physical. ORDER holiday bulk inventory — all physical titles.",
      products:[
       {n:"Test Year in Letters as it arrives",   ty:"digital",st:"pending"},
       {n:"Pinterest holiday content push",       ty:"digital",st:"pending"},
     ]},
-    {w:19,dates:"Oct 13–17",s:"holiday",theme:"CREATE — Cosy Winter Sticker Sheet + Bookmark Set VI",
+    {w:18,dates:"Oct 13–17",s:"holiday",theme:"CREATE — Cosy Winter Sticker Sheet + Bookmark Set VI",
      note:"Create week 1 of 2. Hard deadline — all holiday digital products live by Oct 15. Sticker sheet + final bookmark set.",
      pub:"All holiday digital listings live by Oct 15. PUBLISH Advent Calendar physical + Year in Letters physical if arrived.",
      products:[
       {n:"Cosy Scholar Winter Sticker Sheet",    ty:"digital",st:"pending"},
       {n:"Scholar Bookmark Set VI (Gift Edition)",ty:"both",  st:"pending"},
     ]},
-    {w:20,dates:"Oct 20–24",s:"holiday",theme:"CREATE — New Year Reading Intentions + 2027 Goals",
+    {w:19,dates:"Oct 20–24",s:"holiday",theme:"CREATE — New Year Reading Intentions + 2027 Goals",
      note:"Create week 2 of 2. Single beautiful page each — fast builds. Holiday inventory arrives this week.",
      pub:"Holiday bulk inventory arrives — begin assembling gift bundles",
      products:[
       {n:"New Year Reading Intentions 2027",     ty:"digital",st:"pending"},
       {n:"Scholar\'s 2027 Reading Goals",        ty:"digital",st:"pending"},
     ]},
-    {w:21,dates:"Oct 27–31",s:"ops",    theme:"VET — Assemble Bundles + List",
+    {w:20,dates:"Oct 27–31",s:"ops",    theme:"VET — Assemble Bundles + List",
      note:"Vetting week. Assemble all physical gift bundles from inventory. Create bundle Etsy listings. Test new digital products by using them.",
      pub:"List Autumn Scholar Bundle $42.99 + Reading Life Starter Kit $44.99 + Scholar\'s Gift Box $69.99",
      products:[
@@ -248,41 +241,41 @@ const MONTHS=[
     ]},
   ]},
   {name:"NOVEMBER",col:"#3a2050",weeks:[
-    {w:22,dates:"Nov 3–7",  s:"holiday",theme:"🎁 All Bundles Live — Holiday Push Begins",
+    {w:21,dates:"Nov 3–7",  s:"holiday",theme:"🎁 All Bundles Live — Holiday Push Begins",
      note:"All physical bundles live by Nov 1. Pinterest holiday push in full swing. Light week — focus on marketing.",
      pub:"All physical gift bundles live + Pinterest holiday board active",
      products:[
       {n:"Pinterest holiday push + content",     ty:"digital",st:"pending"},
     ]},
-    {w:23,dates:"Nov 10–14",s:"ops",    theme:"VET — SEO + Marketing Blitz",
+    {w:22,dates:"Nov 10–14",s:"ops",    theme:"VET — SEO + Marketing Blitz",
      note:"No building. Refresh all listing SEO for Christmas. Create Pinterest gift guide boards. Post gift-for-readers content daily.",
      pub:"Etsy SEO Christmas refresh + Pinterest gift guide boards",
      products:[]},
-    {w:24,dates:"Nov 17–21",s:"holiday",theme:"CREATE — Latin Art Vol. IV (only if Vol. III performed well)",
+    {w:23,dates:"Nov 17–21",s:"holiday",theme:"CREATE — Latin Art Vol. IV (only if Vol. III performed well)",
      note:"Final build window before Christmas. Only build Vol. IV if Vol. III sold well — otherwise use this week purely for marketing and fulfillment prep.",
      pub:null,
      products:[
       {n:"Latin Quote Art Vol. IV (Navy/Silver) — conditional",ty:"digital",st:"pending"},
     ]},
-    {w:25,dates:"Nov 24–28",s:"ops",    theme:"VET — Cyber Week Sale (Digital Only)",
+    {w:24,dates:"Nov 24–28",s:"ops",    theme:"VET — Cyber Week Sale (Digital Only)",
      note:"Run 20% Etsy sale on digital products only Nov 28–Dec 2. No discounts on physical. Focus on fulfillment.",
      pub:"Launch Etsy Cyber Week 20% sale — digital only",
      products:[]},
   ]},
   {name:"DECEMBER",col:"#1B2A4A",weeks:[
-    {w:26,dates:"Dec 1–5",  s:"holiday",theme:"🎄 Peak Season — Advent Activates",
+    {w:25,dates:"Dec 1–5",  s:"holiday",theme:"🎄 Peak Season — Advent Activates",
      note:"Advent Calendar buyers start Dec 1. Digital sales peak. Focus on customer service. No new builds.",
      pub:null,
      products:[]},
-    {w:27,dates:"Dec 8–12", s:"ops",    theme:"Physical Shipping Deadline",
+    {w:26,dates:"Dec 8–12", s:"ops",    theme:"Physical Shipping Deadline",
      note:"Dec 12 is last day to guarantee Christmas delivery. No building — all time goes to fulfillment.",
      pub:"Dec 12 = last guaranteed Christmas delivery date",
      products:[]},
-    {w:28,dates:"Dec 15–19",s:"ops",    theme:"Digital Final Push",
+    {w:27,dates:"Dec 15–19",s:"ops",    theme:"Digital Final Push",
      note:"Physical wind down. Digital gifts peak Dec 15–24. No new builds — promote existing New Year Reading Intentions.",
      pub:null,
      products:[]},
-    {w:29,dates:"Dec 22–31",s:"ops",    theme:"Year End + Plan 2027",
+    {w:28,dates:"Dec 22–31",s:"ops",    theme:"Year End + Plan 2027",
      note:"Review best sellers, calculate revenue, plan January 2027 with the same 2-week create / 1-week vet rhythm. Consider Valentine\'s angle for Feb.",
      pub:"Review + plan January 2027 using create/vet rhythm",
      products:[]},
@@ -520,7 +513,7 @@ function useAllStatus(){return useLS("tcd_st3",{});}
 function useAllChecks(){return useLS("tcd_ck3",{});}
 function getCW(){
   const diff=Math.floor((new Date()-new Date("2026-06-02"))/(7*864e5));
-  return Math.max(1,Math.min(29,diff+1));
+  return Math.max(1,Math.min(28,diff+1));
 }
 
 function Modal({src,onClose}){
