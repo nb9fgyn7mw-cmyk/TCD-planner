@@ -53,7 +53,7 @@ const ST={
 const ls=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}};
 const lsS=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch{}};
 function useLS(k,d){const[v,sv]=useState(()=>ls(k,d));return[v,(x)=>{const n=typeof x==="function"?x(v):x;sv(n);lsS(k,n);}];}
-function getCW(){const diff=Math.floor((new Date()-new Date("2026-06-02"))/(7*864e5));return Math.max(1,Math.min(30,diff+1));}
+function getCW(){const diff=Math.floor((new Date()-new Date("2026-06-02"))/(7*864e5));return Math.max(1,Math.min(45,diff+1));}
 
 const MONTHS=[
   {name:"JUNE",col:"#2D4A3E",weeks:[
@@ -210,25 +210,35 @@ const MONTHS=[
       {n:"Test Year in Letters as it arrives",   ty:"digital",st:"pending"},
       {n:"Pinterest holiday content push",        ty:"digital",st:"pending"},
     ]},
-    {w:20,dates:"Oct 13–17",s:"holiday",theme:"CREATE — Desk Calendar + Bookmark Set VI",
-     note:"Create week 1 of 2. Scholar's Desk Calendar — 12-month wall calendar, 11×8.5 spiral, one Latin quote/illustration per month in seasonal palette + reading prompt. Hard deadline: all holiday digital products live by Oct 15.",
-     pub:"All holiday digital listings live by Oct 15. Upload Desk Calendar to Lulu → order sample.",
+    {w:20,dates:"Oct 13–17",s:"holiday",theme:"CREATE — Desk Calendar + BM Set VI + Biblical Hebrew Vol I",
+     note:"Create week 1 of 2. Scholar's Desk Calendar + BM Set VI as planned. PLUS: Biblical Hebrew Vol I — 3 prints (Shalom · Emet · Chesed) + matching bookmark set. Q4 language test begins. All holiday digital products live by Oct 15. Hebrew positioned as scholarly/historical art, not religious devotional — appeals to linguistics lovers, calligraphy enthusiasts, academics.",
+     pub:"All holiday digital listings live by Oct 15. Upload Desk Calendar to Lulu → order sample. List Hebrew Vol I prints immediately as digital downloads.",
      products:[
-      {n:"Scholar's Desk Calendar (12-month, seasonal)",ty:"both",st:"pending"},
-      {n:"Scholar Bookmark Set VI (Gift Edition — Style E revised)",ty:"both",st:"pending"},
+      {n:"Scholar's Desk Calendar (12-month, seasonal)",ty:"both",   st:"pending"},
+      {n:"Scholar Bookmark Set VI (Gift Edition — Style E revised)", ty:"both",   st:"pending"},
+      {n:"Ancient Scholar Hebrew Reflection Journal",                  ty:"both",   st:"pending"},
+      {n:"Biblical Hebrew Vol I — Shalom print",                     ty:"digital",st:"pending"},
+      {n:"Biblical Hebrew Vol I — Bookmark Set",                     ty:"both",   st:"pending"},
     ]},
-    {w:21,dates:"Oct 20–24",s:"holiday",theme:"CREATE — Annual Planner + New Year Intentions + 2027 Goals",
-     note:"Create week 2 of 2. Annual Reading Planner (moved from W4). Two fast single-page builds. Holiday inventory arrives this week.",
-     pub:"Holiday bulk inventory arrives — begin assembling gift bundles. Approve Desk Calendar sample → order first batch.",
+    {w:21,dates:"Oct 20–24",s:"holiday",theme:"CREATE — Annual Planner + New Year + Koine Greek Vol I",
+     note:"Create week 2 of 2. Annual Planner + New Year products as planned. PLUS: Koine Greek Vol I — 3 prints (Logos · Agape · Charis) + matching bookmark set. Koine Greek = New Testament Greek, appeals to classics students, philosophy enthusiasts, language lovers and theology scholars alike. Holiday inventory arrives this week.",
+     pub:"Holiday bulk inventory arrives — begin assembling gift bundles. Approve Desk Calendar sample → order first batch. List Koine Greek Vol I prints as digital downloads.",
      products:[
-      {n:"Scholar's Annual Reading Planner",     ty:"both",   st:"pending"},
-      {n:"New Year Reading Intentions 2027",      ty:"digital",st:"pending"},
-      {n:"Scholar's 2027 Reading Goals",          ty:"digital",st:"pending"},
+      {n:"Scholar's Annual Reading Planner",              ty:"both",   st:"pending"},
+      {n:"New Year Reading Intentions 2027",               ty:"digital",st:"pending"},
+      {n:"Scholar's 2027 Reading Goals",                   ty:"digital",st:"pending"},
+      {n:"Ancient Scholar Greek Reflection Journal",        ty:"both",   st:"pending"},
+      {n:"Koine Greek Vol I — Logos print",                ty:"digital",st:"pending"},
+      {n:"Koine Greek Vol I — Bookmark Set",               ty:"both",   st:"pending"},
     ]},
-    {w:22,dates:"Oct 27–31",s:"ops",   theme:"VET — Assemble Bundles + List",
-     note:"Vet week. Assemble all physical gift bundles from inventory. Create bundle Etsy + Shopify listings.",
-     pub:"List Autumn Scholar Bundle $42.99 + Reading Life Starter Kit $44.99 + Scholar's Gift Box $69.99.",
+    {w:22,dates:"Oct 27–31",s:"ops",   theme:"CREATE (light) — Old English Vol I + VET — Assemble Bundles",
+     note:"Old English Vol I is a fast build (~30-60min per print — 3 total: Wyrd · Gast · Soþ). Beowulf, Tolkien\'s language, medieval literature — broader mainstream appeal beyond pure academics. Alongside: assemble all physical gift bundles. By end of week all 3 language collections (Hebrew, Greek, Old English) should be live — create \'The Ancient Scholar Collection\' bundle listing.",
+     pub:"List Old English Vol I prints. Create \'The Ancient Scholar Collection\' bundle (all 3 language sets). List Autumn Scholar Bundle + Reading Life Starter Kit + Scholar\'s Gift Box.",
      products:[
+      {n:"Ancient Scholar Old English Reflection Journal", ty:"both",   st:"pending"},
+      {n:"Old English Vol I — Wyrd print",               ty:"digital",st:"pending"},
+      {n:"Old English Vol I — Bookmark Set",             ty:"both",   st:"pending"},
+      {n:"The Ancient Scholar Collection — Bundle",      ty:"digital",st:"pending"},
       {n:"Photograph + list all physical gift bundles",ty:"digital",st:"pending"},
     ]},
   ]},
@@ -274,9 +284,124 @@ const MONTHS=[
      pub:"Review + plan January 2027 products.",
      products:[]},
   ]},
+,
+  // ═══════════════════════════════════════════════════════
+  // 2027 ROADMAP — Full Year Expansion
+  // Ancient Scholar Language Series + Continued Growth
+  // ═══════════════════════════════════════════════════════
+  {name:"JAN 2027",col:"#1B2A4A",weeks:[
+    {w:31,dates:"Jan 5–9",  s:"ops",  theme:"VET — Year Review + 2027 Plan",
+     note:"Review 2026 Q4 data. Which language (Hebrew/Greek/Old English) sold best? Use this to prioritise 2027 language expansion. Plan full year 2027 roadmap.",
+     pub:"New Year products live. Self-Reflection Journal New Year push.",
+     products:[
+      {n:"2026 Year in Review — analytics + best sellers",ty:"digital",st:"pending"},
+    ]},
+    {w:32,dates:"Jan 12–16",s:"evergreen",theme:"CREATE — Aramaic Vol I",
+     note:"Aramaic — the language Jesus spoke. Sayings from the Peshitta (Aramaic New Testament), Dead Sea Scrolls context. 3 prints + bookmark set. Deepest faith-scholarly crossover of all the languages.",
+     pub:"List Aramaic Vol I as digital downloads. Add to Ancient Scholar Collection bundle.",
+     products:[
+      {n:"Ancient Scholar Aramaic Reflection Journal",    ty:"both",   st:"pending"},
+      {n:"Aramaic Vol I — Shlama print (Peace)",          ty:"digital",st:"pending"},
+      {n:"Aramaic Vol I — Nura print (Light)",            ty:"digital",st:"pending"},
+      {n:"Aramaic Vol I — Bookmark Set",                  ty:"both",   st:"pending"},
+    ]},
+    {w:33,dates:"Jan 19–23",s:"evergreen",theme:"CREATE — Classical Syriac Vol I",
+     note:"Classical Syriac — the language of early church fathers (Ephrem, Isaac of Nineveh). Deeply scholarly, niche but passionate audience. 3 prints + bookmark set.",
+     pub:"List Classical Syriac Vol I. Update Ancient Scholar Collection to include all 5 language sets.",
+     products:[
+      {n:"Classical Syriac Vol I — Shlomo print",  ty:"digital",st:"pending"},
+      {n:"Classical Syriac Vol I — Tubo print",    ty:"digital",st:"pending"},
+      {n:"Classical Syriac Vol I — Nuhro print",   ty:"digital",st:"pending"},
+      {n:"Classical Syriac Vol I — Bookmark Set",  ty:"both",   st:"pending"},
+    ]},
+    {w:34,dates:"Jan 26–30",s:"ops",  theme:"VET — Q4 Language Data + Content Push",
+     note:"Vet week. Review all language collection analytics. Double down on whichever language performed best with Pinterest + TikTok content push.",
+     pub:"Update Ancient Scholar Collection pricing if needed based on data.",
+     products:[]},
+  ]},
+  {name:"FEB 2027",col:"#2D4A3E",weeks:[
+    {w:35,dates:"Feb 2–6",  s:"evergreen",theme:"CREATE — Coptic Vol I",
+     note:"Coptic — the language of early Egyptian Christians, the direct descendant of ancient Egyptian. Appeals to Egyptology enthusiasts + early church history fans. Beautiful script. 3 prints + bookmark set.",
+     pub:"List Coptic Vol I. Egyptology + early Christian crossover marketing.",
+     products:[
+      {n:"Coptic Vol I — Eirene print (Peace)",    ty:"digital",st:"pending"},
+      {n:"Coptic Vol I — Ouoein print (Light)",    ty:"digital",st:"pending"},
+      {n:"Coptic Vol I — Agape print (Love)",      ty:"digital",st:"pending"},
+      {n:"Coptic Vol I — Bookmark Set",            ty:"both",   st:"pending"},
+    ]},
+    {w:36,dates:"Feb 9–13", s:"evergreen",theme:"CREATE — Hebrew Vol II + Greek Vol II",
+     note:"Second volumes for the two best-performing Q4 2026 languages. More words, deeper themes. New color palette variation.",
+     pub:"List Hebrew Vol II + Greek Vol II. Bundle with Vol I as complete language collections.",
+     products:[
+      {n:"Biblical Hebrew Vol II (3 prints)",      ty:"digital",st:"pending"},
+      {n:"Koine Greek Vol II (3 prints)",           ty:"digital",st:"pending"},
+    ]},
+    {w:37,dates:"Feb 16–20",s:"ops",  theme:"VET — Valentine\'s Gifting Push",
+     note:"Language prints are beautiful gift items. Valentine\'s push: \'A gift for the scholar you love\'.",
+     pub:"Valentine\'s gifting content on TikTok + Pinterest.",
+     products:[]},
+    {w:38,dates:"Feb 23–27",s:"evergreen",theme:"CREATE — Old English Vol II + Scholar\'s Language Journal",
+     note:"Old English Vol II (3 more prints). Plus: Scholar\'s Language Journal — a new journal format specifically for language learners and lovers of ancient scripts. Reflection prompts around words + etymology.",
+     pub:"List Old English Vol II. List Scholar\'s Language Journal digital.",
+     products:[
+      {n:"Old English Vol II (3 prints)",           ty:"digital",st:"pending"},
+      {n:"Scholar\'s Language Journal",             ty:"both",   st:"pending"},
+    ]},
+  ]},
+  {name:"MAR–JUN 2027",col:"#4a6b3e",weeks:[
+    {w:39,dates:"Mar 2027",  s:"evergreen",theme:"CREATE — Spring Language Expansion",
+     note:"Build out Vol II/III for remaining languages. Easter timing: Aramaic Vol II — deeply resonant for Easter season (language Jesus spoke). Botanical prints Vol II. New seasonal journal for spring.",
+     pub:"Easter language prints push — Aramaic especially resonant.",
+     products:[
+      {n:"Aramaic Vol II — Easter edition (3 prints)",ty:"digital",st:"pending"},
+      {n:"Botanical Prints Vol II (3 prints)",         ty:"digital",st:"pending"},
+      {n:"Spring Scholar\'s Reading Journal",          ty:"both",   st:"pending"},
+    ]},
+    {w:40,dates:"Apr 2027",  s:"evergreen",theme:"VET + Market — Spring Expansion",
+     note:"Vet month. Review all language analytics. Begin planning Q4 2027 gift bundles.",
+     pub:"Spring content push. TikTok language education series begins.",
+     products:[]},
+    {w:41,dates:"May–Jun 2027",s:"evergreen",theme:"CREATE — Summer Scholar Collection",
+     note:"Summer reading season. New reading journal (summer palette). Language Vol IIs for remaining collections. Scholar\'s Language Flashcard Prints — educational wall art series.",
+     pub:"Summer reading push. Language prints as study aids marketing.",
+     products:[
+      {n:"Summer Scholar\'s Reading Journal",          ty:"both",   st:"pending"},
+      {n:"Scholar\'s Language Flashcard Prints",       ty:"digital",st:"pending"},
+    ]},
+  ]},
+  {name:"Q3–Q4 2027",col:"#6B2737",weeks:[
+    {w:42,dates:"Jul–Aug 2027",s:"autumn",theme:"CREATE — Autumn 2027 Language Collections",
+     note:"Build Autumn 2027 versions of the top-selling language products with seasonal palette updates. New Autumn Reading Journal 2027. Language bookmark Vol II sets.",
+     pub:"Autumn 2027 launch. All language series now have at least 2 volumes.",
+     products:[
+      {n:"Autumn Reading Journal 2027",            ty:"both",   st:"pending"},
+      {n:"Language Bookmark Sets Vol II (all 3 top languages)",ty:"both",st:"pending"},
+    ]},
+    {w:43,dates:"Sep 2027",  s:"holiday",theme:"VET + PLAN — Q4 2027 Maximization",
+     note:"Plan Q4 2027. By now you have 2 years of data. Identify top 3 language products and create premium gift bundles. Consider: \'The Complete Ancient Scholar Gift Box\' (all 6 language collections). Hardcover language companion journal.",
+     pub:"Q4 2027 gift collection announced.",
+     products:[
+      {n:"The Complete Ancient Scholar Gift Box (planning)",ty:"digital",st:"pending"},
+    ]},
+    {w:44,dates:"Oct–Nov 2027",s:"holiday",theme:"CREATE — Q4 2027 Peak",
+     note:"Full Q4 2027 gift push. Premium hardcover Companion for language lovers. All language bundles. Complete Ancient Scholar Collection as flagship gift set.",
+     pub:"Q4 2027 full launch. Ancient Scholar Collection in all formats.",
+     products:[
+      {n:"Scholar\'s Language Companion (hardcover)",   ty:"both",   st:"pending"},
+      {n:"Complete Ancient Scholar Collection — Gift Box",ty:"both",  st:"pending"},
+    ]},
+    {w:45,dates:"Dec 2027",  s:"ops",  theme:"Year End + Plan 2028",
+     note:"Review 2027. By now TCD has a complete scholarly ecosystem: Latin + Hebrew + Greek + Aramaic + Syriac + Old English + Coptic. Plan 2028 expansions and consider whether children\'s or seniors\' brand is ready to launch.",
+     pub:"Year end review. 2028 planning.",
+     products:[]},
+  ]},
 ];
 
 const PS=new Map([
+  ["Ancient Scholar Hebrew Reflection Journal","Cover (1) + Welcome (1) + 90 daily pages each with: Date + Hebrew Word of Today (Hebrew script) + Transliteration + Translation + Language Note (2-3 lines: history, etymology, scholarly context) + open ruled writing space. BINDING: Paperback 6x9 $22.99. Digital: US Letter + A4."],
+  ["Ancient Scholar Greek Reflection Journal","Cover (1) + Welcome (1) + 90 daily pages each with: Date + Koine Greek Word (Greek script) + Transliteration + Translation + Language Note (New Testament context, classical usage, scholarly note) + open ruled writing space. BINDING: Paperback 6x9 $22.99."],
+  ["Ancient Scholar Old English Reflection Journal","Cover (1) + Welcome (1) + 90 daily pages each with: Date + Old English Word (with script) + Pronunciation + Translation + Language Note (Beowulf, Bede, medieval literature context) + open ruled writing space. BINDING: Paperback 6x9 $22.99."],
+  ["The Ancient Scholar Collection — Bundle","Digital bundle: all 3 language journals + all 3 prints + all 3 bookmark sets. Premium Q4 gift bundle."],
   ["Sticker Sheet Vol. I",                 "1 sticker sheet — 35 stickers: Latin mottos, botanical line art, study icons. GoodNotes compatible. Digital only."],
   ["Sticker Sheet Vol. II",                "1 sticker sheet — 35 stickers: seasonal motifs, quote banners, decorative dividers. GoodNotes compatible. Digital only."],
   ["Reading Log Single Page",              "1 page — compact reading tracker: Title, Author, Date, Rating, Genre, Notes. Print 4-per-A4 sheet."],
