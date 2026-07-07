@@ -474,6 +474,29 @@ const ETSY_SPECS=new Map([
   }],
 ]);
 
+const BRAND_IDENTITY={
+  statement:"TheCuratorsDesk makes scholarly journals and stationery for book lovers, language enthusiasts, and anyone who takes their reading life seriously.",
+  audience:[
+    {t:"Primary",d:"Scholars, book lovers, ancient history fans, language enthusiasts, intentional readers — regardless of faith background"},
+    {t:"Secondary",d:"Christian buyers who appreciate faith-compatible scholarly aesthetics"},
+    {t:"NOT the target",d:"Generic dark academia / gothic aesthetic / occult audiences"},
+  ],
+  whatWeDo:[
+    "Classical Latin mottos and ancient language art positioned as SCHOLARLY, not religious",
+    "Biblical Latin quotes woven in naturally — never marketed as a Christian brand",
+    "Journals and stationery that serve the reading and reflective life",
+    "Products that feel beautiful to any language lover, historian, or serious reader",
+  ],
+  whatWeWont:[
+    "Pagan mythology or non-Christian deities (Greek gods, Roman pantheon, Norse mythology)",
+    "Occult, witchcraft, or dark gothic aesthetic",
+    "Sanskrit, Egyptian hieroglyphics, or Sumerian (non-Christian ancient religious contexts)",
+    "Products that require faith to understand or appreciate",
+  ],
+  faithFilter:"Every Stoic-adjacent quote or prompt must be tested: does it point toward own willpower/self-sufficiency, or does it leave room for grace and God? Stoic TOOLS (self-examination, distinguishing what is in one\'s control) = YES. Stoic THEOLOGY (self-sufficiency as salvific) = NO.",
+  voicePrinciple:"Every TikTok, Pinterest pin, email, and product listing should feel like it belongs to one brand: scholarly, classical, warm, intentional. Never salesy. Educate, inspire, or show — selling follows naturally.",
+};
+
 const PALETTES=[
   {name:"Classic Scholar",sub:"Year-round flagship",
    colors:[["#2D4A3E","Forest Green"],["#C9A84C","Gold"],["#F5E6C8","Parchment"]],
@@ -565,7 +588,7 @@ function ProdCard({prod,wNum,pIdx,statuses,setStatuses,checks,setChecks}){
 }
 
 function Nav({tab,set}){
-  const tabs=[{id:"week",ic:"📌",lb:"Week"},{id:"roadmap",ic:"🗓",lb:"Roadmap"},{id:"products",ic:"✅",lb:"Products"},{id:"etsy",ic:"🏷",lb:"Etsy"},{id:"palettes",ic:"🎨",lb:"Palettes"}];
+  const tabs=[{id:"week",ic:"📌",lb:"Week"},{id:"roadmap",ic:"🗓",lb:"Roadmap"},{id:"products",ic:"✅",lb:"Products"},{id:"etsy",ic:"🏷",lb:"Etsy"},{id:"palettes",ic:"📖",lb:"Brand"}];
   return React.createElement("div",{style:{position:"sticky",top:0,zIndex:50,background:"#1a1208ee",backdropFilter:"blur(8px)",borderBottom:"1px solid #C9A84C33",display:"flex"}},
     tabs.map(t=>React.createElement("button",{key:t.id,onClick:()=>set(t.id),style:{flex:1,padding:"10px 2px",fontSize:9,letterSpacing:.5,color:tab===t.id?"#E4C977":"#F5E6C866",borderBottom:tab===t.id?"2px solid #C9A84C":"2px solid transparent",transition:"all .2s",fontFamily:"Cinzel,Georgia,serif"}},
       React.createElement("div",{style:{fontSize:14,marginBottom:1}},t.ic),t.lb))
@@ -771,26 +794,86 @@ function EtsyTab(){
 
 function PalettesTab(){
   return React.createElement("div",{style:{padding:"14px"},className:"fade"},
+
     React.createElement("div",{style:{textAlign:"center",marginBottom:14}},
+      React.createElement("div",{style:{fontSize:8,letterSpacing:4,color:"#C9A84C",textTransform:"uppercase"},className:"cz"},"TheCuratorsDesk"),
+      React.createElement("div",{style:{fontSize:18,color:"#E4C977",marginTop:3},className:"cz"},"Brand Identity"),
+      React.createElement("div",{style:{fontSize:10,color:"#F5E6C855",marginTop:3}},"The north star for every product, post, and decision")
+    ),
+
+    React.createElement("div",{style:{background:"linear-gradient(135deg,#2D4A3E55,#2D4A3E22)",border:"2px solid #C9A84C44",borderRadius:12,padding:"14px",marginBottom:12}},
+      React.createElement("div",{style:{fontSize:8,letterSpacing:3,color:"#C9A84C",textTransform:"uppercase",marginBottom:6},className:"cz"},"Brand Statement"),
+      React.createElement("div",{style:{fontSize:13,color:"#E4C977",fontStyle:"italic",lineHeight:1.6}},
+        "“"+BRAND_IDENTITY.statement+"”")
+    ),
+
+    React.createElement("div",{style:{background:"#231808",border:"1px solid #C9A84C22",borderRadius:10,padding:"12px",marginBottom:10}},
+      React.createElement("div",{style:{fontSize:8,letterSpacing:3,color:"#C9A84C",textTransform:"uppercase",marginBottom:8},className:"cz"},"Target Audience"),
+      BRAND_IDENTITY.audience.map((a,i)=>React.createElement("div",{key:i,style:{display:"flex",gap:8,marginBottom:6,alignItems:"flex-start"}},
+        React.createElement("span",{style:{background:i===0?"#2D4A3E":i===1?"#6B2737":"#3a3020",color:i===0?"#7aE499":i===1?"#F5D090":"#888",padding:"2px 8px",borderRadius:8,fontSize:8,fontFamily:"Cinzel,serif",flexShrink:0,marginTop:1}},a.t),
+        React.createElement("span",{style:{fontSize:10,color:"#F5E6C8bb",lineHeight:1.4}},a.d)
+      ))
+    ),
+
+    React.createElement("div",{style:{background:"#1B2A1A",border:"1px solid #2D4A3E",borderRadius:10,padding:"12px",marginBottom:10}},
+      React.createElement("div",{style:{fontSize:8,letterSpacing:3,color:"#7aE499",textTransform:"uppercase",marginBottom:8},className:"cz"},"✓ What We Create"),
+      BRAND_IDENTITY.whatWeDo.map((item,i)=>React.createElement("div",{key:i,style:{display:"flex",gap:8,marginBottom:5,alignItems:"flex-start"}},
+        React.createElement("span",{style:{color:"#7aE499",fontSize:10,flexShrink:0}},"✓"),
+        React.createElement("span",{style:{fontSize:10,color:"#F5E6C8bb",lineHeight:1.4}},item)
+      ))
+    ),
+
+    React.createElement("div",{style:{background:"#2a1a1a",border:"1px solid #6B2737",borderRadius:10,padding:"12px",marginBottom:10}},
+      React.createElement("div",{style:{fontSize:8,letterSpacing:3,color:"#e87a7a",textTransform:"uppercase",marginBottom:8},className:"cz"},"✗ What We Won’t Create"),
+      BRAND_IDENTITY.whatWeWont.map((item,i)=>React.createElement("div",{key:i,style:{display:"flex",gap:8,marginBottom:5,alignItems:"flex-start"}},
+        React.createElement("span",{style:{color:"#e87a7a",fontSize:10,flexShrink:0}},"✗"),
+        React.createElement("span",{style:{fontSize:10,color:"#F5E6C8bb",lineHeight:1.4}},item)
+      ))
+    ),
+
+    React.createElement("div",{style:{background:"#1B2A4A44",border:"1px solid #1B2A4A",borderRadius:10,padding:"12px",marginBottom:10}},
+      React.createElement("div",{style:{fontSize:8,letterSpacing:3,color:"#A8B8C8",textTransform:"uppercase",marginBottom:6},className:"cz"},"The Stoic Faith Filter"),
+      React.createElement("div",{style:{fontSize:10,color:"#F5E6C8bb",lineHeight:1.5}},BRAND_IDENTITY.faithFilter)
+    ),
+
+    React.createElement("div",{style:{background:"#3a2a0e44",border:"1px solid #C9A84C33",borderRadius:10,padding:"12px",marginBottom:20}},
+      React.createElement("div",{style:{fontSize:8,letterSpacing:3,color:"#C9A84C",textTransform:"uppercase",marginBottom:6},className:"cz"},"Content Voice"),
+      React.createElement("div",{style:{fontSize:10,color:"#F5E6C8bb",lineHeight:1.5}},BRAND_IDENTITY.voicePrinciple)
+    ),
+
+    React.createElement("div",{style:{textAlign:"center",marginBottom:14,borderTop:"1px solid #C9A84C33",paddingTop:16}},
       React.createElement("div",{style:{fontSize:8,letterSpacing:4,color:"#C9A84C",textTransform:"uppercase"},className:"cz"},"Brand Color System"),
       React.createElement("div",{style:{fontSize:18,color:"#E4C977",marginTop:3},className:"cz"},"Your Palettes"),
       React.createElement("div",{style:{fontSize:10,color:"#F5E6C855",marginTop:3}},"One product = one palette · Never mix within a product")
     ),
-    PALETTES.map((p,pi)=>React.createElement("div",{key:pi,style:{background:"#231808",border:"1px solid #C9A84C22",borderRadius:12,padding:"14px",marginBottom:10}},
+    PALETTES.map((p,pi)=>React.createElement("div",{key:pi,style:{background:"#231808",
+      border:"1px solid #C9A84C22",borderRadius:12,padding:"14px",marginBottom:10}},
       React.createElement("div",{style:{marginBottom:8}},
-        React.createElement("div",{style:{fontSize:13,color:"#E4C977",fontWeight:"bold"},className:"cz"},p.name),
+        React.createElement("div",{style:{fontSize:13,color:"#E4C977",fontWeight:"bold"},
+          className:"cz"},p.name),
         React.createElement("div",{style:{fontSize:10,color:"#C9A84C",fontStyle:"italic"}},p.sub)
       ),
       React.createElement("div",{style:{display:"flex",gap:8,marginBottom:8}},
         p.colors.map((c,ci)=>React.createElement("div",{key:ci,style:{flex:1,textAlign:"center"}},
-          React.createElement("div",{style:{height:52,borderRadius:6,background:c[0],border:"1px solid #F5E6C81a",marginBottom:4,display:"flex",alignItems:"center",justifyContent:"center"}},
-            React.createElement("span",{style:{fontSize:9,color:"#F5E6C8cc",fontFamily:"monospace",fontWeight:"bold"}},c[0])
+          React.createElement("div",{style:{height:52,borderRadius:6,background:c[0],
+            border:"1px solid #F5E6C81a",marginBottom:4,display:"flex",
+            alignItems:"center",justifyContent:"center"}},
+            React.createElement("span",{style:{fontSize:9,color:"#F5E6C8cc",
+              fontFamily:"monospace",fontWeight:"bold"}},c[0])
           ),
           React.createElement("div",{style:{fontSize:9,color:"#F5E6C877",lineHeight:1.2}},c[1])
         ))
       ),
-      React.createElement("div",{style:{fontSize:10,color:"#F5E6C866",fontStyle:"italic",borderTop:"1px solid #C9A84C1a",paddingTop:6}},p.use)
-    ))
+      React.createElement("div",{style:{fontSize:10,color:"#F5E6C866",fontStyle:"italic",
+        borderTop:"1px solid #C9A84C1a",paddingTop:6}},p.use)
+    )),
+    React.createElement("div",{style:{background:"#2D4A3E1a",border:"1px solid #2D4A3E",
+      borderRadius:10,padding:"12px",marginTop:4}},
+      React.createElement("div",{style:{fontSize:11,color:"#E4C977",fontWeight:"bold",
+        marginBottom:4},className:"cz"},"The Brand Rule"),
+      React.createElement("div",{style:{fontSize:11,color:"#F5E6C8bb",lineHeight:1.6}},
+        "Cinzel + Cormorant Garamond fonts, Latin mottos, parchment textures — these never change. Color is the season signal, not the brand identity.")
+    )
   );
 }
 
