@@ -58,7 +58,7 @@ function useLS(k,d){const[v,sv]=useState(()=>ls(k,d));return[v,(x)=>{const n=typ
 function getCW(){
   const now=new Date();
   const adj=now.getDay()===0?new Date(now.getTime()+864e5):now;
-  const diff=Math.floor((adj-new Date("2026-06-02"))/(7*864e5));
+  const diff=Math.floor((adj-new Date("2026-06-01"))/(7*864e5));
   return Math.max(1,Math.min(45,diff+1));
 }
 
