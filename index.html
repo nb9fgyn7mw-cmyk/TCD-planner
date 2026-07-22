@@ -23,6 +23,21 @@ input[type=checkbox]{accent-color:#C9A84C;width:16px;height:16px;cursor:pointer;
 .pw{animation:pw 2.5s infinite}
 @keyframes pw{0%,100%{opacity:1}50%{opacity:.4}}
 .chip{display:inline-flex;align-items:center;border-radius:10px;font-size:8px;padding:2px 7px;font-family:"Cinzel",Georgia,serif;letter-spacing:.4px;font-weight:600;white-space:nowrap}
+
+.year-separator {
+  background: linear-gradient(135deg, #1B2A4A, #2D4A3E);
+  color: #C9A84C;
+  text-align: center;
+  padding: 18px 0 14px;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 6px;
+  border-top: 3px solid #C9A84C;
+  border-bottom: 3px solid #C9A84C;
+  margin: 32px 0 8px;
+  width: 100%;
+  font-family: 'Cinzel Decorative', serif;
+}
 </style>
 </head>
 <body>
@@ -145,11 +160,11 @@ const MONTHS=[
      note:"CURRENT/RECENT WEEK. Two priorities: (1) Finish Shopify store — products, pages, email capture, Lulu Direct. (2) Film physical product videos using arrived books. Point all TikTok/Pinterest traffic to Shopify. Etsy = digital only going forward.\n\nDAILY SCHEDULE:\nTUE 9am-12pm: Shopify product upload (digital products) · 12-1pm: Lunch · 1-5pm: TikTok content + link in bio update\nWED 3hrs am: Pinterest scheduling\nTHU 9am-12pm: Film physical product flip-throughs + bookmark making process · 12-1pm: Lunch · 1-5pm: Shopify pages (About, Policies, Email capture)\nFRI 3hrs am: Pinterest scheduling\nSAT 3hrs am: Review Shopify + analytics",
      pub:"Launch Shopify store. Update TikTok + Pinterest link in bio to curatorsdesk.com. Film all physical product flip-throughs + bookmark-making process video.",
      products:[
-      {n:"Complete Shopify store — all products listed",  ty:"digital", st:"pending"},
-      {n:"Email capture + Klaviyo welcome sequence",      ty:"digital", st:"pending"},
-      {n:"Lulu Direct integration on Shopify",            ty:"physical",st:"pending"},
-      {n:"Film physical product videos — all 8 books",   ty:"physical",st:"pending"},
-      {n:"Film bookmark-making process video",            ty:"physical",st:"pending"},
+      {n:"Complete Shopify store — all products listed",  ty:"digital", st:"done"},
+      {n:"Email capture + Klaviyo welcome sequence",      ty:"digital", st:"done"},
+      {n:"Lulu Direct integration on Shopify",            ty:"physical",st:"done"},
+      {n:"Film physical product videos — all 8 books",   ty:"physical",st:"done"},
+      {n:"Film bookmark-making process video",            ty:"physical",st:"done"},
     ]},
     {w:6,dates:"Jul 7–11",s:"autumn",theme:"WEEK COMPLETED — Botanical Prints + Bookmark Set II + Reading Log + Habit Tracker + Latin Art Vol III",
      note:"DONE THIS WEEK: Botanical Prints Vol I ✓ · Bookmark Set II ✓ (both completed ahead of schedule). STILL TO BUILD: Daily Reading Log (Tue) · Habit Tracker (Tue) · Latin Art Vol III — 3 prints (Thu). Latin Art III moved forward from W8. Total 5 new builds this week.\n\nDAILY SCHEDULE:\nTUE 9am-12pm: Build Daily Reading Log + Habit Tracker · 12-1pm: Lunch · 1-5pm: TikTok content (journal flip-throughs, bookmark making process)\nWED 3hrs am: Schedule Pinterest pins for July/August\nTHU 9am-12pm: Build Latin Art Vol III (all 3 prints) · 12-1pm: Lunch · 1-5pm: Film product videos (Botanical Prints, Bookmark Sets II-III)\nFRI 3hrs am: Pinterest scheduling catch-up\nSAT 3hrs am: Review analytics + schedule remaining pins",
@@ -174,7 +189,7 @@ const MONTHS=[
       {n:"Latin Quote Art Vol III — Post tenebras lux",          ty:"digital",st:"done"},
       {n:"Scholar's Annual Reading Planner (23pp)",              ty:"both",   st:"done"},
       {n:"List Annual Planner + Daily Reading Log on Etsy/Shopify", ty:"digital",st:"done"},
-      {n:"DM review team contacts — 20-25 messages (carrying into W8)", ty:"digital",st:"pending"},
+      {n:"DM review team contacts — 20-25 messages (carrying into W8)", ty:"digital",st:"done"},
     ]},
     {w:8,dates:"Jul 21–25",s:"autumn",theme:"CREATE — 6 Language Journals + Mockups + Review Team Outreach",
      note:"W8 SCHEDULE (Jul 21-25). MON full day: Build Hebrew + Greek + Old English journals + mockups for all 3. TUE 2hrs: Review team DM outreach. WED 3hrs: Pinterest September pins. THU: Rest. FRI full day: Writing Companion + Idea Capture + Contemplative journals + mockups + Lulu upload. SAT 3hrs: Finish listings + confirm samples + follow up DMs.",
@@ -200,88 +215,77 @@ const MONTHS=[
     ]},
   ]},
   {name:"AUGUST",col:"#6B2737",weeks:[
-    {w:10,dates:"Aug 4–8",s:"ops",theme:"🌴 VACATION — No Work (Aug 3–8)",
-     note:"You are on vacation Aug 3-8. No work this week. Language journals pre-built in W9. Advent Calendar moved to W11.",
-     pub:null,
+    {w:10,dates:"holiday",s:"holiday",theme:"🌴 VACATION — Week 1 of 3",
+     note:"Full vacation. No work. No listings. No social. Rest completely.",
+     pub:"Nothing.",
      products:[]},
-    {w:11,dates:"holiday",s:"holiday",theme:"🌴 VACATION LIGHT — List Language Journals + Pinterest Only",
-     note:"Vacation week. Light tasks only. Upload all 6 language journals to Etsy and Shopify as digital downloads. Schedule Pinterest for September. No building. No pressure.",
-     pub:"List all 6 language journals digital on Etsy + Shopify.",
-     products:[
-      {n:"List Hebrew + Greek + Old English journals on Etsy/Shopify",ty:"digital",st:"pending"},
-      {n:"List Writing Companion + Idea Capture + Contemplative journals",ty:"digital",st:"pending"},
-      {n:"Pinterest: schedule September pins",                          ty:"digital",st:"pending"},
-    ]},
-    {w:12,dates:"holiday",s:"holiday",theme:"CREATE — Scholar's Year in Letters (highest viral potential — launch Dec 1)",
-     note:"One focused build this week. Year in Letters: 12 sealed monthly letters opened on New Year's Day. Navy + silver palette. Highest viral potential product in the catalog. Give it full attention. Film the concept on the same day.",
-     pub:null,
+    {w:11,dates:"holiday",s:"holiday",theme:"🌴 VACATION — Week 2 of 3",
+     note:"Full vacation. No work. No listings. No social. Rest completely.",
+     pub:"Nothing.",
+     products:[]},
+    {w:12,dates:"holiday",s:"holiday",theme:"🌴 VACATION — Week 3 of 3",
+     note:"Full vacation. No work. No listings. No social. Rest completely.",
+     pub:"Nothing.",
+     products:[]},
+    {w:13,dates:"autumn",s:"autumn",theme:"CREATE — Scholar's Year in Letters (highest viral potential — launch Dec 1)",
+     note:"First week back from vacation. One focused build: Year in Letters. 12 sealed monthly letters opened on New Year's Day. Navy + silver palette. Highest viral potential product in the catalog. Give it full attention and film the concept on the same day.",
+     pub:"List Year in Letters on Etsy + Shopify. Film TikTok concept video same day.",
      products:[
       {n:"Scholar's Year in Letters — 12 sealed monthly letters",ty:"both",st:"pending"},
-      {n:"Film TikTok: Year in Letters concept video",               ty:"digital",st:"pending"},
-    ]},
-    {w:13,dates:"autumn",s:"autumn",theme:"CREATE — Scholar's Curiosity Journal Omnibus (90 concepts, 5 disciplines)",
-     note:"Final build before marketing mode. Curiosity Journal Omnibus: 90 concepts across Psychology, Philosophy, Theology, Mythology, Mental Health. Write concept list + generate CSV + build in Canva. Same two-page spread format as language journals. This is the gateway product for the entire Curiosity Journal series.",
-     pub:"List Curiosity Journal Omnibus digital + physical on Etsy/Shopify.",
-     products:[
-      {n:"Write 90 concept list + prompts (5 disciplines, 18 each)",  ty:"both",st:"pending"},
-      {n:"Generate Curiosity Journal CSV + build in Canva",           ty:"both",st:"pending"},
-      {n:"Scholar's Curiosity Journal Omnibus — list on Etsy/Shopify",ty:"both",st:"pending"},
+      {n:"Film TikTok: Year in Letters sealed envelope concept",  ty:"digital",st:"pending"},
     ]},
   ]},
   {name:"SEPTEMBER",col:"#5a3a6a",weeks:[
-    {w:14,dates:"ops",s:"ops",theme:"MARKETING MODE — Q4 Gifting Season Prep Begins",
-     note:"NO NEW BUILDS from this week forward until January 2027. All energy goes to getting people to find what already exists. Focus: TikTok content batch (4-6 videos), Pinterest Q4 boards, Etsy listing SEO review, email campaign planning. Inspect all Lulu samples that arrived during vacation and approve for inventory.",
-     pub:"Inspect Lulu samples. Approve + order inventory. No new listings.",
+    {w:14,dates:"autumn",s:"autumn",theme:"CREATE — Scholar's Curiosity Journal Omnibus — FINAL BUILD BEFORE SEP 30",
+     note:"FINAL BUILD. Sep 30 deadline. After this week, no new builds until January 2027. Curiosity Journal Omnibus: 90 concepts across Psychology, Philosophy, Theology, Mythology, Mental Health. Write concept list + generate CSV + build in Canva. Same two-page spread as language journals. This is the gateway product for the entire Curiosity Journal series.",
+     pub:"List Curiosity Journal Omnibus on Etsy + Shopify. BUILDING STOPS HERE.",
      products:[
-      {n:"Inspect all Lulu samples returned from vacation",        ty:"physical",st:"pending"},
-      {n:"Approve samples + order first inventory batch",          ty:"physical",st:"pending"},
-      {n:"TikTok content batch — film 4-6 videos",              ty:"digital", st:"pending"},
-      {n:"Etsy listing SEO review — all 21 listings",           ty:"digital", st:"pending"},
+      {n:"Write 90 concept list + prompts (5 disciplines, 18 concepts each)", ty:"both",st:"pending"},
+      {n:"Generate Curiosity Journal CSV + build in Canva",                    ty:"both",st:"pending"},
+      {n:"Scholar's Curiosity Journal Omnibus — list on Etsy + Shopify",    ty:"both",st:"pending"},
     ]},
-    {w:15,dates:"ops",s:"ops",theme:"MARKETING MODE — TikTok + Pinterest + Email Campaigns",
-     note:"TikTok priority week. Film and schedule 4-6 videos. Mix: scholar history slides, Latin word series, journal flip-throughs, behind-the-scenes using your own journals. Pinterest: Q4 gift guide boards. Email: send first Q4 teaser to list.",
-     pub:"Post 2 TikToks. Schedule 10 Pinterest pins.",
+    {w:15,dates:"ops",s:"ops",theme:"MARKETING MODE — TikTok Content Batch + Pinterest Q4 Boards",
+     note:"No new builds. All energy on getting people to find what exists. Film and schedule 4-6 TikToks. Mix: scholar history slides, Latin word series, journal flip-throughs, BTS of using your own journals. Pinterest: Q4 gift guide boards. Start using your own journals this week.",
+     pub:"Post 2 TikToks. Pinterest Q4 boards scheduled.",
      products:[
-      {n:"Post 2 TikToks (scholar history + journal flip-through)", ty:"digital",st:"pending"},
-      {n:"Pinterest: Q4 gift guide boards",                        ty:"digital",st:"pending"},
-      {n:"Email: Q4 teaser campaign to list",                     ty:"digital",st:"pending"},
-      {n:"Use your own journals this week — note what to say on TikTok",ty:"digital",st:"pending"},
+      {n:"TikTok batch — film 4-6 videos",                    ty:"digital",st:"pending"},
+      {n:"Pinterest: Q4 gift guide boards",                    ty:"digital",st:"pending"},
+      {n:"Use your Hebrew + Curiosity journals personally",     ty:"digital",st:"pending"},
     ]},
-    {w:16,dates:"ops",s:"ops",theme:"MARKETING MODE — Review Team Follow-Up + Etsy SEO Push",
-     note:"Review team follow-up: check in with anyone who received products, send direct review links. Etsy SEO audit: update all listing titles and tags for Q4 search terms (gift for reader, Christmas gift bookworm, literary journal gift). Run Etsy ads on top 3 products if 90 days of organic data available.",
-     pub:"Etsy SEO updated on all listings. Review links sent.",
+    {w:16,dates:"ops",s:"ops",theme:"MARKETING MODE — Review Team + Etsy SEO + Email Campaign",
+     note:"Review team follow-up: send direct Etsy/Shopify review links to anyone who received products. Etsy SEO audit: update all listing titles and tags for Q4 gift search terms. Email: first Q4 gift guide to your list. Consider running Etsy ads on top 3 products if 90 days organic data available.",
+     pub:"Review links sent. Etsy SEO updated. Email sent.",
      products:[
       {n:"Review team follow-up — send direct review links",    ty:"digital",st:"pending"},
-      {n:"Etsy SEO audit — Q4 gift search terms on all listings",ty:"digital",st:"pending"},
-      {n:"Etsy ads: launch on Sticker Bundle + Reading Log + Wall Art if 90 days organic data ready",ty:"digital",st:"pending"},
+      {n:"Etsy SEO audit — update all listings for Q4 search",  ty:"digital",st:"pending"},
+      {n:"Email: Q4 gift guide to list",                         ty:"digital",st:"pending"},
     ]},
-    {w:17,dates:"ops",s:"ops",theme:"MARKETING MODE — Q4 Content Calendar + Gift Guide Outreach",
-     note:"Gift guide outreach: identify 5-10 BookTok creators, book bloggers, or gift guide accounts and pitch TCD. Q4 content calendar: plan November and December posts in advance. Email: send gift guide email to list featuring top 5 products.",
-     pub:"Gift guide outreach sent to 5-10 accounts.",
+    {w:17,dates:"ops",s:"ops",theme:"MARKETING MODE — Gift Guide Outreach + November Content Plan",
+     note:"Gift guide outreach: identify 5-10 BookTok creators, book bloggers, or literary gift guide accounts and pitch TCD. Plan all November and December content in advance so gifting season is not chaotic. Confirm physical inventory levels ahead of peak demand.",
+     pub:"Gift guide outreach sent. November content planned.",
      products:[
-      {n:"Gift guide outreach — 5-10 BookTok/book blog accounts",ty:"digital",st:"pending"},
-      {n:"Q4 content calendar: plan Nov + Dec posts",              ty:"digital",st:"pending"},
-      {n:"Email: gift guide featuring top 5 TCD products",        ty:"digital",st:"pending"},
+      {n:"Gift guide outreach — 5-10 BookTok and book blog accounts",ty:"digital",st:"pending"},
+      {n:"November + December content calendar planned",            ty:"digital",st:"pending"},
+      {n:"Confirm physical inventory levels for gifting season",   ty:"physical",st:"pending"},
     ]},
-    {w:18,dates:"ops",s:"ops",theme:"MARKETING MODE — Pre-October Review + Advent Calendar Promo Begins",
-     note:"October 1 review: assess what is working, what needs more attention. Advent Calendar promotional push begins. Film Advent Calendar unboxing-style TikTok. Confirm all physical inventory levels before gifting season peak.",
-     pub:"Advent Calendar promo live. October inventory confirmed.",
+    {w:18,dates:"ops",s:"ops",theme:"MARKETING MODE — Advent Calendar Promo + October Review",
+     note:"Advent Calendar promotional push begins. Film TikTok of the calendar concept. October 1 review: assess what is working, what needs more attention. This is the week the catalog is fully live and being actively promoted. Celebrate what you have built.",
+     pub:"Advent Calendar TikTok live. October review done.",
      products:[
-      {n:"October review: assess what is working",                ty:"digital",st:"pending"},
-      {n:"Advent Calendar TikTok promo — film concept video",   ty:"digital",st:"pending"},
-      {n:"Confirm physical inventory levels for gifting season",  ty:"physical",st:"pending"},
+      {n:"Advent Calendar TikTok — film concept promo video",    ty:"digital",st:"pending"},
+      {n:"October review: what is working, what needs attention",  ty:"digital",st:"pending"},
+      {n:"Etsy ads: launch on top 3 products",                    ty:"digital",st:"pending"},
     ]},
-  ]},
   {name:"OCTOBER",col:"#1B2A4A",weeks:[
-    {w:19,dates:"Oct 6–10",s:"ops",theme:"BUILD RESUMES — Curiosity Journal Vol I Psychology + Vol II Philosophy",
-     note:"Build resumes January 2027. Priority: Curiosity Journal discipline volumes based on which topics performed best from the Omnibus. Vol I Psychology and Vol II Philosophy first. Let Q4 data guide which volumes to prioritise.",
+    {w:19,dates:"ops",s:"ops",theme:"MARKETING MODE — TikTok + Pinterest + Email Q4 Push",
+     note:"No new builds. All energy on being found. TikTok: 2 posts per week minimum. Pinterest: Q4 gift guide boards. Email: gift campaign series. Inspect all Lulu samples and order inventory for gifting season.",
      pub:"PUBLISH Winter Self-Reflection physical. ORDER holiday bulk inventory — all physical titles.",
      products:[
       {n:"Test Year in Letters as it arrives",ty:"digital",st:"pending"},
       {n:"Pinterest holiday content push",    ty:"digital",st:"pending"},
     ]},
-    {w:20,dates:"Oct 13–17",s:"holiday",theme:"Q4 LAUNCH — Desk Calendar + Language Prints + Ancient Scholar Collection",
-     note:"Language journals already pre-built in W9 and W11. This week: Desk Calendar + BM Set VI + list language journals + language prints. Hard deadline: all holiday digital products live by Oct 15.\n\nDAILY SCHEDULE:\nTUE: Build Desk Calendar + Shalom (Hebrew) print · Afternoon: TikTok language content\nWED: Pinterest — language collection boards\nTHU: Build BM Set VI + Logos (Greek) print + list all language journals · Afternoon: Film language journal content\nFRI-SAT: Pinterest holiday push",
+    {w:20,dates:"ops",s:"ops",theme:"MARKETING MODE — Review Team + Etsy SEO + Gift Guide Outreach",
+     note:"Review team follow-up: send direct links to anyone who received products. Etsy SEO audit: update all listings for Q4 gift search terms. Gift guide outreach: pitch 5-10 BookTok and book blog accounts.",
      pub:"LIST Hebrew + Greek + Old English Reflection Journals immediately (built in W9). All holiday digital listings live by Oct 15. Upload Desk Calendar to Lulu → order sample.",
      products:[
       {n:"Scholar's Desk Calendar (12-month, seasonal)",           ty:"both",  st:"pending"},
@@ -352,7 +356,7 @@ const MONTHS=[
      pub:"Review + plan January 2027 products.",
      products:[]},
   ]},
-  {name:"JAN 2027",col:"#1B2A4A",weeks:[
+    {name:"JAN 2027",col:"#1B2A4A",yearBreak:true,yearBreak:true,weeks:[
     {w:31,dates:"Jan 5–9",s:"ops",theme:"VET — Year Review + 2027 Plan",
      note:"Review 2026 Q4 data. Which language sold best? Plan full year 2027 roadmap.",
      pub:"New Year products live. Self-Reflection Journal New Year push.",
@@ -454,7 +458,7 @@ const MONTHS=[
      note:"Review 2027. TCD now has a complete scholarly ecosystem: Latin + Hebrew + Greek + Aramaic + Syriac + Old English + Coptic. Plan 2028 — is children's or seniors' brand ready to launch?",
      pub:"Year end review. 2028 planning.",
      products:[]},
-  ]},
+  ]}
 ];
 
 const PS=new Map([
@@ -627,7 +631,7 @@ function RoadmapTab({statuses}){
     ),
     MONTHS.map(m=>React.createElement("div",{key:m.name,style:{marginBottom:16}},
       React.createElement("div",{style:{display:"flex",alignItems:"center",gap:8,marginBottom:6}},
-        React.createElement("div",{style:{background:m.col,color:"#F5E6C8",padding:"2px 12px",borderRadius:12,fontSize:10,fontWeight:"bold",letterSpacing:2},className:"cz"},m.name),
+        React.createElement(React.Fragment,null,m.yearBreak?React.createElement("div",{style:{textAlign:"center",width:"100%",padding:"10px 0 6px",fontSize:13,letterSpacing:5,color:"#C9A84C",fontFamily:"Cinzel,serif",fontWeight:"bold",borderTop:"1px solid #C9A84C33"}},"✦  2027  ✦"):null,React.createElement("div",{style:{background:m.col,color:"#F5E6C8",padding:"2px 12px",borderRadius:12,fontSize:10,fontWeight:"bold",letterSpacing:2},className:"cz"},m.name),
         React.createElement("div",{style:{flex:1,height:1,background:m.col+"44"}})
       ),
       m.weeks.map(w=>{
