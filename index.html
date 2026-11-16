@@ -845,7 +845,7 @@ const MONTHS=[
     "dates": "Nov 16–22, 2026",
     "s": "ops",
     "theme": "WEBSITE HEALTH CHECK + PRODUCT AUDIT + VENDOR SEARCH",
-    "note": "Make sure everything that exists is working before anything new is made. Start the hardcover vendor search: quotes and sample packs from Mixam and Bookvault.",
+    "note": "Make sure everything that exists is working before anything new is made. Start the hardcover vendor search: quotes and sample packs from Mixam and Bookvault. Thursday Nov 19 is the Annotator's Journal build — your own reading copy first, then listed for sale after the proof is approved.",
     "pub": "Site healthy, product audit complete, vendor samples requested.",
     "products": [
      {
@@ -880,6 +880,16 @@ const MONTHS=[
      },
      {
       "n": "Request Bookvault sample pack + quote (hardcover journal)",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "Thu Nov 19: BUILD Annotator's Journal — Single Study (6×9\", 180pp, $24.99, JRN-ANS-P) — for your own reading and for sale",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "ORDER Lulu proof — Annotator's Journal Single Study",
       "ty": "physical",
       "st": "pending"
      }
@@ -958,6 +968,11 @@ const MONTHS=[
       "n": "Record findings per vendor (quality, price, shipping time)",
       "ty": "physical",
       "st": "pending"
+     },
+     {
+      "n": "INSPECT Annotator's Journal proof (margins, paper, page count) — use it while reading",
+      "ty": "physical",
+      "st": "pending"
      }
     ]
    },
@@ -981,6 +996,11 @@ const MONTHS=[
      },
      {
       "n": "Research pen options — supplier, MOQ, branding, cost, price",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "Approve Annotator's Journal proof + list Single Study for sale (mockups, description, SKU JRN-ANS-P)",
       "ty": "physical",
       "st": "pending"
      }
@@ -1027,6 +1047,11 @@ const MONTHS=[
      {
       "n": "Optional: set a Jan 31 checkpoint (sessions + orders since Nov 1)",
       "ty": "digital",
+      "st": "pending"
+     },
+     {
+      "n": "Define the habit-based study journals: names, which study habit each supports, spec, price",
+      "ty": "physical",
       "st": "pending"
      }
     ]
@@ -1256,6 +1281,11 @@ const MONTHS=[
       "n": "Literary Commonplace Book build — continuing",
       "ty": "physical",
       "st": "pending"
+     },
+     {
+      "n": "BUILD Method Companions (5 digital volumes) — first half",
+      "ty": "digital",
+      "st": "pending"
      }
     ]
    },
@@ -1270,6 +1300,11 @@ const MONTHS=[
      {
       "n": "ORDER proof — Literary Commonplace Book",
       "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "FINISH Method Companions + mockups",
+      "ty": "digital",
       "st": "pending"
      }
     ]
@@ -1307,6 +1342,11 @@ const MONTHS=[
       "n": "Q1 2027 review — top sellers, revenue, restock needs",
       "ty": "digital",
       "st": "pending"
+     },
+     {
+      "n": "LAUNCH Method Companions (5 digital volumes)",
+      "ty": "digital",
+      "st": "pending"
      }
     ]
    },
@@ -1336,19 +1376,9 @@ const MONTHS=[
     "dates": "Later · timing TBD",
     "s": "ops",
     "theme": "LATER — Annotator's Journal (3 editions)",
-    "note": "Use the Single Study edition yourself first (history of Christianity book) so the interior is proven before it is built for sale.",
+    "note": "Single Study is built Nov 19 and listed after its proof (weeks 25–29). Scholar's Edition and Omnibus follow later.",
     "pub": "",
     "products": [
-     {
-      "n": "Use a prototype Annotator's Journal while reading before building",
-      "ty": "physical",
-      "st": "pending"
-     },
-     {
-      "n": "BUILD Annotator's Journal — Single Study (6×9\", 180pp, $24.99, JRN-ANS-P)",
-      "ty": "physical",
-      "st": "pending"
-     },
      {
       "n": "BUILD Annotator's Journal — Scholar's Edition (6×9\", 320pp, $39.99, JRN-ANS2-P, tab dividers)",
       "ty": "physical",
@@ -1415,11 +1445,6 @@ const MONTHS=[
     "pub": "",
     "products": [
      {
-      "n": "Method Companions (5 digital volumes) — timing TBD",
-      "ty": "digital",
-      "st": "pending"
-     },
-     {
       "n": "Subject Companions (10 digital volumes) — timing TBD",
       "ty": "digital",
       "st": "pending"
@@ -1457,6 +1482,36 @@ const MONTHS=[
      {
       "n": "BUILD The Year I Noticed You (journal + letter kit formats) — 2028",
       "ty": "both",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 51,
+    "dates": "Later · timing TBD",
+    "s": "ops",
+    "theme": "STUDY JOURNALS — habit-based physical journals",
+    "note": "Journals built around different studying habits. Define the list in week 31, then schedule builds and proofs.",
+    "pub": "",
+    "products": [
+     {
+      "n": "Finalise the list of habit-based study journals",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "Design interiors — one study habit per journal",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "BUILD + order proofs",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "Mockups + listings",
+      "ty": "digital",
       "st": "pending"
      }
     ]
@@ -1809,7 +1864,7 @@ function App(){
     React.createElement("div",{style:{background:"linear-gradient(to bottom,#2D4A3E,#1a1208)",padding:"16px 16px 12px",textAlign:"center",borderBottom:"1px solid #C9A84C33"}},
       React.createElement("div",{style:{fontSize:8,letterSpacing:6,color:"#C9A84C",textTransform:"uppercase"},className:"cz"},"TheCuratorsDesk"),
       React.createElement("div",{style:{fontSize:13,color:"#E4C977",marginTop:2,letterSpacing:1},className:"cz"},"Product Planner 2026–2027"),
-      React.createElement("div",{style:{fontSize:8,color:"#F5E6C855",marginTop:4,letterSpacing:1}},"v10 · updated Nov 15, 2026 · products only")
+      React.createElement("div",{style:{fontSize:8,color:"#F5E6C855",marginTop:4,letterSpacing:1}},"v11 · updated Nov 15, 2026 · products only")
     ),
     React.createElement(Nav,{tab,set:setTab}),
     tab==="week"    &&React.createElement(WeekTab,{statuses,setStatuses}),
