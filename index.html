@@ -38,7 +38,7 @@ const SS={
   spring:  {bg:"#4A6741",tx:"#F0E4A0",lb:"Spring",   ic:"🌸"},
   // Functional overrides (used sparingly)
   holiday: {bg:"#1B2A4A",tx:"#A8B8C8",lb:"Vacation", ic:"🌴"},
-  ops:     {bg:"#3a3020",tx:"#E4C977",lb:"Marketing", ic:"📣"},
+  ops:     {bg:"#3a3020",tx:"#E4C977",lb:"Planning", ic:"📋"},
   prep:    {bg:"#2D4A3E",tx:"#E4C977",lb:"Build",     ic:"📚"},
   evergreen:{bg:"#3a5a3a",tx:"#E4C977",lb:"Evergreen",ic:"🌿"},
 };
@@ -93,7 +93,7 @@ const BRAND_IDENTITY={
   ],
   faithFilter:"Every Stoic-adjacent quote must pass this test: does it point toward own willpower/self-sufficiency, or does it leave room for grace? Stoic TOOLS = YES. Stoic THEOLOGY = NO.",
   voicePrinciple:"Every TikTok, Pinterest pin, email, and listing should feel like one brand: scholarly, classical, warm. Never salesy. Educate, inspire, or show — selling follows.",
-  weeklySchedule:"TUE 9am-5pm (7hrs): TikTok content + listings | WED 3hrs am: Pinterest scheduling | THU 9am-5pm (7hrs): filming + marketing | FRI 3hrs am: Pinterest scheduling | SAT 3hrs am: Pinterest + analytics | SUN: Plan the week (planner flips to new week)\n\n📊 ANALYTICS (Aug 18, 2026):\nTikTok @thecuratorsdesk: 22 followers\nBest: \"Not a Diary\" slides = 922 views, 43 likes, 38 saves ⭐ BEST EVER\nThomas Jefferson = 906 views · Commonplace Educational = 655 views\nFrancis Bacon = 548 views (148.72% above avg) · Free Reading Log = 595 views\nFormat ranking: Educational slides > Scholar history > Lead magnet > Product showcases\nTop search queries: \"commonplace book\" · \"dark academia reading journal\" · \"school commonplace\"\nTraffic: 90.9% FYP · 3.8% Search\n\nPinterest: 1,400 monthly views (dip — resume daily posting)\nShopify: 2 confirmed email subscribers · 54 product views · 0 add-to-cart (product page is bottleneck)\nRevenue goal: $3,000/mo by June 1, 2027",
+  weeklySchedule:"TEXAS SALES TAX — comptroller.texas.gov — due Jan 20 · Apr 20 · Jul 20 · Oct 20. File even when the amount is small.\n\nBEFORE APPROVING ANY PRINT FILE — read every word of the cover and interior out loud: title, subtitle, spine, section headers, and trim near borders.\n\nSHIPPING URGENT ORDERS — drop at a USPS post office or UPS store on a weekday, get the receipt with the acceptance scan.\n\nCONTENT (TikTok, Pinterest, email) lives in the separate Content Planner — not here.",
   skuSystem:"SKU FORMAT: [CATEGORY]-[CODE]-[FORMAT]\n\nCATEGORY CODES: JRN=journal · PLN=planner · BMK=bookmark · STK=sticker · WAL=wall art · NTP=notepad · CHL=challenge · STD=study companion · KIT=bundle\nFORMAT CODES: P=physical · D=digital\n\nSTRATEGY: SKUs identify products instantly on packing slips without reading full names. Essential as catalog grows to 80+ products by 2027. Add in Shopify: product → Inventory → SKU field. Add in Etsy: listing → Inventory and Pricing → SKU.\n\nCURRENT SKU DIRECTORY:\nJRN-CC (Classicist's Companion) · JRN-CRJ (Classicist's Reading Journal) · JRN-CB (Commonplace Book) · JRN-DRL (Daily Reading Log) · JRN-MRJ (Morning Reflection Journal) · JRN-SRJ (Self-Reflection Journal) · JRN-ARJ (Autumn Reading Journal) · JRN-TBR (Autumn TBR Journal) · JRN-ADV (Advent Reading Calendar) · JRN-CTJ (Contemplative Journal) · JRN-ICN (Idea Capture Notebook) · JRN-WRC (Writing Companion) · JRN-OMS (Curiosity Journal Omnibus) · JRN-HEB (Hebrew Journal) · JRN-GRK (Koine Greek Journal) · JRN-OLE (Old English Journal)\nPLN-WKP (Weekly Planner) · PLN-ARP (Annual Reading Planner)\nCHL-RC (Reading Challenge) · CHL-HT (Habit Tracker)\nNTP-DLY (Daily Notepad)\nBMK-V1/V2/BD (Bookmark Sets Physical) · BMK-DIG (Bookmark Set Digital)\nSTK-V1/V2/BD (Sticker Sheets)\nWAL-VLM/PAA/ALB/V1B (Wall Art) · WAL-LQ1–3/BD (Latin Quote Art) · WAL-BP1A/B/C/BD (Botanical Prints)\nKIT-BCK (Book Club Kit)\n\nFUTURE SKUs:\nJRN-YIL (Year in Letters) · JRN-YNY (Year I Noticed You) · JRN-CJ1–CJ8 (Curiosity Vol I–VIII) · STD-MC1–MC5 (Method Companions) · STD-SC1–SC10 (Subject Companions)",
 };
 
@@ -105,473 +105,1365 @@ const PALETTES=[
 ];
 
 const MONTHS=[
-  {name:"JUNE",col:"#2D5A3D",weeks:[
-    {w:1,dates:"spring",s:"prep",theme:"Foundation Week — Core Catalog Launch",
-     note:"Original 12-product launch. All foundation digital products built and listed.",
-     pub:"All 12 foundation products listed live on Etsy",
-     products:[
-      {n:"Sticker Sheet Vol. I",                 ty:"digital",st:"done"},
-      {n:"Sticker Sheet Vol. II",                ty:"digital",st:"done"},
-      {n:"Reading Log Single Page",              ty:"digital",st:"done"},
-      {n:"Daily Notepad",                        ty:"digital",st:"done"},
-      {n:"Wall Art Vol. I (3 prints + bundle)",  ty:"digital",st:"done"},
-      {n:"Scholar's Reading Challenge (Digital)",ty:"digital",st:"done"},
-      {n:"Commonplace Book (Digital)",           ty:"digital",st:"done"},
-    ]},
-    {w:2,dates:"summer",s:"prep",theme:"Core Build Week — All 7 Products",
-     note:"7 products built. All Lulu samples ordered Jun 9.",
-     pub:"All 7 products listed. Lulu samples ordered.",
-     products:[
-      {n:"Autumn Scholar's Reading Journal",    ty:"both",  st:"done"},
-      {n:"Latin Quote Art Vol. II (×3 + 2 bundles)",ty:"digital",st:"done"},
-      {n:"Scholar's Weekly Planner",            ty:"both",  st:"done"},
-      {n:"Scholar's Self-Reflection Journal",   ty:"both",  st:"done"},
-      {n:"Book Club Kit",                        ty:"digital",st:"done"},
-      {n:"Scholar's Morning Reflection Journal",ty:"both",  st:"done"},
-      {n:"Autumn TBR Journal",                  ty:"both",  st:"done"},
-    ]},
-    {w:3,dates:"summer",s:"ops",theme:"Vet Week Part 1 — Digital Content + Marketing",
-     note:"Vet week. Test, film, and market all products built so far.",
-     pub:"TikTok videos posted. Pinterest boards live. Etsy SEO updated.",
-     products:[
-      {n:"Test all journals personally",         ty:"digital",st:"done"},
-      {n:"Pinterest boards + pin variations",    ty:"digital",st:"done"},
-      {n:"Etsy SEO + title refresh",             ty:"digital",st:"done"},
-      {n:"TikTok videos created + scheduled",    ty:"digital",st:"done"},
-    ]},
-    {w:4,dates:"summer",s:"ops",theme:"Vet Week Part 2 — Samples Arrive + Shopify Begins",
-     note:"Lulu samples arrive Jun 23. Inspect and approve. Shopify store begins.",
-     pub:"Samples approved. Inventory ordered. Shopify store started.",
-     products:[
-      {n:"Inspect + approve all 6 new Lulu samples",       ty:"physical",st:"done"},
-      {n:"Order first batch inventory same day",            ty:"physical",st:"done"},
-      {n:"List Classicist's Companion + Reading Journal physical",ty:"physical",st:"done"},
-      {n:"Shopify store — Day 1 setup",                  ty:"digital", st:"done"},
-      {n:"Bookmark Sets II–VI (all built ahead)",         ty:"both",    st:"done"},
-      {n:"Botanical Prints Vol I (built ahead)",            ty:"digital", st:"done"},
-    ]},
-  ]},
-  {name:"JULY",col:"#2D5A3D",weeks:[
-    {w:5,dates:"summer",s:"ops",theme:"Shopify Store Build + Klaviyo + Physical Videos",
-     note:"Complete Shopify store. Set up Klaviyo welcome sequence. Film physical product videos.",
-     pub:"Shopify live. Klaviyo welcome sequence active. Product videos filmed.",
-     products:[
-      {n:"Complete Shopify store — all products listed",  ty:"digital", st:"done"},
-      {n:"Email capture + Klaviyo welcome sequence",         ty:"digital", st:"done"},
-      {n:"Lulu Direct integration on Shopify",               ty:"digital", st:"done"},
-      {n:"Film physical product videos — all 8 books",   ty:"digital", st:"done"},
-      {n:"Film bookmark-making process video",               ty:"digital", st:"done"},
-    ]},
-    {w:6,dates:"summer",s:"autumn",theme:"WEEK COMPLETED — Botanical Prints + Bookmark Set II + Reading Log + Habit Tracker + Latin Art Vol III",
-     note:"DONE THIS WEEK: Botanical Prints Vol I + Bookmark Set II (both completed ahead of schedule). Also built: Daily Reading Log + Habit Tracker + Latin Art Vol III all 3 prints.",
-     pub:"All products listed on Etsy + Shopify.",
-     products:[
-      {n:"Botanical Prints Vol I (3 prints)",                ty:"digital",st:"done"},
-      {n:"Scholar Bookmark Set II — Autumn Collection",   ty:"both",   st:"done"},
-      {n:"Scholar's Daily Reading Log (60-Day)",             ty:"both",   st:"done"},
-      {n:"Scholar's Habit Tracker (Monthly)",               ty:"digital",st:"done"},
-      {n:"Latin Quote Art Vol III — Legere est vivere",  ty:"digital",st:"done"},
-      {n:"Latin Quote Art Vol III — Omnia tempus habent",ty:"digital",st:"done"},
-      {n:"Latin Quote Art Vol III — Post tenebras lux",  ty:"digital",st:"done"},
-    ]},
-    {w:7,dates:"summer",s:"ops",theme:"WEEK COMPLETED (Jul 14-18) — Annual Planner + Reading Log + Habit Tracker + Latin Art Vol III",
-     note:"COMPLETED: Annual Reading Planner 23pp + Daily Reading Log + Habit Tracker + Latin Art Vol III all 3 prints. Listed Annual Planner + Daily Reading Log on Etsy/Shopify Fri Jul 18. Pinterest done through Aug 14. Review team DM outreach carrying into W8.",
-     pub:"Annual Planner + Daily Reading Log listed on Etsy + Shopify.",
-     products:[
-      {n:"Scholar's Annual Reading Planner (23pp)",ty:"both",   st:"done"},
-      {n:"Scholar's Daily Reading Log (60-Day)",   ty:"both",   st:"done"},
-      {n:"Scholar's Habit Tracker (Monthly)",      ty:"digital",st:"done"},
-      {n:"Latin Quote Art Vol III — all 3 prints",ty:"digital",st:"done"},
-    ]},
-    {w:8,dates:"summer",s:"autumn",theme:"CREATE — 6 Language Journals + Mockups + Review Team Outreach",
-     note:"W8 SCHEDULE (Jul 21-25). Available: Mon full day + Tue 2hrs + Wed 3hrs + Thu nothing + Fri full day + Sat 3hrs.\nMON (full day): Build Hebrew + Greek + Old English Reflection Journals + mockups for all 3 same day.\nTUE (2hrs): Review team DM outreach — search TikTok hashtags, find 25-30 creators 800-6k followers, send DMs.\nWED (3hrs): Pinterest — plan September pins.\nTHU: Rest.\nFRI (full day): Writing Companion + Idea Capture + Contemplative journals + mockups for all 3 + upload all 6 to Lulu.\nSAT (3hrs): Finish all listings + confirm Lulu samples + follow up DMs.",
-     pub:"List all 6 language journals digital on Etsy + Shopify.",
-     products:[
-      {n:"Ancient Scholar Hebrew Reflection Journal",       ty:"both",st:"done"},
-      {n:"Ancient Scholar Greek Reflection Journal",        ty:"both",st:"done"},
-      {n:"Ancient Scholar Old English Reflection Journal",  ty:"both",st:"done"},
-      {n:"Scholar's Writing Companion Journal",            ty:"both",st:"done"},
-      {n:"Scholar's Idea Capture Notebook",               ty:"both",st:"done"},
-      {n:"Contemplative Scholar's Journal",               ty:"both",st:"done"},
-    ]},
-    {w:9,dates:"summer",s:"holiday",theme:"FINAL PRE-VACATION BUILD — Curiosity Omnibus ✅ + Advent Calendar ✅ + Bookmark Set V ✅",
-     note:"COMPLETED: Curiosity Journal Omnibus + Advent Calendar + Bookmark Set V. Study Companion shelved — subject-specific version builds January 2027. Still to do: ORDER all Lulu samples before vacation.",
-     pub:"List Advent Calendar + Study Companion digital. ORDER Lulu samples Friday Jul 31.",
-     products:[
-      {n:"Scholar's Curiosity Journal Omnibus (build complete)",ty:"both",st:"done"},
-      {n:"Scholar's Advent Reading Calendar (build complete)",ty:"both",st:"done"},
-      {n:"Scholar Bookmark Set V — Advent Collection (complete)",ty:"both",st:"done"},
-      {n:"ORDER all Lulu samples before vacation",ty:"physical",st:"done"},
-    ]},
-  ]},
-  {name:"AUGUST",col:"#2D5A3D",weeks:[
-    {w:10,dates:"summer",s:"holiday",theme:"🌴 VACATION — Week 1 of 3 — No Work",
-     note:"Full vacation. No work. No listings. No social. Rest completely.",
-     pub:"Nothing.",
-     products:[]},
-    {w:11,dates:"summer",s:"holiday",theme:"🌴 VACATION — Week 2 of 3 — No Work",
-     note:"Full vacation. No work. No listings. No social. Rest completely.",
-     pub:"Nothing.",
-     products:[]},
-    {w:12,dates:"summer",s:"holiday",theme:"🌴 VACATION — Week 3 of 3 — No Work",
-     note:"Full vacation. No work. No listings. No social. Rest completely.",
-     pub:"Nothing.",
-     products:[]},
-    {w:13,dates:"summer",s:"autumn",theme:"FIRST WEEK BACK — 10 Lulu Books Arriving Aug 24 + TikTok Videos",
-     note:"First week back from vacation. Light week — no new builds. Lulu delivery arriving Aug 24: inspect all 10 books on arrival, order inventory same day if approved. Film TikTok brand intro video Aug 24 showing the physical books. List all 6 language journals + W9 products on Etsy and Shopify. Brand intro video scheduled Aug 19 — pin immediately on Pinterest. BLOG LAUNCHES THIS WEEK: first post = 'The Complete Guide to Keeping a Commonplace Book' (deep-dive, SEO-optimised, ties to top TikTok content). Rest and ease back in.",
-     pub:"List all language journals + Advent Calendar + Curiosity Omnibus on Etsy + Shopify. TikTok brand intro video posted. Blog post #1 published.",
-     products:[
-      {n:"📦 ARRIVED AUG 24 — 9 of 10 books inspected ✅",ty:"physical",st:"done"},
-      {n:"Ancient Scholar Hebrew Reflection Journal ✅ APPROVED",ty:"physical",st:"done"},
-      {n:"Ancient Scholar Old English Reflection Journal ✅ APPROVED",ty:"physical",st:"done"},
-      {n:"Scholar's Writing Companion Journal ✅ APPROVED",ty:"physical",st:"done"},
-      {n:"Scholar's Idea Capture Notebook ✅ APPROVED",ty:"physical",st:"done"},
-      {n:"Contemplative Scholar's Journal ✅ APPROVED",ty:"physical",st:"done"},
-      {n:"Scholar's Advent Reading Calendar ✅ APPROVED",ty:"physical",st:"done"},
-      {n:"Scholar's Self-Reflection Journal ✅ APPROVED",ty:"physical",st:"done"},
-      {n:"Scholar's Daily Reading Log 60-Day ✅ APPROVED",ty:"physical",st:"done"},
-      {n:"Scholar's Annual Reading Planner ⚠️ THIN — price bumped to $22.99 physical / $9.99 digital",ty:"physical",st:"done"},
-      {n:"❌ Koine Greek Reflection Journal NOT ordered — order with gifting season stock W22-W24",ty:"physical",st:"pending"},
-      {n:"🎥 Film TikTok brand intro video — books arriving Aug 24",ty:"digital",st:"in-progress"},
-      {n:"List all 6 language journals on Etsy + Shopify",ty:"digital",st:"in-progress"},
-      {n:"List Advent Calendar on Etsy + Shopify",ty:"digital",st:"in-progress"},
-      {n:"📝 BLOG #1 — moved to W15 (not started, starting next week)",ty:"digital",st:"pending"},
-    ]},
-  ]},
-  {name:"SEPTEMBER",col:"#6B2737",weeks:[
-    {w:14,dates:"summer",s:"autumn",theme:"🎉 FIRST SALE — Sep 2, 2026 + LISTING + BLOG + 🎥 NEW ARRIVALS INTRO VIDEO",
-     note:"🎉 MILESTONE: FIRST EVER ORDER — September 2, 2026. Customer purchased 4 journals (Commonplace Book + Classicist's Companion + Advent Calendar + Old English Journal) totalling $100+. Payment via Mastercard/Shop Pay. This is the day TheCuratorsDesk made its first sale — 14 weeks after launch on May 28, 2026. List Curiosity Journal Omnibus on Etsy and Shopify (built W9). Rebuild Autumn TBR Journal: expand to 90 books × 2-page spread each (LEFT: reading log; RIGHT: top = expectations before, bottom = reflections after). ~185pp total. Physical price bumped to $27.99 (print cost $10.08). Blog calendar starts W16.",
-     pub:"🎉 FIRST SALE Sep 2! List Curiosity Journal Omnibus on Etsy + Shopify. TBR Journal rebuilt. 🎥 New Arrivals Intro Video LIVE Sep 5. BUILDING STOPS HERE UNTIL JAN 2027.",
-     products:[
-      {n:"List Scholar's Curiosity Journal Omnibus on Etsy + Shopify",ty:"both",st:"pending"},
-      {n:"REBUILD Autumn TBR Journal → 90 books × 2pp = ~185pp — price $27.99 physical (print cost $10.08)",ty:"both",st:"pending"},
-      {n:"🎥 NEW ARRIVALS INTRO VIDEO — all language journals + Omnibus (CORRECTED: Sep 5 not Oct 8)",ty:"digital",st:"pending"},
-    ]},
-    {w:15,dates:"autumn",s:"ops",theme:"MARKETING MODE — TikTok + Pinterest Q4 Boards",
-     note:"NO NEW BUILDS from this week forward until January 2027. Film 4-6 TikToks. Pinterest Q4 gift guide boards. Start using journals personally, your genuine experience is your best content. Blog calendar starts W16 next week.",
-     pub:"Post 2 TikToks. Pinterest Q4 boards live.",
-     products:[
-      {n:"TikTok + Pinterest content — marketing only this week",ty:"digital",st:"pending"},
-     ]},
-{w:16,dates:"autumn",s:"done",theme:"✅ DONE — MARKETING + WEBSITE DESIGN + About Me Blog Written",
-     note:"W16 actuals: Focused on marketing strategy and website design in collaboration with web developer. Website redesign underway — library aesthetic, TCD palette, accordion metafields. Wrote the About Me / Our Story section including AI transparency paragraph. No formal SEO blog posts published. No product builds. Gifting season strategy planned.",
-     pub:"Website design collaboration started. About Me brand page written. Marketing strategy mapped.",
-     products:[
-      {n:"✅ Website redesign — working with web developer on library aesthetic",ty:"digital",st:"done"},
-      {n:"✅ Wrote About Me / Our Story section + AI transparency paragraph",ty:"digital",st:"done"},
-      {n:"✅ Gifting season strategy planned",ty:"digital",st:"done"},
-     ]},
-    {w:17,dates:"autumn",s:"ops",theme:"✅ DONE — GIFTING SEASON + PRODUCT PAGE BLOGS — Commonplace Book · Reading Log · Companion",
-     note:"W17 actuals: Continued website design with web developer. Wrote product page blogs (accordion 'A Note from the Curator' content) for Commonplace Book, Classicist's Reading Journal (Reading Log), and Classicist's Companion. Gifting season strategy in progress. No formal SEO blog posts published. No product builds. Blog schedule removed until further notice.",
-     pub:"Product page blogs written for Commonplace Book, Reading Log, Classicist's Companion. Website design in progress.",
-     products:[
-      {n:"✅ Product page blog — Scholar's Commonplace Book",ty:"digital",st:"done"},
-      {n:"✅ Product page blog — Classicist's Reading Journal (Reading Log)",ty:"digital",st:"done"},
-      {n:"✅ Product page blog — Classicist's Companion",ty:"digital",st:"done"},
-      {n:"✅ Website design continued with web developer",ty:"digital",st:"done"},
-     ]},
-    {w:18,dates:"autumn",s:"done",theme:"✅ DONE — STRATEGIZING + Advent Calendar typo fixed + Key decisions made",
-     note:"W18 actuals: Strategizing only. No products built. No formal blogs published. Business planning, product roadmap decisions, printer research (PrintNinja vs Mixam), Lulu hardcover quality issue identified and hardcovers discontinued. Advent Calendar cover typo (Advert → Advent) discovered and corrected. Reprint ordered for first customer. Key decisions made on product upgrades (deferred), returns policy updated, accordion tab structure confirmed.",
-     pub:"Strategizing complete. Key business decisions made. Advent Calendar typo corrected and reprint ordered.",
-     products:[
-      {n:"✅ Lulu hardcover discontinued — colour inconsistency across batches",ty:"digital",st:"done"},
-      {n:"✅ Advent Calendar cover typo corrected (Advert → Advent) + reprint ordered",ty:"physical",st:"done"},
-      {n:"✅ Returns policy updated — 14-day satisfaction guarantee",ty:"digital",st:"done"},
-      {n:"✅ Accordion tab structure confirmed: A Note from the Curator · What's Inside · Who It's For",ty:"digital",st:"done"},
-     ]},
-  ]},
-  {name:"OCTOBER",col:"#6B2737",weeks:[
-    {w:19,dates:"autumn",s:"done",theme:"✅ DONE — STRATEGIZING — No builds. Business planning + product roadmap decisions.",
-     note:"W19 actuals: Strategizing only. No products built. No formal blog posts published. Business decisions made: product line expansion (Annotator's Journal 3 editions), language journal bundles planned, Old Norse Journal under consideration, alphabet guide cards for language journals, Agentic Commerce optimization identified as priority, voiceover b-roll format adopted for TikTok content.",
-     pub:"Strategizing complete. Product roadmap updated. Voiceover video format confirmed.",
-     products:[
-      {n:"✅ Annotator's Journal product line spec completed (3 editions)",ty:"digital",st:"done"},
-      {n:"✅ Language journal bundles planned (Biblical Languages · Ancient Scholar · Medieval · Complete Collection)",ty:"digital",st:"done"},
-      {n:"✅ Voiceover b-roll TikTok format confirmed — first video plan for Commonplace Book",ty:"digital",st:"done"},
-      {n:"✅ Agentic Commerce optimization identified — product descriptions + image alt text priority",ty:"digital",st:"done"},
-     ]},
-    {w:20,dates:"autumn",s:"ops",theme:"📝 PRODUCT PAGE BLOGS + ⚠️ TAX DEADLINE Oct 20 — Morning Journal blog written",
-     note:"W20 in progress (Oct 2026). Writing product page blogs for accordion 'A Note from the Curator' sections. ⚠️ TAX DEADLINE: October 20 is Texas sales tax remittance due date — log into comptroller.texas.gov and remit all sales tax collected from Sep 7 through Sep 30. Do NOT miss this deadline. No product builds this week. Blog schedule (formal SEO posts) removed until further notice.",
-     pub:"Morning Journal product page blog written. Reading Challenge blog in progress. Tax remittance filed.",
-     products:[
-      {n:"✅ Product page blog — Morning Reflection Journal",ty:"digital",st:"done"},
-      {n:"📝 Product page blog — Scholar's Reading Challenge (in progress)",ty:"digital",st:"pending"},
-      {n:"⚠️ TAX DEADLINE Oct 20 — Remit Texas sales tax at comptroller.texas.gov",ty:"digital",st:"pending"},
-     ]},
-    {w:21,dates:"autumn",s:"ops",theme:"📖 KOINE GREEK CONTENT WEEK (Oct 16) + GIFTING SEASON + Blog #9",
-     note:"🎥 KOINE GREEK JOURNAL WEEK (Oct 16): Full 3-post treatment. 🔨 BUILD continues in background — Curiosity Journal Vol V (Mental Health + Behaviour) + Vol VI (History of Ideas). These builds happen alongside content week — dedicate build time to weekday evenings or the weekend, keep TikTok filming separate. BLOG #9: 'How to Plan Your Autumn Reading Season'.",
-     pub:"🎥 Koine Greek journal week content live. Curiosity Vol V + VI built. Blog post #9 published.",
-     products:[
-      {n:"🎥 Koine Greek educational slide — 'Koine Greek: Language of the New Testament' (Oct 16)",ty:"digital",st:"pending"},
-      {n:"🎥 Koine Greek scholar slide — Apostle Paul as Scholar",ty:"digital",st:"pending"},
-      {n:"📝 BLOG #2 (OCTOBER) — 'Lulu Notebook Quality Review: Paper, Binding, and What to Expect'",ty:"digital",st:"pending"},
-      {n:"🔨 BUILD — Curiosity Journal Vol V (Mental Health + Behaviour)",ty:"both",st:"pending"},
-      {n:"🔨 BUILD — Curiosity Journal Vol VI (History of Ideas)",ty:"both",st:"pending"},
-     ]},
-    {w:22,dates:"autumn",s:"ops",theme:"📖 OLD ENGLISH CONTENT WEEK + 🔨 BUILD STARTS — Year in Letters + Year I Noticed You",
-     note:"🎥 OLD ENGLISH JOURNAL WEEK (Oct 23): Full 3-post treatment. 🔨 FINAL BUILDS — Curiosity Journal Vol VII + Vol VIII. All builds complete by end of this week. ORDER all remaining Lulu samples by Oct 30. 📅 DECEMBER CONTENT CREATION WEEK 1: Write all December TikTok scripts + slide copy. Film all December TikTok videos while physical products still in hand. Design all December Canva slides + Pinterest pins. Write December blog post. Draft December monthly email. BLOG #8: 'C.S. Lewis as a Scholar'.",
-     pub:"🎥 Old English journal week content live. ALL 12 builds complete. ALL samples ordered. December content created. Blog post #8 published.",
-     products:[
-      {n:"🎥 Old English educational slide (Oct 23)",ty:"digital",st:"pending"},
-      {n:"🎥 Old English scholar slide",ty:"digital",st:"pending"},
-      {n:"🎥 Old English Reflection Journal face video",ty:"digital",st:"pending"},
-      {n:"🔨 BUILD — Curiosity Journal Vol VII (Linguistics + Language)",ty:"both",st:"pending"},
-      {n:"🔨 BUILD — Curiosity Journal Vol VIII (Science + Natural World)",ty:"both",st:"pending"},
-      {n:"ORDER all Lulu samples — Curiosity Vol I-VIII (HARD DEADLINE Oct 30)",ty:"physical",st:"pending"},
-      {n:"ORDER Koine Greek journal sample (with this batch)",ty:"physical",st:"pending"},
-      {n:"📅 CONTENT WEEK 1 — Write all December TikTok scripts + slide copy",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 1 — Film all December TikTok videos",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 1 — Design all December Canva slides + Pinterest pins",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 1 — Write December blog post + draft monthly email",ty:"digital",st:"pending"},
-     ]},
-  ]},
-  {name:"NOVEMBER",col:"#6B2737",weeks:[
-    {w:23,dates:"autumn",s:"ops",theme:"📖 HEBREW CONTENT WEEK + 🔨 BUILD — Year in Letters + Year I Noticed You (continued) + ORDER SAMPLES",
-     note:"🎥 HEBREW JOURNAL WEEK (Oct 30): Full 3-post treatment. All builds complete. All samples ordered. 📅 DECEMBER CONTENT SCHEDULING WEEK 2: Schedule all December TikTok videos. Schedule all December Pinterest pins. Publish/schedule December blog post. Schedule December monthly email in Klaviyo. Full Shopify + Etsy audit — listings, prices, photos, inventory. Buffer day: edit, review, finish anything incomplete. Pause bookmark listings before Nov 16. BLOG #9: 'How to Plan Your Autumn Reading Season'.",
-     pub:"🎥 Hebrew journal week content live. December content fully scheduled. Shopify + Etsy audited. Blog post #9 published.",
-     products:[
-      {n:"🎥 Hebrew educational slide — 'Biblical Hebrew: 10 Words That Change How You Read the OT' (Oct 30)",ty:"digital",st:"pending"},
-      {n:"🎥 Hebrew scholar slide — Paul's Hebrew scholarship",ty:"digital",st:"pending"},
-      {n:"🎥 Hebrew Reflection Journal face video",ty:"digital",st:"pending"},
-      {n:"Inspect any Lulu samples that have arrived",ty:"physical",st:"pending"},
-      {n:"📅 CONTENT WEEK 2 — Schedule all December TikTok videos",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 2 — Schedule all December Pinterest pins",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 2 — Schedule December blog + monthly email",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 2 — Full Shopify + Etsy audit",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 2 — Buffer: edit, review, finish incomplete",ty:"digital",st:"pending"},
-      {n:"⚠️ Travel cancelled — bookmark pause no longer needed. Remove Nov 16 deadline tasks.",ty:"digital",st:"done"},
-     ]},
-    {w:24,dates:"autumn",s:"ops",theme:"🎁 GIFTING SEASON PEAK + 🔨 FINISH Year in Letters + Year I Noticed You builds + ORDER SAMPLES by Nov 30 + Blog #3",
-     note:"Gifting season at full intensity. Monitor what is converting, double down on top performers. Inspect Lulu samples as they arrive. 📅 JANUARY CONTENT CREATION WEEK 1: Write all January TikTok scripts + slide copy. Design all January Canva slides + Pinterest pins. Write January blog post. Draft January monthly email. Note: no filming this week — batch filming happens in W25. BLOG #3 (NOVEMBER): 'The Literary Gift Guide: 18 Gifts for the Reader in Your Life' — most commercially important blog of the year, publish now while gifting searches peak.",
-     pub:"Gifting season peak active. Samples inspected. January content created. Blog #3 published.",
-     products:[
-      {n:"Inspect all Lulu samples as they arrive this week",ty:"physical",st:"pending"},
-      {n:"Begin writing listing copy for Year in Letters + Year I Noticed You + Curiosity Vol I-VIII",ty:"digital",st:"pending"},
-      {n:"📝 BLOG #3 (NOVEMBER) — 'The Literary Gift Guide: 18 Gifts for the Reader in Your Life'",ty:"digital",st:"pending"},
-     ]},
-    {w:25,dates:"autumn",s:"ops",theme:"📦 SAMPLES ARRIVING — Review + Approve Year in Letters + Year I Noticed You + PRE-ORDERS OPEN DEC 15",
-     note:"LAST WEEK IN THE USA before travel Nov 16 - Jan 11. Inspect all Lulu samples received. 📅 JANUARY CONTENT SCHEDULING WEEK 2: Schedule all January TikTok videos (filmed today in batch session). Schedule all January Pinterest pins. Publish/schedule January blog post. Schedule January monthly email in Klaviyo. Full Shopify + Etsy audit. Buffer: edit, review, finish anything incomplete. BATCH FILM all introduction videos — Year in Letters, The Year I Noticed You, Curiosity volumes with samples in hand. Schedule Black Friday + Cyber Monday content + emails. Confirm bookmark pause. BLOG #11: 'The Apostle Paul as a Scholar'.",
-     pub:"All filming complete. January content fully scheduled. Black Friday pre-scheduled. Blog #11 published. ✈️ DEPART USA NOV 16.",
-     products:[
-      {n:"🎥 BATCH FILM — Year in Letters introduction videos (while physical in hand)",ty:"digital",st:"pending"},
-      {n:"🎥 BATCH FILM — The Year I Noticed You introduction videos",ty:"digital",st:"pending"},
-      {n:"🎥 BATCH FILM — Curiosity Journal introduction videos (all samples in hand)",ty:"digital",st:"pending"},
-      {n:"Inspect all Lulu samples received before departure",ty:"physical",st:"pending"},
-      {n:"Schedule Black Friday + Cyber Monday content + emails BEFORE leaving",ty:"digital",st:"pending"},
-      {n:"Confirm bookmark fulfillment plan (pause / pre-pack / ships-Jan notice)",ty:"physical",st:"pending"},
-      {n:"⚠️ TRAVEL CANCELLED — Continue building in USA. Year in Letters + Curiosity builds ongoing.",ty:"digital",st:"pending"},
-     ]},
-    {w:26,dates:"autumn",s:"ops",theme:"🛍️ BLACK FRIDAY WEEK + 🔨 BEGIN Curiosity Journal Vol I (Psychology) + Vol II (Philosophy)",
-     note:"✈️ ABROAD. Desk work only — no filming. Black Friday Nov 28 + Cyber Monday Dec 1 run on pre-scheduled content. Monitor sales, respond to messages. 📅 FEBRUARY CONTENT CREATION WEEK 1 (desk work only — no filming): Write all February TikTok scripts + slide copy. Design all February Canva slides + Pinterest pins. Write February blog post. Draft February monthly email. Write listing copy for Year in Letters + Year I Noticed You + Curiosity Vol I-VIII ready to publish on return. BLOG #12: 'The Literary Gift Guide: 18 Gifts for Readers'.",
-     pub:"Black Friday + Cyber Monday live (pre-scheduled). February content created. Blog post #12 published.",
-     products:[
-      {n:"📅 CONTENT WEEK 1 — Write all February TikTok scripts + slide copy",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 1 — Design all February Canva slides + Pinterest pins",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 1 — Write February blog post + draft monthly email",ty:"digital",st:"pending"},
-      {n:"Write listing copy for Year in Letters + Year I Noticed You + Curiosity Vol I-VIII",ty:"digital",st:"pending"},
-     ]},
-  ]},
-  {name:"DECEMBER",col:"#1B2A4A",weeks:[
-    {w:27,dates:"autumn",s:"ops",theme:"🔨 BUILD — Curiosity Vol III (Theology) + Vol IV (Mythology) + Year in Letters pre-order content",
-     note:"✈️ ABROAD. Year in Letters content goes live Dec 1 (pre-scheduled). Advent Calendar at full speed. Physical orders must be placed by Dec 12. 📅 FEBRUARY CONTENT SCHEDULING WEEK 2: Schedule all February TikTok videos. Schedule all February Pinterest pins. Publish/schedule February blog post. Schedule February monthly email in Klaviyo. Full remote Shopify + Etsy audit. Buffer: edit, review, finish anything incomplete. BLOG #13: 'Hebrew for Faith: 10 Words That Deepen Scripture'.",
-     pub:"Year in Letters content live. Physical gifting deadline: Dec 12. February content fully scheduled. Blog post #13 published.",
-     products:[
-      {n:"📅 CONTENT WEEK 2 — Schedule all February TikTok videos",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 2 — Schedule all February Pinterest pins",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 2 — Schedule February blog + monthly email",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 2 — Remote Shopify + Etsy audit",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 2 — Buffer: edit, review, finish incomplete",ty:"digital",st:"pending"},
-     ]},
-    {w:28,dates:"winter",s:"ops",theme:"🔨 BUILD — Curiosity Vol V (Mental Health) + Vol VI (History of Ideas) + PHYSICAL ORDER DEADLINE Dec 12",
-     note:"✈️ ABROAD. Dec 12 is the last day to order physical products for Christmas delivery. Promote hard. After Dec 12 promote digital only. 📅 MARCH CONTENT CREATION WEEK 1 (desk work only): Write all March TikTok scripts + slide copy. Design all March Canva slides + Pinterest pins. Write March blog post. Draft March monthly email. BLOG #14: 'The Scholar's Advent: A 24-Day Latin Word Practice'.",
-     pub:"Physical order deadline Dec 12 promoted. March content created. Blog post #14 published.",
-     products:[
-      {n:"📅 CONTENT WEEK 1 — Write all March TikTok scripts + slide copy",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 1 — Design all March Canva slides + Pinterest pins",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 1 — Write March blog post + draft monthly email",ty:"digital",st:"pending"},
-     ]},
-    {w:29,dates:"winter",s:"ops",theme:"🔨 BUILD — Curiosity Vol VII (Linguistics) + Vol VIII (Science) + PRE-ORDERS CLOSE + Year end prep + Blog #4",
-     note:"✈️ ABROAD. Digital only for last-minute shoppers. Language journals, Curiosity Omnibus, and Advent Calendar are the digital heroes. 📅 MARCH CONTENT SCHEDULING WEEK 2: Schedule all March TikTok videos. Schedule all March Pinterest pins. Publish/schedule March blog post. Schedule March monthly email. Remote Shopify + Etsy audit. Buffer: edit, review, finish incomplete. Finalise all listing copy for Year in Letters + Year I Noticed You + Curiosity Vol I-VIII. BLOG #15: 'Old English for Beginners: 10 Words from Medieval Literature'.",
-     pub:"Digital only active. March content fully scheduled. All listing copy finalised. Blog post #15 published.",
-     products:[
-      {n:"📅 CONTENT WEEK 2 — Schedule all March TikTok videos",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 2 — Schedule all March Pinterest pins",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 2 — Schedule March blog + monthly email",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 2 — Remote Shopify + Etsy audit",ty:"digital",st:"pending"},
-      {n:"📅 CONTENT WEEK 2 — Buffer: edit, review, finish incomplete",ty:"digital",st:"pending"},
-      {n:"Finalise all listing copy for Year in Letters + Year I Noticed You + Curiosity Vol I-VIII",ty:"digital",st:"pending"},
-      {n:"📝 BLOG #4 (DECEMBER) — 'How to Set Meaningful Reading Intentions for the New Year' (publish before Dec 25 — ranks in January)",ty:"digital",st:"pending"},
-     ]},
-    {w:30,dates:"winter",s:"ops",theme:"🎉 YEAR END REVIEW + PLAN 2027 + Year in Letters + Year I Noticed You LAUNCH JAN 1",
-     note:"✈️ ABROAD. Review 2026 remotely — calculate revenue, identify top sellers, plan 2027 content calendar. All listing copy complete and ready to publish on return. Rest. Reflect on year one.",
-     pub:"2026 reviewed. All listing copy ready. 2027 plan drafted.",
-     products:[
-      {n:"Complete 2026 revenue review remotely",ty:"digital",st:"pending"},
-      {n:"All Jan 2027 product listing copy complete and ready to publish",ty:"digital",st:"pending"},
-      {n:"Draft 2027 content calendar",ty:"digital",st:"pending"},
-     ]},
-  ]},
-  {name:"★ 2027 — JAN",col:"#1B2A4A",weeks:[
-    {w:31,dates:"winter",s:"prep",theme:"🚀 LAUNCH — Year in Letters + Year I Noticed You (Jan 1) + LIST Curiosity Vol I + II + Begin Vol III-VIII listings",
-     note:"RETURN FROM TRAVEL Jan 11. Inspect any Lulu samples that arrived while abroad. Begin publishing all products built in W23-W24 — listing copy is already written. First new products of 2027 go live this week. Year in Letters and The Year I Noticed You are the hero launch. Start filming Month 1 entries for both products immediately — this is the beginning of your 12-month authentic content strategy. Curiosity Vol I-II list this week. RELEASE CADENCE: one series every 3-4 weeks from here.",
-     pub:"🎉 Year in Letters LIVE. The Year I Noticed You LIVE. Curiosity Vol I-II LIVE. First Month 1 filming done.",
-     products:[
-      {n:"LIST Scholar's Year in Letters on Etsy + Shopify",ty:"both",st:"pending"},
-      {n:"LIST The Year I Noticed You on Etsy + Shopify",ty:"both",st:"pending"},
-      {n:"🎥 Batch film — Year in Letters + Year I Noticed You TikTok content",ty:"digital",st:"pending"},
-      {n:"🎥 Film Month 1 — Year in Letters (Jan entry)",ty:"digital",st:"pending"},
-      {n:"🎥 Film Month 1 — The Year I Noticed You (Jan entry)",ty:"digital",st:"pending"},
-    ]},
-    {w:32,dates:"winter",s:"ops",theme:"📣 MARKETING — Year in Letters + Year I Noticed You Week 2 + 🚀 LAUNCH Curiosity Vol I (Psychology)",
-     note:"No new releases. This week is entirely about marketing the hero launch from W31. TikTok content for both products circulating. Pinterest flat lay pins. Email to list. Monitor what is resonating. The 3-4 week gap before the next collection drop is intentional — let these two products breathe and find their audience before the next wave.",
-     pub:"Year in Letters + Year I Noticed You marketing in full swing.",
-     products:[
-      {n:"TikTok educational content — Year in Letters concept",ty:"digital",st:"pending"},
-      {n:"TikTok educational content — The Year I Noticed You concept",ty:"digital",st:"pending"},
-      {n:"Pinterest pins — both products",ty:"digital",st:"pending"},
-     ]},
-    {w:33,dates:"winter",s:"ops",theme:"MARKETING — Year in Letters + Year I Noticed You — Week 3 + Prep Curiosity Drop",
-     note:"Still no new releases. Final marketing week for the letter products before the Curiosity collection drops next week. Begin scheduling TikTok content for the Curiosity Journal collection launch. All 8 listing copy is already written from abroad — finalise and prepare to publish. Film Curiosity batch session if not already done.",
-     pub:"Letter products still actively marketed. Curiosity collection launch content ready.",
-     products:[
-      {n:"Finalise all 8 Curiosity Journal listings ready to publish W34",ty:"digital",st:"pending"},
-      {n:"🎥 Batch film — Curiosity Journal collection TikTok content",ty:"digital",st:"pending"},
-     ]},
-    {w:34,dates:"winter",s:"prep",theme:"🚀 CURIOSITY JOURNAL COLLECTION DROP — All 8 Volumes",
-     note:"Full Curiosity Journal collection launches this week — all 8 volumes live at once as one collection event. Vol I Psychology · Vol II Philosophy · Vol III Theology + Religion · Vol IV Mythology + Symbol · Vol V Mental Health + Behaviour · Vol VI History of Ideas · Vol VII Linguistics + Language · Vol VIII Science + Natural World. One collection, one announcement, one TikTok batch. This is release 2 of 2027 — 3 weeks after Year in Letters, exactly on cadence.",
-     pub:"🎉 All 8 Curiosity Journal volumes LIVE. Full collection announced.",
-     products:[
-      {n:"LIST Curiosity Journal Vol I — Psychology",ty:"both",st:"pending"},
-      {n:"LIST Curiosity Journal Vol II — Philosophy",ty:"both",st:"pending"},
-      {n:"LIST Curiosity Journal Vol III — Theology + Religion",ty:"both",st:"pending"},
-      {n:"LIST Curiosity Journal Vol IV — Mythology + Symbol",ty:"both",st:"pending"},
-      {n:"LIST Curiosity Journal Vol V — Mental Health + Behaviour",ty:"both",st:"pending"},
-      {n:"LIST Curiosity Journal Vol VI — History of Ideas",ty:"both",st:"pending"},
-      {n:"LIST Curiosity Journal Vol VII — Linguistics + Language",ty:"both",st:"pending"},
-      {n:"LIST Curiosity Journal Vol VIII — Science + Natural World",ty:"both",st:"pending"},
-    ]},
-  ]},
-  {name:"FEB 2027",col:"#1B2A4A",weeks:[
-    {w:35,dates:"winter",s:"ops",theme:"MARKETING — Curiosity Journal Collection — Week 2",
-     note:"No new releases. Market the full Curiosity collection. TikTok: one video per discipline this week — use the batch session content from W33. Email: Curiosity collection announcement to full list. Pinterest: pins for each volume. 3-4 week window before the next collection drop.",
-     pub:"Curiosity Journal collection actively marketed.",
-     products:[
-      {n:"TikTok content — Curiosity Journal collection (one per discipline)",ty:"digital",st:"pending"},
-      {n:"Email — Curiosity Journal collection announcement",ty:"digital",st:"pending"},
-     ]},
-    {w:36,dates:"winter",s:"ops",theme:"MARKETING — Curiosity Collection + Prep Method Companions",
-     note:"Continue marketing Curiosity collection. Begin building Method Companions in Canva: Cornell, Visual/Mind Map, Feynman, Auditory, Spaced Repetition. These are digital only — no Lulu sample needed. Faster build cycle.",
-     pub:"Curiosity collection marketed. Method Companions build started.",
-     products:[
-      {n:"🔨 BUILD — Study Companion Cornell Method",ty:"digital",st:"pending"},
-      {n:"🔨 BUILD — Study Companion Visual/Mind Map Method",ty:"digital",st:"pending"},
-      {n:"🔨 BUILD — Study Companion Feynman Technique",ty:"digital",st:"pending"},
-      {n:"🔨 BUILD — Study Companion Auditory Learner Method",ty:"digital",st:"pending"},
-      {n:"🔨 BUILD — Study Companion Spaced Repetition Method",ty:"digital",st:"pending"},
-    ]},
-    {w:37,dates:"winter",s:"ops",theme:"MARKETING — Curiosity Collection Week 4 + Build Subject Companions Batch 1",
-     note:"Final marketing week for Curiosity collection before next release. Build Subject Companions Batch 1: Biology, Chemistry, History, Mathematics, Psychology. Digital only — fast build cycle.",
-     pub:"Curiosity collection final marketing push. Subject Companions Batch 1 built.",
-     products:[
-      {n:"🔨 BUILD — Study Companion Biology",ty:"digital",st:"pending"},
-      {n:"🔨 BUILD — Study Companion Chemistry",ty:"digital",st:"pending"},
-      {n:"🔨 BUILD — Study Companion History",ty:"digital",st:"pending"},
-      {n:"🔨 BUILD — Study Companion Mathematics",ty:"digital",st:"pending"},
-      {n:"🔨 BUILD — Study Companion Psychology",ty:"digital",st:"pending"},
-    ]},
-    {w:38,dates:"spring",s:"prep",theme:"🚀 METHOD COMPANIONS COLLECTION DROP — All 5 Volumes",
-     note:"Method Companions collection launches — all 5 volumes live at once. Cornell · Visual/Mind Map · Feynman · Auditory · Spaced Repetition. Positioned for students and lifelong learners. Back to school prep audience starts warming up in March. This is release 3 of 2027 — 4 weeks after Curiosity collection, exactly on cadence.",
-     pub:"🎉 All 5 Method Companions LIVE.",
-     products:[
-      {n:"LIST Study Companion — Cornell Method",ty:"digital",st:"pending"},
-      {n:"LIST Study Companion — Visual/Mind Map Method",ty:"digital",st:"pending"},
-      {n:"LIST Study Companion — Feynman Technique",ty:"digital",st:"pending"},
-      {n:"LIST Study Companion — Auditory Learner Method",ty:"digital",st:"pending"},
-      {n:"LIST Study Companion — Spaced Repetition Method",ty:"digital",st:"pending"},
-    ]},
-  ]},
-  {name:"MAR 2027",col:"#4A6741",weeks:[
-    {w:39,dates:"spring",s:"ops",theme:"MARKETING — Method Companions + Build Subject Companions Batch 2",
-     note:"Market Method Companions. Build Subject Companions Batch 2: Anatomy, Literature, Philosophy, Languages, Universal/General. Digital only.",
-     pub:"Method Companions actively marketed. Batch 2 built.",
-     products:[
-      {n:"🔨 BUILD — Study Companion Anatomy + Physiology",ty:"digital",st:"pending"},
-      {n:"🔨 BUILD — Study Companion Literature + English",ty:"digital",st:"pending"},
-      {n:"🔨 BUILD — Study Companion Philosophy + Theology",ty:"digital",st:"pending"},
-      {n:"🔨 BUILD — Study Companion Languages",ty:"digital",st:"pending"},
-      {n:"🔨 BUILD — Study Companion Universal/General",ty:"digital",st:"pending"},
-    ]},
-    {w:40,dates:"spring",s:"ops",theme:"MARKETING — Method Companions Week 3 + Spring Reading Journal Build",
-     note:"Continue marketing Method Companions. Build the Spring Reading Journal — Valentine's Day/spring season product. Physical + digital.",
-     pub:"Method Companions marketed. Spring Reading Journal built.",
-     products:[
-      {n:"🔨 BUILD — Spring Scholar's Reading Journal",ty:"both",st:"pending"},
-      {n:"ORDER Lulu sample — Spring Reading Journal",ty:"physical",st:"pending"},
-    ]},
-    {w:41,dates:"spring",s:"ops",theme:"MARKETING — Method Companions Week 4 + Prep Subject Collection Drop",
-     note:"Final marketing week for Method Companions. Finalise all Subject Companion listings. Inspect Spring Reading Journal sample if arrived.",
-     pub:"Method Companions final push. Subject collection launch prepped.",
-     products:[
-      {n:"Finalise all 10 Subject Companion listings",ty:"digital",st:"pending"},
-      {n:"Inspect Spring Reading Journal Lulu sample",ty:"physical",st:"pending"},
-     ]},
-    {w:42,dates:"spring",s:"prep",theme:"🚀 SUBJECT COMPANIONS COLLECTION DROP — All 10 Volumes + Spring Reading Journal",
-     note:"Full Subject Companions collection launches — all 10 volumes at once. Biology · Chemistry · History · Mathematics · Psychology · Anatomy · Literature · Philosophy · Languages · Universal. PLUS Spring Reading Journal goes live. Two releases in one week — justified because Spring Reading Journal is a completely different product family. This is release 4 of 2027 — 4 weeks after Method Companions.",
-     pub:"🎉 All 10 Subject Companions LIVE. Spring Reading Journal LIVE.",
-     products:[
-      {n:"LIST Study Companion — Biology",ty:"digital",st:"pending"},
-      {n:"LIST Study Companion — Chemistry",ty:"digital",st:"pending"},
-      {n:"LIST Study Companion — History",ty:"digital",st:"pending"},
-      {n:"LIST Study Companion — Mathematics",ty:"digital",st:"pending"},
-      {n:"LIST Study Companion — Psychology",ty:"digital",st:"pending"},
-      {n:"LIST Study Companion — Anatomy + Physiology",ty:"digital",st:"pending"},
-      {n:"LIST Study Companion — Literature + English",ty:"digital",st:"pending"},
-      {n:"LIST Study Companion — Philosophy + Theology",ty:"digital",st:"pending"},
-      {n:"LIST Study Companion — Languages",ty:"digital",st:"pending"},
-      {n:"LIST Study Companion — Universal/General",ty:"digital",st:"pending"},
-      {n:"LIST Spring Scholar's Reading Journal",ty:"both",st:"pending"},
-    ]},
-  ]},
-  {name:"APR–JUN 2027",col:"#4A6741",weeks:[
-    {w:43,dates:"spring",s:"ops",theme:"MARKETING — Subject Companions + Spring Reading Journal",
-     note:"Market the full Subject Companions collection and Spring Reading Journal. Easter 2027 — Contemplative Journal, Hebrew Journal, and Koine Greek Journal all have strong Easter resonance. Push faith-adjacent products this week.",
-     pub:"Subject Companions + Spring Reading Journal actively marketed.",
-     products:[
-      {n:"Easter content push — Contemplative, Hebrew, Greek journals",ty:"digital",st:"pending"},
-     ]},
-    {w:44,dates:"spring",s:"ops",theme:"Q1 2027 Review + Plan Q2",
-     note:"Review Q1 2027 performance. What sold, what did not, what surprised you. This data tells you what to build in Q2 and what to build more of in Q3 Autumn season. Plan Summer Scholar season.",
-     pub:"Q1 review complete. Q2 plan in place.",
-     products:[
-      {n:"Q1 2027 review — top sellers, revenue, audience growth",ty:"digital",st:"pending"},
-      {n:"Plan Summer Scholar + Autumn 2027 strategy",ty:"digital",st:"pending"},
-     ]},
-    {w:45,dates:"spring",s:"ops",theme:"Summer Scholar Season — Building Season",
-     note:"Summer Scholar season begins. Longer days, more creative energy. This is the building season for Autumn 2027 launches. Review what the data says about which Curiosity Journal disciplines resonated most — build Vol II series from the winners.",
-     pub:"Summer Scholar season announced.",
-     products:[]},
-  ]},
-  {name:"Q3–Q4 2027",col:"#6B2737",weeks:[
-    {w:46,dates:"summer",s:"autumn",theme:"Autumn Scholar 2027 — Second Year",
-     note:"Autumn Scholar 2027. Second year of the flagship season. Full catalog now live. New products TBD from 2026-2027 data. Language journals, Curiosity Journals, and Year in Letters are the proven heroes going into gifting season year two.",
-     pub:"Autumn Scholar 2027 full launch.",
-     products:[
-      {n:"Autumn Scholar 2027 new products TBD from data",ty:"both",st:"pending"},
-     ]},
-    {w:47,dates:"autumn",s:"ops",theme:"Q4 2027 Marketing Mode",
-     note:"Same strategy as Q4 2026 but with a full year of data, reviews, and a real audience behind it. Marketing only from Sep 30 2027 onward.",
-     pub:"Q4 2027 marketing mode active.",
-     products:[]},
-    {w:48,dates:"autumn",s:"ops",theme:"Gifting Season 2027",
-     note:"Second year of gifting season. Execute the same strategy with improvements from 2026 learnings.",
-     pub:"Gifting season 2027 full push.",
-     products:[]},
-    {w:49,dates:"winter",s:"ops",theme:"Year End + Plan 2028",
-     note:"Review 2027. Plan 2028. By now TCD has a complete scholarly ecosystem across journals, planners, language companions, and study tools. Is a second brand ready to launch?",
-     pub:"Year end review. 2028 planning.",
-     products:[]},
-  ]},
-]
+ {
+  "name": "JUNE",
+  "col": "#2D5A3D",
+  "weeks": [
+   {
+    "w": 1,
+    "dates": "Jun 1–7, 2026",
+    "s": "prep",
+    "theme": "Foundation Week — Core Catalog Launch",
+    "note": "Original 12-product launch. All foundation digital products built and listed.",
+    "pub": "All 12 foundation products listed live on Etsy",
+    "products": [
+     {
+      "n": "Sticker Sheet Vol. I",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Sticker Sheet Vol. II",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Reading Log Single Page",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Daily Notepad",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Wall Art Vol. I (3 prints + bundle)",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Scholar's Reading Challenge (Digital)",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Commonplace Book (Digital)",
+      "ty": "digital",
+      "st": "done"
+     }
+    ]
+   },
+   {
+    "w": 2,
+    "dates": "Jun 8–14, 2026",
+    "s": "prep",
+    "theme": "Core Build Week — All 7 Products",
+    "note": "7 products built. All Lulu samples ordered Jun 9.",
+    "pub": "All 7 products listed. Lulu samples ordered.",
+    "products": [
+     {
+      "n": "Autumn Scholar's Reading Journal",
+      "ty": "both",
+      "st": "done"
+     },
+     {
+      "n": "Latin Quote Art Vol. II (×3 + 2 bundles)",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Scholar's Weekly Planner",
+      "ty": "both",
+      "st": "done"
+     },
+     {
+      "n": "Scholar's Self-Reflection Journal",
+      "ty": "both",
+      "st": "done"
+     },
+     {
+      "n": "Book Club Kit",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Scholar's Morning Reflection Journal",
+      "ty": "both",
+      "st": "done"
+     },
+     {
+      "n": "Autumn TBR Journal",
+      "ty": "both",
+      "st": "done"
+     }
+    ]
+   },
+   {
+    "w": 3,
+    "dates": "Jun 15–21, 2026",
+    "s": "ops",
+    "theme": "Vet Week Part 1 — Test all journals + Etsy SEO",
+    "note": "Vet week. All journals built so far tested personally. Etsy listing titles and tags refreshed.",
+    "pub": "Etsy SEO updated.",
+    "products": [
+     {
+      "n": "Test all journals personally",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Etsy SEO + title refresh",
+      "ty": "digital",
+      "st": "done"
+     }
+    ]
+   },
+   {
+    "w": 4,
+    "dates": "Jun 22–28, 2026",
+    "s": "ops",
+    "theme": "Vet Week Part 2 — Samples Arrive + Shopify Begins",
+    "note": "Lulu samples arrive Jun 23. Inspect and approve. Shopify store begins.",
+    "pub": "Samples approved. Inventory ordered. Shopify store started.",
+    "products": [
+     {
+      "n": "Inspect + approve all 6 new Lulu samples",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "Order first batch inventory same day",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "List Classicist's Companion + Reading Journal physical",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "Shopify store — Day 1 setup",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Bookmark Sets II–VI (all built ahead)",
+      "ty": "both",
+      "st": "done"
+     },
+     {
+      "n": "Botanical Prints Vol I (built ahead)",
+      "ty": "digital",
+      "st": "done"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "JULY",
+  "col": "#2D5A3D",
+  "weeks": [
+   {
+    "w": 5,
+    "dates": "Jun 29 – Jul 5, 2026",
+    "s": "ops",
+    "theme": "Shopify Store Build + Klaviyo",
+    "note": "Complete Shopify store. Set up Klaviyo welcome sequence.",
+    "pub": "Shopify live. Klaviyo welcome sequence active.",
+    "products": [
+     {
+      "n": "Complete Shopify store — all products listed",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Email capture + Klaviyo welcome sequence",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Lulu Direct integration on Shopify",
+      "ty": "digital",
+      "st": "done"
+     }
+    ]
+   },
+   {
+    "w": 6,
+    "dates": "Jul 6–12, 2026",
+    "s": "autumn",
+    "theme": "WEEK COMPLETED — Botanical Prints + Bookmark Set II + Reading Log + Habit Tracker + Latin Art Vol III",
+    "note": "DONE THIS WEEK: Botanical Prints Vol I + Bookmark Set II (both completed ahead of schedule). Also built: Daily Reading Log + Habit Tracker + Latin Art Vol III all 3 prints.",
+    "pub": "All products listed on Etsy + Shopify.",
+    "products": [
+     {
+      "n": "Botanical Prints Vol I (3 prints)",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Scholar Bookmark Set II — Autumn Collection",
+      "ty": "both",
+      "st": "done"
+     },
+     {
+      "n": "Scholar's Daily Reading Log (60-Day)",
+      "ty": "both",
+      "st": "done"
+     },
+     {
+      "n": "Scholar's Habit Tracker (Monthly)",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Latin Quote Art Vol III — Legere est vivere",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Latin Quote Art Vol III — Omnia tempus habent",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Latin Quote Art Vol III — Post tenebras lux",
+      "ty": "digital",
+      "st": "done"
+     }
+    ]
+   },
+   {
+    "w": 7,
+    "dates": "Jul 13–19, 2026",
+    "s": "ops",
+    "theme": "WEEK COMPLETED (Jul 14-18) — Annual Planner + Reading Log + Habit Tracker + Latin Art Vol III",
+    "note": "COMPLETED: Annual Reading Planner 23pp + Daily Reading Log + Habit Tracker + Latin Art Vol III all 3 prints. Listed Annual Planner + Daily Reading Log on Etsy/Shopify Fri Jul 18.",
+    "pub": "Annual Planner + Daily Reading Log listed on Etsy + Shopify.",
+    "products": [
+     {
+      "n": "Scholar's Annual Reading Planner (23pp)",
+      "ty": "both",
+      "st": "done"
+     },
+     {
+      "n": "Scholar's Daily Reading Log (60-Day)",
+      "ty": "both",
+      "st": "done"
+     },
+     {
+      "n": "Scholar's Habit Tracker (Monthly)",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Latin Quote Art Vol III — all 3 prints",
+      "ty": "digital",
+      "st": "done"
+     }
+    ]
+   },
+   {
+    "w": 8,
+    "dates": "Jul 20–26, 2026",
+    "s": "autumn",
+    "theme": "CREATE — 6 Language Journals + Mockups",
+    "note": "W8 SCHEDULE (Jul 21-25). MON (full day): Build Hebrew + Greek + Old English Reflection Journals + mockups for all 3 same day. FRI (full day): Writing Companion + Idea Capture + Contemplative journals + mockups for all 3 + upload all 6 to Lulu. SAT (3hrs): Finish all listings + confirm Lulu samples.",
+    "pub": "List all 6 language journals digital on Etsy + Shopify.",
+    "products": [
+     {
+      "n": "Ancient Scholar Hebrew Reflection Journal",
+      "ty": "both",
+      "st": "done"
+     },
+     {
+      "n": "Ancient Scholar Greek Reflection Journal",
+      "ty": "both",
+      "st": "done"
+     },
+     {
+      "n": "Ancient Scholar Old English Reflection Journal",
+      "ty": "both",
+      "st": "done"
+     },
+     {
+      "n": "Scholar's Writing Companion Journal",
+      "ty": "both",
+      "st": "done"
+     },
+     {
+      "n": "Scholar's Idea Capture Notebook",
+      "ty": "both",
+      "st": "done"
+     },
+     {
+      "n": "Contemplative Scholar's Journal",
+      "ty": "both",
+      "st": "done"
+     }
+    ]
+   },
+   {
+    "w": 9,
+    "dates": "Jul 27 – Aug 2, 2026",
+    "s": "holiday",
+    "theme": "FINAL PRE-VACATION BUILD — Curiosity Omnibus ✅ + Advent Calendar ✅ + Bookmark Set V ✅",
+    "note": "COMPLETED: Curiosity Journal Omnibus + Advent Calendar + Bookmark Set V. Study Companion shelved. Lulu samples ordered before vacation.",
+    "pub": "Advent Calendar listed digital. Lulu samples ordered Friday Jul 31.",
+    "products": [
+     {
+      "n": "Scholar's Curiosity Journal Omnibus (build complete)",
+      "ty": "both",
+      "st": "done"
+     },
+     {
+      "n": "Scholar's Advent Reading Calendar (build complete)",
+      "ty": "both",
+      "st": "done"
+     },
+     {
+      "n": "Scholar Bookmark Set V — Advent Collection (complete)",
+      "ty": "both",
+      "st": "done"
+     },
+     {
+      "n": "ORDER all Lulu samples before vacation",
+      "ty": "physical",
+      "st": "done"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "AUGUST",
+  "col": "#2D5A3D",
+  "weeks": [
+   {
+    "w": 10,
+    "dates": "Aug 3–9, 2026",
+    "s": "holiday",
+    "theme": "🌴 VACATION — Week 1 of 3 — No Work",
+    "note": "Full vacation. No work. No listings. No social. Rest completely.",
+    "pub": "Nothing.",
+    "products": []
+   },
+   {
+    "w": 11,
+    "dates": "Aug 10–16, 2026",
+    "s": "holiday",
+    "theme": "🌴 VACATION — Week 2 of 3 — No Work",
+    "note": "Full vacation. No work. No listings. No social. Rest completely.",
+    "pub": "Nothing.",
+    "products": []
+   },
+   {
+    "w": 12,
+    "dates": "Aug 17–23, 2026",
+    "s": "holiday",
+    "theme": "🌴 VACATION — Week 3 of 3 — No Work",
+    "note": "Full vacation. No work. No listings. No social. Rest completely.",
+    "pub": "Nothing.",
+    "products": []
+   },
+   {
+    "w": 13,
+    "dates": "Aug 24–30, 2026",
+    "s": "autumn",
+    "theme": "FIRST WEEK BACK — 10 Lulu Books Arriving Aug 24",
+    "note": "First week back from vacation. Light week — no new builds. Lulu delivery arrived Aug 24: all books inspected, inventory ordered. All 6 language journals + W9 products listed on Etsy and Shopify.",
+    "pub": "All language journals + Advent Calendar + Curiosity Omnibus listed on Etsy + Shopify.",
+    "products": [
+     {
+      "n": "📦 ARRIVED AUG 24 — 9 of 10 books inspected ✅",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "Ancient Scholar Hebrew Reflection Journal ✅ APPROVED",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "Ancient Scholar Old English Reflection Journal ✅ APPROVED",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "Scholar's Writing Companion Journal ✅ APPROVED",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "Scholar's Idea Capture Notebook ✅ APPROVED",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "Contemplative Scholar's Journal ✅ APPROVED",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "Scholar's Advent Reading Calendar ✅ APPROVED",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "Scholar's Self-Reflection Journal ✅ APPROVED",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "Scholar's Daily Reading Log 60-Day ✅ APPROVED",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "Scholar's Annual Reading Planner ⚠️ THIN — price bumped to $22.99 physical / $9.99 digital",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "Koine Greek Reflection Journal — not in the first Lulu batch; added to inventory later",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "List all 6 language journals on Etsy + Shopify",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "List Advent Calendar on Etsy + Shopify",
+      "ty": "digital",
+      "st": "done"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "SEPTEMBER",
+  "col": "#6B2737",
+  "weeks": [
+   {
+    "w": 14,
+    "dates": "Aug 31 – Sep 6, 2026",
+    "s": "autumn",
+    "theme": "🎉 FIRST SALE — Sep 2, 2026 + LISTINGS",
+    "note": "🎉 MILESTONE: FIRST EVER ORDER — September 2, 2026. Customer purchased 4 journals (Commonplace Book + Classicist's Companion + Advent Calendar + Old English Journal) totalling $100+. Payment via Mastercard/Shop Pay. This is the day TheCuratorsDesk made its first sale — 14 weeks after launch on May 28, 2026. Curiosity Journal Omnibus listed on Etsy and Shopify (built W9). Autumn TBR Journal rebuilt: 90 books × 2-page spread each (LEFT: reading log; RIGHT: top = expectations before, bottom = reflections after). ~185pp total. Physical price bumped to $27.99 (print cost $10.08).",
+    "pub": "🎉 FIRST SALE Sep 2! Curiosity Journal Omnibus listed on Etsy + Shopify. TBR Journal rebuilt.",
+    "products": [
+     {
+      "n": "List Scholar's Curiosity Journal Omnibus on Etsy + Shopify",
+      "ty": "both",
+      "st": "done"
+     },
+     {
+      "n": "REBUILD Autumn TBR Journal → 90 books × 2pp = ~185pp — price $27.99 physical (print cost $10.08)",
+      "ty": "both",
+      "st": "done"
+     }
+    ]
+   },
+   {
+    "w": 15,
+    "dates": "Sep 7–13, 2026",
+    "s": "ops",
+    "theme": "MARKETING WEEK — no product tasks",
+    "note": "No product builds this week. Marketing focus only — tracked in the content planner.",
+    "pub": "",
+    "products": []
+   },
+   {
+    "w": 16,
+    "dates": "Sep 14–20, 2026",
+    "s": "ops",
+    "theme": "✅ MARKETING + WEBSITE DESIGN + About Me written",
+    "note": "Marketing and website design with the web developer (library aesthetic, accordion metafields). About Me / Our Story written, including the AI transparency paragraph. No product builds.",
+    "pub": "Website design started. About Me / Our Story written.",
+    "products": [
+     {
+      "n": "Website redesign — working with web developer (library aesthetic)",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "About Me / Our Story page written + AI transparency paragraph",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Marketing + gifting season planning",
+      "ty": "digital",
+      "st": "done"
+     }
+    ]
+   },
+   {
+    "w": 17,
+    "dates": "Sep 21–27, 2026",
+    "s": "ops",
+    "theme": "✅ WEBSITE DESIGN + PRODUCT PAGES — Commonplace Book · Reading Log · Companion",
+    "note": "Website design continued with the web developer. Product page blogs written for Scholar's Commonplace Book, Classicist's Reading Journal, and Classicist's Companion. No product builds.",
+    "pub": "Product page blogs written for 3 flagship products.",
+    "products": [
+     {
+      "n": "Product page blog — Scholar's Commonplace Book",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Product page blog — Classicist's Reading Journal (Reading Log)",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Product page blog — Classicist's Companion",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Website design continued with web developer",
+      "ty": "digital",
+      "st": "done"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "OCTOBER",
+  "col": "#6B2737",
+  "weeks": [
+   {
+    "w": 18,
+    "dates": "Sep 28 – Oct 4, 2026",
+    "s": "ops",
+    "theme": "✅ STRATEGIZING — printer decisions + returns policy",
+    "note": "Strategizing only. No products built. Lulu hardcovers discontinued (colour inconsistency across batches). Returns policy updated. Accordion tab structure confirmed: A Note from the Curator · What's Inside · Who It's For.",
+    "pub": "Printer and policy decisions made.",
+    "products": [
+     {
+      "n": "Lulu hardcover discontinued — colour inconsistency across batches",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Returns policy updated — 14-day satisfaction guarantee",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Accordion tab structure confirmed: A Note from the Curator · What's Inside · Who It's For",
+      "ty": "digital",
+      "st": "done"
+     }
+    ]
+   },
+   {
+    "w": 19,
+    "dates": "Oct 5–11, 2026",
+    "s": "ops",
+    "theme": "✅ STRATEGIZING — product roadmap decisions",
+    "note": "Strategizing only. No products built. Annotator's Journal specced (3 editions), language journal bundles planned, Agentic Commerce priority identified (full product descriptions + image alt text).",
+    "pub": "Roadmap decisions made.",
+    "products": [
+     {
+      "n": "Annotator's Journal product line spec completed (3 editions)",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Language journal bundles planned (Biblical Languages · Ancient Scholar · Medieval · Complete Collection)",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Agentic Commerce optimisation identified — product descriptions + image alt text priority",
+      "ty": "digital",
+      "st": "done"
+     }
+    ]
+   },
+   {
+    "w": 20,
+    "dates": "Oct 12–18, 2026",
+    "s": "ops",
+    "theme": "✅ PRODUCT PAGES — Morning Journal + Advent Calendar cover fix",
+    "note": "Product page blog written for the Morning Reflection Journal. Advent Reading Calendar cover typo ('Advert' → 'Advent') found by the first customer — file corrected and replacement reprint ordered.",
+    "pub": "Morning Journal page written. Advent Calendar cover fixed.",
+    "products": [
+     {
+      "n": "Product page blog — Morning Reflection Journal",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Advent Reading Calendar cover typo corrected (Advert → Advent) + replacement reprint ordered",
+      "ty": "physical",
+      "st": "done"
+     }
+    ]
+   },
+   {
+    "w": 21,
+    "dates": "Oct 19–25, 2026",
+    "s": "ops",
+    "theme": "✅ PRODUCT PAGES — Reading Challenge + TAX DEADLINE Oct 20",
+    "note": "Product page blog for Scholar's Reading Challenge. ⚠️ Texas sales tax remittance was due Oct 20 — tick it only once filed at comptroller.texas.gov. If it has not been filed yet, file now.",
+    "pub": "Reading Challenge page written. Sales tax filed.",
+    "products": [
+     {
+      "n": "Product page blog — Scholar's Reading Challenge",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "⚠️ TAX DEADLINE Oct 20 — remit Texas sales tax at comptroller.texas.gov",
+      "ty": "digital",
+      "st": "done"
+     }
+    ]
+   },
+   {
+    "w": 22,
+    "dates": "Oct 26 – Nov 1, 2026",
+    "s": "ops",
+    "theme": "RESTOCK + PRODUCT PAGES + STORE POLICIES",
+    "note": "Restock and Advent replacement are done. Remaining items carry over — finish them alongside the website health work.",
+    "pub": "Commonplace Book restocked. Product pages complete. Policies live.",
+    "products": [
+     {
+      "n": "Restock Commonplace Book — Lulu order (budget under $100)",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "Finish remaining product page descriptions + accordion tabs",
+      "ty": "digital",
+      "st": "pending"
+     },
+     {
+      "n": "Add image alt text to all product photos (web designer)",
+      "ty": "digital",
+      "st": "pending"
+     },
+     {
+      "n": "Create The Scholar's Language Collection on Shopify (SEO description drafted)",
+      "ty": "digital",
+      "st": "pending"
+     },
+     {
+      "n": "Add 30-day returns + shipping policies to Shopify (support@curatorsdesk.com)",
+      "ty": "digital",
+      "st": "pending"
+     },
+     {
+      "n": "Request PrintNinja sample kit — compare cover colour + texture vs Lulu",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "Ship replacement Commonplace Book — 2nd order (UPS overnight)",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "Ship corrected Advent Reading Calendar replacement to first customer (drop at USPS post office)",
+      "ty": "physical",
+      "st": "done"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "NOVEMBER",
+  "col": "#6B2737",
+  "weeks": [
+   {
+    "w": 23,
+    "dates": "Nov 2–8, 2026",
+    "s": "ops",
+    "theme": "RECEIVED + RESTOCKED — Commonplace Books & Advent Calendars arrive",
+    "note": "5 Commonplace Books and 3 corrected Advent Calendars (1 sent as the replacement) have arrived. No new journal builds until January 2027 — the focus is making every existing product and the website right.",
+    "pub": "Restock and Advent reprints received.",
+    "products": [
+     {
+      "n": "Receive 5 Commonplace Books from Lulu (restock)",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "Receive 3 corrected Advent Calendars from Lulu — 1 sent as the replacement",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "Set up bundles in Shopify — pre-curated + mix-and-match language bundles (Easy Builder)",
+      "ty": "digital",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 24,
+    "dates": "Nov 9–15, 2026",
+    "s": "ops",
+    "theme": "STORE OPERATIONS — checkout + first review",
+    "note": "Manual order review for now; CartWatch deferred until sales are consistent. First review received.",
+    "pub": "Checkout decision made. First review live.",
+    "products": [
+     {
+      "n": "Restock Commonplace Book + Advent replacement shipped",
+      "ty": "physical",
+      "st": "done"
+     },
+     {
+      "n": "Decide checkout protection — manual order review now, CartWatch later once sales are consistent",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Digital Advent Calendar listing finished",
+      "ty": "digital",
+      "st": "done"
+     },
+     {
+      "n": "Add Idea Capture review to its product page, labelled \"received a free copy\"",
+      "ty": "digital",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 25,
+    "dates": "Nov 16–22, 2026",
+    "s": "ops",
+    "theme": "WEBSITE HEALTH CHECK + PRODUCT AUDIT + VENDOR SEARCH",
+    "note": "Make sure everything that exists is working before anything new is made. Start the hardcover vendor search: quotes and sample packs from Mixam and Bookvault.",
+    "pub": "Site healthy, product audit complete, vendor samples requested.",
+    "products": [
+     {
+      "n": "Full site health check — click every product page, cart, checkout, policies, mobile view",
+      "ty": "digital",
+      "st": "pending"
+     },
+     {
+      "n": "Set up Google Search Console + submit sitemap",
+      "ty": "digital",
+      "st": "pending"
+     },
+     {
+      "n": "Fix the Hebrew product URL",
+      "ty": "digital",
+      "st": "pending"
+     },
+     {
+      "n": "Audit every product page: description, spec block, alt text, mockups, price",
+      "ty": "digital",
+      "st": "pending"
+     },
+     {
+      "n": "Inspect remaining physical stock (cover colour, edges, corners)",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "Request Mixam sample pack + quote (hardcover journal)",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "Request Bookvault sample pack + quote (hardcover journal)",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 26,
+    "dates": "Nov 23–29, 2026",
+    "s": "ops",
+    "theme": "BLACK FRIDAY WEEK + VENDOR PROOFS",
+    "note": "Black Friday Nov 27. Order one or two Commonplace Book proofs each from Mixam and Bookvault to compare against Lulu.",
+    "pub": "Black Friday sale live. Vendor proofs ordered.",
+    "products": [
+     {
+      "n": "Black Friday sale live on Shopify + Etsy",
+      "ty": "digital",
+      "st": "pending"
+     },
+     {
+      "n": "Order 1–2 Commonplace Book proofs from Mixam",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "Order 1–2 Commonplace Book proofs from Bookvault",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "DECEMBER",
+  "col": "#1B2A4A",
+  "weeks": [
+   {
+    "w": 27,
+    "dates": "Nov 30 – Dec 6, 2026",
+    "s": "ops",
+    "theme": "ADVENT LISTING + REVIEWS",
+    "note": "Make sure the Advent Calendar is live and easy to find before December 1.",
+    "pub": "Advent listing live Dec 1. Review requests sent.",
+    "products": [
+     {
+      "n": "Confirm Advent Calendar listing is live for Dec 1",
+      "ty": "digital",
+      "st": "pending"
+     },
+     {
+      "n": "Send review requests to existing customers",
+      "ty": "digital",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 28,
+    "dates": "Dec 7–13, 2026",
+    "s": "ops",
+    "theme": "PHYSICAL ORDER DEADLINE Dec 12 + COMPARE VENDOR PROOFS",
+    "note": "Dec 12 is the last day to order physical items for Christmas delivery.",
+    "pub": "Dec 12 cutoff observed. Vendor proofs compared to Lulu.",
+    "products": [
+     {
+      "n": "Dec 12 physical-order cutoff — banner/notice on Shopify",
+      "ty": "digital",
+      "st": "pending"
+     },
+     {
+      "n": "Inspect vendor proofs vs Lulu: colour, edges, binding, paper",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "Record findings per vendor (quality, price, shipping time)",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 29,
+    "dates": "Dec 14–20, 2026",
+    "s": "ops",
+    "theme": "PAPER + COVER + PEN EXPLORATION",
+    "note": "Explore journal paper weights, cover finishes and options, and a pen to add to the catalogue. Exploration only — no builds.",
+    "pub": "Paper, cover and pen options shortlisted.",
+    "products": [
+     {
+      "n": "Compare journal paper options (weight, colour, ink show-through)",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "Compare cover options and finishes",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "Research pen options — supplier, MOQ, branding, cost, price",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 30,
+    "dates": "Dec 21–27, 2026",
+    "s": "ops",
+    "theme": "YEAR-END REVIEW + VENDOR DECISION",
+    "note": "Decide the hardcover vendor and review the year. Curiosity builds start in January, not before.",
+    "pub": "Year-end review complete. Vendor chosen.",
+    "products": [
+     {
+      "n": "Year-end review — sales, costs, what worked",
+      "ty": "digital",
+      "st": "pending"
+     },
+     {
+      "n": "Choose hardcover vendor",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "Choose paper + cover spec; shortlist pen",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 31,
+    "dates": "Dec 28, 2026 – Jan 3, 2027",
+    "s": "ops",
+    "theme": "NEW-YEAR RESET",
+    "note": "Reset for January. Builds begin next week. A Jan 31 checkpoint is optional.",
+    "pub": "2027 plan set.",
+    "products": [
+     {
+      "n": "Review 2027 plan and update prices if needed",
+      "ty": "digital",
+      "st": "pending"
+     },
+     {
+      "n": "Optional: set a Jan 31 checkpoint (sessions + orders since Nov 1)",
+      "ty": "digital",
+      "st": "pending"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "JANUARY 2027",
+  "col": "#1B2A4A",
+  "weeks": [
+   {
+    "w": 32,
+    "dates": "Jan 4–10, 2027",
+    "s": "prep",
+    "theme": "BUILD — Curiosity Vol I + II + Blank Edition",
+    "note": "Builds resume in January now that vendor, paper and cover decisions are made.",
+    "pub": "Curiosity Vol I + II and Blank Edition built.",
+    "products": [
+     {
+      "n": "BUILD Curiosity Journal Vol I (Psychology) + Vol II (Philosophy)",
+      "ty": "both",
+      "st": "pending"
+     },
+     {
+      "n": "BUILD Blank Edition Commonplace Book (same cover, blank section headers)",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 33,
+    "dates": "Jan 11–17, 2027",
+    "s": "prep",
+    "theme": "BUILD — Curiosity Vol III + IV + Blank Edition proof",
+    "note": "",
+    "pub": "Vol III + IV built. Blank Edition proof ordered.",
+    "products": [
+     {
+      "n": "BUILD Curiosity Vol III + Vol IV",
+      "ty": "both",
+      "st": "pending"
+     },
+     {
+      "n": "ORDER Blank Edition proof from chosen vendor",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 34,
+    "dates": "Jan 18–24, 2027",
+    "s": "prep",
+    "theme": "BUILD — Curiosity Vol V + VI + TAX DEADLINE Jan 20",
+    "note": "",
+    "pub": "Vol V + VI built. Sales tax filed.",
+    "products": [
+     {
+      "n": "BUILD Curiosity Vol V + Vol VI",
+      "ty": "both",
+      "st": "pending"
+     },
+     {
+      "n": "File sales tax — Jan 20 deadline",
+      "ty": "digital",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 35,
+    "dates": "Jan 25–31, 2027",
+    "s": "prep",
+    "theme": "BUILD — Curiosity Vol VII + VIII + proofs",
+    "note": "",
+    "pub": "Vol VII + VIII built. Proofs ordered and inspected.",
+    "products": [
+     {
+      "n": "BUILD Curiosity Vol VII + Vol VIII",
+      "ty": "both",
+      "st": "pending"
+     },
+     {
+      "n": "ORDER Curiosity proof",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "INSPECT Blank Edition proof",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "FEBRUARY 2027",
+  "col": "#1B2A4A",
+  "weeks": [
+   {
+    "w": 36,
+    "dates": "Feb 1–7, 2027",
+    "s": "prep",
+    "theme": "LAUNCH Curiosity Vol I + II + BEGIN Theologian's Commonplace Book",
+    "note": "Curiosity collection launches in pairs, one pair per week through February. Theologian's Commonplace Book: section headers for Scripture passages, doctrinal notes, prayer observations, quotations from the Church Fathers, personal reflection.",
+    "pub": "Curiosity Vol I + II live. Theologian's build started.",
+    "products": [
+     {
+      "n": "FINALISE all 8 Curiosity listings",
+      "ty": "digital",
+      "st": "pending"
+     },
+     {
+      "n": "LAUNCH Blank Edition Commonplace Book",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "LAUNCH Curiosity Journal Vol I (Psychology) + Vol II (Philosophy)",
+      "ty": "both",
+      "st": "pending"
+     },
+     {
+      "n": "BEGIN Theologian's Commonplace Book build",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 37,
+    "dates": "Feb 8–14, 2027",
+    "s": "prep",
+    "theme": "LAUNCH Curiosity Vol III + IV + Theologian's build",
+    "note": "Curiosity launches continue weekly.",
+    "pub": "Curiosity Vol III + IV live.",
+    "products": [
+     {
+      "n": "LAUNCH Curiosity Journal Vol III (Theology + Religion) + Vol IV (Mythology + Symbol)",
+      "ty": "both",
+      "st": "pending"
+     },
+     {
+      "n": "Theologian's Commonplace Book build — continuing",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 38,
+    "dates": "Feb 15–21, 2027",
+    "s": "prep",
+    "theme": "LAUNCH Curiosity Vol V + VI + ORDER Theologian's proof",
+    "note": "Order the Theologian's proof now so it can be approved before the March launch.",
+    "pub": "Curiosity Vol V + VI live. Theologian's proof ordered.",
+    "products": [
+     {
+      "n": "LAUNCH Curiosity Journal Vol V (Mental Health + Behaviour) + Vol VI (History of Ideas)",
+      "ty": "both",
+      "st": "pending"
+     },
+     {
+      "n": "ORDER proof — Theologian's Commonplace Book",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 39,
+    "dates": "Feb 22–28, 2027",
+    "s": "prep",
+    "theme": "LAUNCH Curiosity Vol VII + VIII — collection complete",
+    "note": "Final Curiosity pair. Inspect the Theologian's proof (read every word out loud).",
+    "pub": "Curiosity collection complete. Theologian's proof inspected.",
+    "products": [
+     {
+      "n": "LAUNCH Curiosity Journal Vol VII (Linguistics + Language) + Vol VIII (Science + Natural World)",
+      "ty": "both",
+      "st": "pending"
+     },
+     {
+      "n": "Inspect Theologian's proof — approve or fix",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "MARCH 2027",
+  "col": "#4A6741",
+  "weeks": [
+   {
+    "w": 40,
+    "dates": "Mar 1–7, 2027",
+    "s": "prep",
+    "theme": "LAUNCH Theologian's Commonplace Book + BEGIN Literary Commonplace Book",
+    "note": "Literary Commonplace Book: section headers for passages, character observations, literary devices, author notes, questions raised.",
+    "pub": "Theologian's Commonplace Book live. Literary build started.",
+    "products": [
+     {
+      "n": "LAUNCH Theologian's Commonplace Book",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "BEGIN Literary Commonplace Book build",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 41,
+    "dates": "Mar 8–14, 2027",
+    "s": "prep",
+    "theme": "BUILD — Literary Commonplace Book",
+    "note": "Build continues.",
+    "pub": "Literary build progressing.",
+    "products": [
+     {
+      "n": "Literary Commonplace Book build — continuing",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 42,
+    "dates": "Mar 15–21, 2027",
+    "s": "ops",
+    "theme": "ORDER proof — Literary Commonplace Book",
+    "note": "Order the proof so it can be approved before the April launch.",
+    "pub": "Literary proof ordered.",
+    "products": [
+     {
+      "n": "ORDER proof — Literary Commonplace Book",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 43,
+    "dates": "Mar 22–28, 2027",
+    "s": "ops",
+    "theme": "INSPECT proof — Literary Commonplace Book",
+    "note": "Read every word out loud before approving.",
+    "pub": "Literary proof approved.",
+    "products": [
+     {
+      "n": "Inspect Literary proof — approve or fix",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "APRIL 2027",
+  "col": "#4A6741",
+  "weeks": [
+   {
+    "w": 44,
+    "dates": "Mar 29 – Apr 4, 2027",
+    "s": "ops",
+    "theme": "Q1 2027 REVIEW",
+    "note": "Review what sold, restock needs, and which Commonplace Book edition performs best.",
+    "pub": "Q1 review complete.",
+    "products": [
+     {
+      "n": "Q1 2027 review — top sellers, revenue, restock needs",
+      "ty": "digital",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 45,
+    "dates": "Apr 5–11, 2027",
+    "s": "prep",
+    "theme": "LAUNCH Literary Commonplace Book",
+    "note": "Third Commonplace Book edition goes live.",
+    "pub": "Literary Commonplace Book live.",
+    "products": [
+     {
+      "n": "LAUNCH Literary Commonplace Book",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "name": "LATER",
+  "col": "#6B2737",
+  "weeks": [
+   {
+    "w": 46,
+    "dates": "Later · timing TBD",
+    "s": "ops",
+    "theme": "LATER — Annotator's Journal (3 editions)",
+    "note": "Use the Single Study edition yourself first (history of Christianity book) so the interior is proven before it is built for sale.",
+    "pub": "",
+    "products": [
+     {
+      "n": "Use a prototype Annotator's Journal while reading before building",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "BUILD Annotator's Journal — Single Study (6×9\", 180pp, $24.99, JRN-ANS-P)",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "BUILD Annotator's Journal — Scholar's Edition (6×9\", 320pp, $39.99, JRN-ANS2-P, tab dividers)",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "BUILD Annotator's Journal — Omnibus (7×10\", ~520pp, $49.99, JRN-ANO-P, tab dividers)",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 47,
+    "dates": "Later · timing TBD",
+    "s": "ops",
+    "theme": "LATER — Language Collection + Old Norse",
+    "note": "Old Norse needs real scholarly research before committing to 90 words. Alphabet guide cards ship with each language journal (cardstock, matte finish).",
+    "pub": "",
+    "products": [
+     {
+      "n": "Alphabet guide card for each language journal (Hebrew, Koine Greek, Old English)",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "Research Old Norse vocabulary before committing to a journal",
+      "ty": "digital",
+      "st": "pending"
+     },
+     {
+      "n": "Medieval Languages Bundle (Old English + Old Norse) once Old Norse is built",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 48,
+    "dates": "Later · timing TBD",
+    "s": "ops",
+    "theme": "LATER — More Commonplace Book editions",
+    "note": "Same format and price as the original Commonplace Book.",
+    "pub": "",
+    "products": [
+     {
+      "n": "Naturalist's Commonplace Book (plant lovers, nature observers)",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "Philosopher's Commonplace Book (non-fiction and ideas readers)",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 49,
+    "dates": "Later · timing TBD",
+    "s": "ops",
+    "theme": "LATER — On hold until Commonplace Book editions are done",
+    "note": "Timing to be set once the Commonplace Book editions are launched. Weekly Planner stays pulled until rebuilt (grid was too small).",
+    "pub": "",
+    "products": [
+     {
+      "n": "Method Companions (5 digital volumes) — timing TBD",
+      "ty": "digital",
+      "st": "pending"
+     },
+     {
+      "n": "Subject Companions (10 digital volumes) — timing TBD",
+      "ty": "digital",
+      "st": "pending"
+     },
+     {
+      "n": "Spring Scholar's Reading Journal — timing TBD",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "Rebuild Weekly Planner (bigger grid) before relisting",
+      "ty": "physical",
+      "st": "pending"
+     },
+     {
+      "n": "Rebuild Annual Reading Planner (deferred)",
+      "ty": "physical",
+      "st": "pending"
+     }
+    ]
+   },
+   {
+    "w": 50,
+    "dates": "Later · timing TBD",
+    "s": "ops",
+    "theme": "2028 — Year in Letters + The Year I Noticed You",
+    "note": "Creation of both limited editions moved to 2028. Timing TBD.",
+    "pub": "",
+    "products": [
+     {
+      "n": "BUILD Year in Letters (journal + letter kit formats) — 2028",
+      "ty": "both",
+      "st": "pending"
+     },
+     {
+      "n": "BUILD The Year I Noticed You (journal + letter kit formats) — 2028",
+      "ty": "both",
+      "st": "pending"
+     }
+    ]
+   }
+  ]
+ }
+];
 
 const PS=new Map([
   ["Ancient Scholar Hebrew Reflection Journal","Cover (1) + Welcome (1) + 90 daily pages each with: Date + Hebrew Word of Today (Hebrew script) + Transliteration + Translation + Language Note (2-3 lines: history, etymology, scholarly context) + open ruled writing space. BINDING: Paperback 6x9 $22.99. Digital: US Letter + A4."],
@@ -618,7 +1510,8 @@ const ETSY_SPECS=new Map([
   }],
 ]);
 
-function useAllStatus(){return useLS("tcd_st4",{});}
+(function(){try{if(!localStorage.getItem("tcd_st6")){var o=JSON.parse(localStorage.getItem("tcd_st5")||"{}"),n={};Object.keys(o).forEach(function(k){if(parseInt(k,10)<=22)n[k]=o[k];});localStorage.setItem("tcd_st6",JSON.stringify(n));}}catch(e){}})();
+function useAllStatus(){return useLS("tcd_st6",{});}
 function useAllChecks(){return useLS("tcd_ck4",{});}
 
 function Modal({src,onClose}){
@@ -644,7 +1537,7 @@ function ProdCard({prod,wNum,pIdx,statuses,setStatuses}){
   const[open,setOpen]=useState(false);
   const[modal,setModal]=useState(null);
   const key=`${wNum}-${pIdx}`;
-  const rawSt=["live","arriving","designed","done"].includes(prod.st)?prod.st:(statuses[key]||"pending");
+  const rawSt=statuses[key]||prod.st||"pending";
   const ss=ST[rawSt]||ST.pending;
   const ty=TY[prod.ty]||TY.digital;
   const ps=PS.get(prod.n);
@@ -653,7 +1546,6 @@ function ProdCard({prod,wNum,pIdx,statuses,setStatuses}){
 
   function cycleStatus(e){
     e.stopPropagation();
-    if(["live","arriving","designed","done"].includes(prod.st))return;
     const cyc=["pending","in-progress","done"];
     const next=cyc[(cyc.indexOf(rawSt)+1)%cyc.length];
     setStatuses(s=>({...s,[key]:next}));
@@ -661,7 +1553,7 @@ function ProdCard({prod,wNum,pIdx,statuses,setStatuses}){
 
   return React.createElement("div",{style:{background:"#231808",border:`1px solid ${rawSt==="done"?"#2D4A3E88":"#C9A84C1a"}`,borderRadius:10,overflow:"hidden",marginBottom:6}},
     React.createElement("div",{onClick:()=>hasContent&&setOpen(o=>!o),style:{display:"flex",alignItems:"flex-start",gap:8,padding:"10px 12px",cursor:hasContent?"pointer":"default"}},
-      React.createElement("button",{onClick:cycleStatus,style:{background:ss.bg,border:`1px solid ${ss.tx}44`,borderRadius:10,padding:"3px 8px",fontSize:8,color:ss.tx,flexShrink:0,fontFamily:"Cinzel,serif",whiteSpace:"nowrap",marginTop:2,cursor:["live","arriving","designed","done"].includes(prod.st)?"default":"pointer"}},ss.ic+" "+ss.lb),
+      React.createElement("button",{onClick:cycleStatus,style:{background:ss.bg,border:`1px solid ${ss.tx}44`,borderRadius:10,padding:"3px 8px",fontSize:8,color:ss.tx,flexShrink:0,fontFamily:"Cinzel,serif",whiteSpace:"nowrap",marginTop:2,cursor:"pointer"}},ss.ic+" "+ss.lb),
       React.createElement("div",{style:{flex:1}},
         React.createElement("div",{style:{fontSize:11,color:rawSt==="done"?"#7aE499":"#E4C977",fontWeight:"bold",lineHeight:1.3,marginBottom:3,textDecoration:rawSt==="done"?"line-through":"none"}},prod.n),
         React.createElement(Chip,ty)
@@ -694,20 +1586,33 @@ function Nav({tab,set}){
 
 function WeekTab({statuses,setStatuses}){
   const cw=getCW();
-  let week=null,mName="";
-  MONTHS.forEach(m=>m.weeks.forEach(w=>{if(w.w===cw){week=w;mName=m.name;}}));
-  if(!week)return React.createElement("div",{style:{padding:24,textAlign:"center",color:"#F5E6C855"}},"No week data found for week "+cw);
-  const ss=SS[week.s];
-  const next=[];
-  MONTHS.forEach(m=>m.weeks.forEach(w=>{if(w.w>cw&&w.w<=cw+2)next.push({...w,mn:m.name});}));
+  const[vw,setVw]=useState(cw);
+  const ALL=[];
+  MONTHS.forEach(m=>m.weeks.forEach(w=>ALL.push({...w,mn:m.name})));
+  const week=ALL.find(w=>w.w===vw);
+  if(!week)return React.createElement("div",{style:{padding:24,textAlign:"center",color:"#F5E6C855"}},"No week data found for week "+vw);
+  const mName=week.mn;
+  const ss=SS[week.s]||SS.ops;
+  const next=ALL.filter(w=>w.w>vw&&w.w<=vw+2);
+  const nav=d=>setVw(v=>Math.max(1,Math.min(ALL.length,v+d)));
+  const doneN=week.products.filter((p,i)=>(statuses[vw+"-"+i]||p.st||"pending")==="done").length;
+  const navBtn={width:34,height:34,borderRadius:"50%",background:"#2D4A3E",color:"#E4C977",fontSize:18,border:"1px solid #C9A84C44",flexShrink:0};
 
   return React.createElement("div",{style:{padding:"14px"},className:"fade"},
+    React.createElement("div",{style:{display:"flex",alignItems:"center",justifyContent:"space-between",gap:8,marginBottom:10}},
+      React.createElement("button",{onClick:()=>nav(-1),"aria-label":"Previous week",style:navBtn},"‹"),
+      React.createElement("div",{style:{textAlign:"center",flex:1}},
+        React.createElement("div",{style:{fontSize:10,letterSpacing:2,color:"#E4C977",textTransform:"uppercase"},className:"cz"},vw===cw?"This week":(vw<cw?"Past week":"Upcoming week")),
+        vw!==cw&&React.createElement("button",{onClick:()=>setVw(cw),style:{fontSize:10,color:"#C9A84C",textDecoration:"underline",marginTop:3}},"Back to this week (W"+cw+")")
+      ),
+      React.createElement("button",{onClick:()=>nav(1),"aria-label":"Next week",style:navBtn},"›")
+    ),
     React.createElement("div",{style:{background:`linear-gradient(135deg,${ss.bg}55,${ss.bg}22)`,border:`2px solid ${ss.tx}33`,borderRadius:14,padding:"14px",marginBottom:16}},
-      React.createElement("div",{style:{fontSize:8,letterSpacing:4,color:ss.tx,textTransform:"uppercase",marginBottom:3},className:"cz"},mName+" · Week "+cw+" of 45"),
+      React.createElement("div",{style:{fontSize:8,letterSpacing:4,color:ss.tx,textTransform:"uppercase",marginBottom:3},className:"cz"},mName+" · "+(vw>45?"Later":"Week "+vw+" of 45")),
       React.createElement("div",{style:{fontSize:18,color:"#E4C977",fontWeight:"bold",marginBottom:3,lineHeight:1.2},className:"cz"},week.theme),
-      React.createElement("div",{style:{fontSize:10,color:"#F5E6C877",marginBottom:10}},week.dates),
+      React.createElement("div",{style:{fontSize:10,color:"#F5E6C877",marginBottom:10}},week.dates+(week.products.length?"  ·  "+doneN+"/"+week.products.length+" done":"")),
       React.createElement("div",{style:{height:4,background:"#F5E6C81a",borderRadius:2,marginBottom:10}},
-        React.createElement("div",{style:{height:"100%",background:"#C9A84C",borderRadius:2,width:`${(cw/45)*100}%`}})
+        React.createElement("div",{style:{height:"100%",background:"#C9A84C",borderRadius:2,width:`${(Math.min(vw,45)/45)*100}%`}})
       ),
       week.note&&React.createElement("div",{style:{fontSize:11,color:"#F5E6C8aa",fontStyle:"italic",marginBottom:10,lineHeight:1.5,whiteSpace:"pre-line"}},week.note),
       week.pub&&React.createElement("div",{style:{background:"#1a1208aa",borderRadius:8,padding:"7px 10px"}},
@@ -716,8 +1621,8 @@ function WeekTab({statuses,setStatuses}){
       )
     ),
     week.products.length>0&&React.createElement("div",null,
-      React.createElement("div",{style:{fontSize:8,letterSpacing:3,color:"#C9A84C",textTransform:"uppercase",marginBottom:8},className:"cz"},"Products This Week"),
-      week.products.map((p,pi)=>React.createElement(ProdCard,{key:pi,prod:p,wNum:cw,pIdx:pi,statuses,setStatuses}))
+      React.createElement("div",{style:{fontSize:8,letterSpacing:3,color:"#C9A84C",textTransform:"uppercase",marginBottom:8},className:"cz"},(vw===cw?"Tasks This Week":"Tasks — Week "+vw)+" · tap a status to change it"),
+      React.createElement("button",{onClick:()=>setStatuses(s=>{const n={...s};week.products.forEach((p,pi)=>{n[vw+"-"+pi]=(doneN===week.products.length?"pending":"done");});return n;}),style:{display:"block",width:"100%",padding:"10px",marginBottom:10,borderRadius:10,border:"1px solid #C9A84C66",background:doneN===week.products.length?"transparent":"#2D4A3E",color:"#E4C977",fontSize:12,letterSpacing:1},className:"cz"},doneN===week.products.length?"✓ Week complete — tap to reopen":"Mark whole week done"),week.products.map((p,pi)=>React.createElement(ProdCard,{key:pi,prod:p,wNum:vw,pIdx:pi,statuses,setStatuses}))
     ),
     next.length>0&&React.createElement("div",{style:{marginTop:18}},
       React.createElement("div",{style:{fontSize:8,letterSpacing:3,color:"#C9A84C55",textTransform:"uppercase",marginBottom:8},className:"cz"},"Coming Up"),
@@ -732,14 +1637,14 @@ function WeekTab({statuses,setStatuses}){
   );
 }
 
-function RoadmapTab({statuses}){
+function RoadmapTab({statuses,setStatuses}){
   const[openW,setOpenW]=useState(null);
   const cw=getCW();
   return React.createElement("div",{style:{padding:"14px"},className:"fade"},
     React.createElement("div",{style:{textAlign:"center",marginBottom:14,borderBottom:"1px solid #C9A84C33",paddingBottom:12}},
       React.createElement("div",{style:{fontSize:8,letterSpacing:5,color:"#C9A84C",textTransform:"uppercase"},className:"cz"},"TheCuratorsDesk"),
       React.createElement("div",{style:{fontSize:18,color:"#E4C977",marginTop:3},className:"cz"},"2026–2027 Roadmap"),
-      React.createElement("div",{style:{fontSize:10,color:"#F5E6C855",marginTop:3}},"45 weeks · June 2026 → December 2027")
+      React.createElement("div",{style:{fontSize:10,color:"#F5E6C855",marginTop:3}},"Product roadmap · June 2026 → 2027")
     ),
     MONTHS.map(m=>React.createElement("div",{key:m.name,style:{marginBottom:16}},
       React.createElement("div",{style:{display:"flex",alignItems:"center",gap:8,marginBottom:6}},
@@ -748,7 +1653,8 @@ function RoadmapTab({statuses}){
       ),
       m.weeks.map(w=>{
         const ss=SS[w.s];const isO=openW===w.w;const isCur=w.w===cw;
-        const allDone=w.products.length>0&&w.products.every(p=>p.st==="done"||statuses[`${w.w}-${w.products.indexOf(p)}`]==="done");
+        const stOf=(p,pi)=>statuses[`${w.w}-${pi}`]||p.st||"pending";
+        const allDone=w.products.every((p,pi)=>stOf(p,pi)==="done")&&(w.w<cw||w.products.length>0);
         return React.createElement("div",{key:w.w,style:{marginBottom:4}},
           React.createElement("div",{onClick:()=>setOpenW(isO?null:w.w),style:{border:`1px solid ${isCur?"#E4C977":allDone?"#2D4A3E88":ss.bg+"66"}`,borderRadius:9,background:allDone?"#1a2a1a":isCur?ss.bg+"55":ss.bg+"18",padding:"9px 12px",cursor:"pointer",display:"flex",alignItems:"center",gap:8}},
             React.createElement("div",{style:{width:26,height:26,borderRadius:"50%",background:allDone?"#2D4A3E":w.products.length===0?"#3a3020":ss.bg,border:`1px solid ${allDone?"#7aE499":w.products.length===0?"#E4C97733":ss.tx}44`,display:"flex",alignItems:"center",justifyContent:"center",fontSize:allDone?11:9,color:allDone?"#7aE499":w.products.length===0?"#E4C97766":ss.tx,flexShrink:0},className:"cz"},allDone?"✓":w.products.length===0?"⚙":w.w),
@@ -765,11 +1671,12 @@ function RoadmapTab({statuses}){
           isO&&React.createElement("div",{style:{padding:"8px 12px",background:"#1a1208",border:`1px solid ${ss.bg}44`,borderRadius:"0 0 8px 8px",marginTop:-2},className:"fade"},
             w.note&&React.createElement("div",{style:{fontSize:10,color:"#F5E6C877",fontStyle:"italic",marginBottom:6,lineHeight:1.5,whiteSpace:"pre-line"}},w.note),
             w.pub&&React.createElement("div",{style:{display:"flex",gap:6,fontSize:10,color:"#7aE499",marginBottom:6}},React.createElement("span",null,"📋"),React.createElement("span",null,w.pub)),
+            w.products.length>0&&React.createElement("div",{style:{display:"flex",gap:10,alignItems:"center",fontSize:9,margin:"2px 0 6px"}},React.createElement("button",{onClick:()=>setStatuses(s=>{const n={...s};w.products.forEach((p,pi)=>{n[`${w.w}-${pi}`]="done";});return n;}),style:{color:"#C9A84C",textDecoration:"underline"}},"Mark all done"),React.createElement("span",{style:{color:"#F5E6C855"}},"· tap a task to change its status")),
             w.products.map((p,pi)=>{
-              const pst=["live","arriving","designed","done"].includes(p.st)?p.st:(statuses[`${w.w}-${pi}`]||"pending");
-              const ic=pst==="done"?"✅":pst==="live"?"🛒":pst==="arriving"?"📦":"⬜";
+              const pst=stOf(p,pi);
+              const ic=pst==="done"?"✅":pst==="in-progress"?"🔄":"⬜";
               const ts=TY[p.ty]||TY.digital;
-              return React.createElement("div",{key:pi,style:{display:"flex",alignItems:"center",gap:6,padding:"4px 0",borderBottom:"1px solid #C9A84C0a"}},
+              return React.createElement("div",{key:pi,onClick:()=>{const cyc=["pending","in-progress","done"];const nx=cyc[(cyc.indexOf(pst)+1)%cyc.length];setStatuses(s=>({...s,[`${w.w}-${pi}`]:nx}));},style:{display:"flex",alignItems:"center",gap:6,padding:"6px 0",borderBottom:"1px solid #C9A84C0a",cursor:"pointer"}},
                 React.createElement("span",{style:{fontSize:10}},ic),
                 React.createElement("span",{style:{flex:1,fontSize:10,color:"#F5E6C8bb",textDecoration:pst==="done"?"line-through":"none"}},p.n),
                 React.createElement("span",{className:"chip",style:{background:ts.bg,color:ts.tx,border:`1px solid ${ts.tx}33`}},ts.lb)
@@ -785,7 +1692,7 @@ function RoadmapTab({statuses}){
 function ProductsTab({statuses}){
   const all=[];
   MONTHS.forEach(m=>m.weeks.forEach(w=>w.products.forEach((p,pi)=>{
-    const s=["live","arriving","designed","done"].includes(p.st)?p.st:(statuses[`${w.w}-${pi}`]||"pending");
+    const s=statuses[`${w.w}-${pi}`]||p.st||"pending";
     all.push({...p,st:s,w:w.w,dates:w.dates});
   })));
   const done=all.filter(p=>p.st==="done");
@@ -864,7 +1771,7 @@ function BrandTab(){
       React.createElement("div",{style:{fontSize:10,color:"#F5E6C8bb",lineHeight:1.5}},BRAND_IDENTITY.voicePrinciple)
     ),
     React.createElement("div",{style:{background:"#2D4A3E33",border:"1px solid #2D4A3E",borderRadius:10,padding:"12px",marginBottom:20}},
-      React.createElement("div",{style:{fontSize:8,letterSpacing:3,color:"#7aE499",textTransform:"uppercase",marginBottom:6},className:"cz"},"Weekly Work Schedule"),
+      React.createElement("div",{style:{fontSize:8,letterSpacing:3,color:"#7aE499",textTransform:"uppercase",marginBottom:6},className:"cz"},"Standing Reminders"),
       React.createElement("div",{style:{fontSize:10,color:"#F5E6C8bb",lineHeight:1.8,whiteSpace:"pre-line"}},BRAND_IDENTITY.weeklySchedule),
       React.createElement("div",{style:{marginTop:16,padding:"10px 12px",background:"#ffffff0a",borderRadius:8,border:"1px solid #C9A84C44"}},
         React.createElement("div",{style:{fontSize:11,color:"#E4C977",fontWeight:"bold",marginBottom:8}},"🏷️ SKU Directory"),
@@ -901,11 +1808,12 @@ function App(){
   return React.createElement("div",{style:{maxWidth:520,margin:"0 auto",minHeight:"100vh",background:"#1a1208",paddingBottom:28}},
     React.createElement("div",{style:{background:"linear-gradient(to bottom,#2D4A3E,#1a1208)",padding:"16px 16px 12px",textAlign:"center",borderBottom:"1px solid #C9A84C33"}},
       React.createElement("div",{style:{fontSize:8,letterSpacing:6,color:"#C9A84C",textTransform:"uppercase"},className:"cz"},"TheCuratorsDesk"),
-      React.createElement("div",{style:{fontSize:13,color:"#E4C977",marginTop:2,letterSpacing:1},className:"cz"},"Creative Planner 2026–2027")
+      React.createElement("div",{style:{fontSize:13,color:"#E4C977",marginTop:2,letterSpacing:1},className:"cz"},"Product Planner 2026–2027"),
+      React.createElement("div",{style:{fontSize:8,color:"#F5E6C855",marginTop:4,letterSpacing:1}},"v10 · updated Nov 15, 2026 · products only")
     ),
     React.createElement(Nav,{tab,set:setTab}),
     tab==="week"    &&React.createElement(WeekTab,{statuses,setStatuses}),
-    tab==="roadmap" &&React.createElement(RoadmapTab,{statuses}),
+    tab==="roadmap" &&React.createElement(RoadmapTab,{statuses,setStatuses}),
     tab==="products"&&React.createElement(ProductsTab,{statuses}),
     tab==="brand"   &&React.createElement(BrandTab),
   );
